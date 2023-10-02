@@ -181,6 +181,7 @@
     <Content Include="Usuario\Contacto.aspx" />
     <Content Include="Usuario\Default.aspx" />
     <Content Include="Usuario\Menu.aspx" />
+    <Content Include="Usuario\Perfil.aspx" />
     <Content Include="Usuario\SliderUserControl1.ascx" />
     <Content Include="Vendedor\Dashboard.aspx" />
     <Content Include="Web.config" />
@@ -217,6 +218,13 @@
     </Compile>
     <Compile Include="Usuario\Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario\SliderUserControl1.ascx.cs">
       <DependentUpon>SliderUserControl1.ascx</DependentUpon>
