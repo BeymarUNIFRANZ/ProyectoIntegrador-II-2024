@@ -16,13 +16,53 @@ namespace CASEWEB.Usuario
             {
                 form1.Attributes.Add("class", "sub_page");
             }
-            else {
+            else
+            {
                 form1.Attributes.Remove("class");
-           //cargar el control
-           Control SliderUserControl1 = (Control)Page.LoadControl("SliderUserControl1.ascx");
+                //cargar el control
+                Control SliderUserControl1 = (Control)Page.LoadControl("SliderUserControl1.ascx");
 
                 //añadir el control al panel
                 pnlSliderUC.Controls.Add(SliderUserControl1);
+
+            }
+
+            if (Session["Cod_Usu"] != null)
+            {
+                LbLoginOrLogout.Text = "Logout";
+            }
+
+            else
+            {
+                LbLoginOrLogout.Text = "Login";
+
+            }
+        }
+        protected void LbLoginOrLogout_Click(object sender, EventArgs e)
+        {
+
+            if (Session["Cod_Usu"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                Session.Abandon();
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+        protected void lbRegisterOrProfile_Click(object sender, EventArgs e)
+        {
+            if (Session["Cod_Usu"] != null)
+            {
+                lbRegisterOrProfile.ToolTip = "User Profile"; 
+                Response.Redirect("Perfil.aspx");
+            }
+            else
+            {
+                lbRegisterOrProfile.ToolTip = "User Registration";
+                Response.Redirect("Registro.aspx");
 
             }
         }

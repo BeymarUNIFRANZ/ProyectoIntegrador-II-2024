@@ -154,6 +154,14 @@
     <Content Include="assets\pages\widget\amchart\worldLow.js" />
     <Content Include="assets\pages\widget\amchart\worldLow.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Category\1b785d40-153e-4c57-a924-3d310ade5939.jpg" />
+    <Content Include="Images\Category\66b69b5a-d16b-4a64-917a-1e2a5215cfdc.jpeg" />
+    <Content Include="Images\Category\85e08e85-bcc7-48f1-93c0-e2276b331465.jpg" />
+    <Content Include="Images\Category\93f4c998-75d1-4bbf-83b1-3d97889c98ef.png" />
+    <Content Include="Images\Category\d5331813-cba3-423e-870a-373076f008b6.png" />
+    <Content Include="Images\Category\ddd9cfcf-8734-4f21-9a8c-738f82444964.jpg" />
+    <Content Include="Images\Category\f454c17b-9715-4adf-b105-da9c04e6aeca.png" />
+    <Content Include="Images\Login.jpg" />
     <Content Include="PlantillaArchivos\css\bootstrap.css" />
     <Content Include="PlantillaArchivos\css\font-awesome.min.css" />
     <Content Include="PlantillaArchivos\css\responsive.css" />
@@ -180,13 +188,20 @@
     <Content Include="Usuario\Acerca.aspx" />
     <Content Include="Usuario\Contacto.aspx" />
     <Content Include="Usuario\Default.aspx" />
+    <Content Include="Usuario\Login.aspx" />
     <Content Include="Usuario\Menu.aspx" />
     <Content Include="Usuario\Perfil.aspx" />
+    <Content Include="Usuario\Registro.aspx" />
     <Content Include="Usuario\SliderUserControl1.ascx" />
+    <Content Include="Vendedor\Category.aspx" />
     <Content Include="Vendedor\Dashboard.aspx" />
+    <Content Include="Vendedor\Usuarios.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connetion.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -212,6 +227,13 @@
     <Compile Include="Usuario\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Usuario\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -225,6 +247,13 @@
     </Compile>
     <Compile Include="Usuario\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario\SliderUserControl1.ascx.cs">
       <DependentUpon>SliderUserControl1.ascx</DependentUpon>
@@ -240,6 +269,13 @@
     <Compile Include="Usuario\Usuario.Master.designer.cs">
       <DependentUpon>Usuario.Master</DependentUpon>
     </Compile>
+    <Compile Include="Vendedor\Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendedor\Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vendedor\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -247,12 +283,33 @@
     <Compile Include="Vendedor\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vendedor\Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendedor\Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vendedor\Vendedor.Master.cs">
       <DependentUpon>Vendedor.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vendedor\Vendedor.Master.designer.cs">
       <DependentUpon>Vendedor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +336,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\User\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

@@ -442,13 +442,13 @@
                                     <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Lista  Usuarios</div>
                                     <ul class="pcoded-item pcoded-left-item">
                                         <li>
-                                            <a href="javascript:void(0)">
+                                            <a href="Usuarios.aspx">
                                                 <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
                                                 <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Usuarios</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
-
+                                          
                                         <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Usuarios Consulta/Comentario</div>
                                         <ul class="pcoded-item pcoded-left-item">
                                             <li>
@@ -504,7 +504,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- CONTENIDO DE PANEL DESPLEGABLE -->
+                <!-- CONTENIDO DE PANEL DESPLEGABLE END-->
             </div>
         </div>
 
