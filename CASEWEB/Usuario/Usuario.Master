@@ -60,7 +60,7 @@
 
        <div class="hero_area">
     <div class="bg-box">
-      <img src="../PlantillaArchivos/images/hero-bg.jpg" alt="">
+      <img src="../PlantillaArchivos/images/hero-bg.jpeg" alt="">
     </div>
     <!-- header section strats -->
     <header class="header_section">
@@ -68,7 +68,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="Default.aspx">
             <span>
-              Feane
+              CASERA WEB
             </span>
           </a>
 
@@ -187,25 +187,25 @@
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
             <h4>
-              Contact Us
+              Cotactanos!
             </h4>
             <div class="contact_link_box">
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                  Ubicacion
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  Cel:75254640
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  TuCaserita@gmail.com
                 </span>
               </a>
             </div>
@@ -214,10 +214,10 @@
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
             <a href="" class="footer-logo">
-              Feane
+              Apoyanos
             </a>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+            Si quieres aysudar a que este proyecto sigua adelante y ayudarnos a mejorar las cosas a un futuro muy proximo por favor colaboranos con una nota 25 sobre 25 en este hito y en los proximos             
             </p>
             <div class="footer_social">
               <a href="">
@@ -240,22 +240,20 @@
         </div>
         <div class="col-md-4 footer-col">
           <h4>
-            Opening Hours
+            Estamos disponibles desde:
           </h4>
           <p>
-            Everyday
+            Todos los dias
           </p>
           <p>
-            10.00 Am -10.00 Pm
+            10.00 Am - 10.00 Pm
           </p>
         </div>
       </div>
       <div class="footer-info">
         <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br><br>
-          &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+         ESTA PAGINA WEB FUE AUSPICIADA POR TU CASERA DEL MERCADO LANZA APOYANOS!! 
+            #TUCASERITATAMBIENTIENESENTIMIENTOS
         </p>
       </div>
     </div>

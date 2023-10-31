@@ -1,3 +1,5 @@
+/*const { has } = require("../../assets/js/classie/classie");*/
+
 // to get current year
 function getYear() {
     var currentDate = new Date();
@@ -27,12 +29,46 @@ $(window).on('load', function () {
             columnWidth: ".all"
         }
     })
+
+    $(document).ready(function () {
+        //Read a page's GET URL varaibles & retunr them as an associative aaray
+        function getUrlVars() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hasg[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        };
+
+        var id = getUrlVars()["id"];
+        if (id > 0) {
+            $('.filters_menu li').removeClass('active');
+        }
+
+        $('.filters_menu li').each(function () {
+            //checks if it is the same on the address bar 
+            if (id == this.attributes["data-id"].value) {
+                $(this).closest("li").addClass("active");
+
+                var data = $(this).attr('data-filter');
+                $grid.isotope({
+                    filter: data
+                })
+
+                return;
+            }
+        });
+
+    });
 });
 
 // nice select
-$(document).ready(function() {
+$(document).ready(function () {
     $('select').niceSelect();
-  });
+});
 
 /** google_map js **/
 function myMap() {

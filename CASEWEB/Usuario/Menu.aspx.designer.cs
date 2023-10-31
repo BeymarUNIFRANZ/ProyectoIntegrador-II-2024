@@ -13,5 +13,23 @@ namespace CASEWEB.Usuario
 
     public partial class Menu
     {
+
+        /// <summary>
+        /// Control rCategory.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rCategory;
+
+        /// <summary>
+        /// Control rProducts.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rProducts;
     }
 }

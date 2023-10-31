@@ -23,7 +23,7 @@
                   <span>20%</span> Off
                 </h6>
                 <a href="">
-                  Order Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                     <g>
                       <g>
                         <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
@@ -163,24 +163,22 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="img-box">
-            <img src="../PlantillaArchivos/images/about-img.png" alt="">
+              <img src="../PlantillaArchivos/images/client1.jpg" /> 
+
           </div>
         </div>
         <div class="col-md-6">
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                We Are Feane
+                Quienes Somos
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+              Descripcion de Quienes Somos
             </p>
             <a href="">
-              Read More
+             
             </a>
           </div>
         </div>
@@ -196,7 +194,7 @@
     <div class="container">
       <div class="heading_container heading_center psudo_white_primary mb_45">
         <h2>
-          What Says Our Customers
+         Comentarios
         </h2>
       </div>
       <div class="carousel-wrap row ">
@@ -205,13 +203,13 @@
             <div class="box">
               <div class="detail-box">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-                </p>
+                  Descripcion de lo que somos
+                    </p>
                 <h6>
-                  Moana Michell
+                  Beymar Villca
                 </h6>
                 <p>
-                  magna aliqua
+                  Paye Manuel
                 </p>
               </div>
               <div class="img-box">

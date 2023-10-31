@@ -26,7 +26,7 @@
         }
     </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
     <div class="pcoded-inner-content pt-0">
         <div class="align-align-self-end">
@@ -46,32 +46,32 @@
 
 
                                         <div class="col-sm-6 col-md-4 col-lg-4">
-                                            <h4 class="sub-title">Category</h4>
+                                            <h4 class="sub-title">Categoria</h4>
                                             <div>
                                                 <div class="form-group">
-                                                    <label>Category Name</label>
+                                                    <label>Nombre de la Categoria</label>
                                                     <div>
                                                         <asp:TextBox ID="txtName" runat="server" CssClass="form-control"
-                                                            placeholder="Enter Category Name" required></asp:TextBox>
-                                                        <asp:HiddenField ID="hdnId" runat="server" Value="0" />
+                                                            placeholder="Ingrese Nombre" required></asp:TextBox>
+                                                        <asp:HiddenField ID="hdnId" Value="0" runat="server"  />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Category Image</label>
+                                                    <label>Imagen de la Categoria</label>
                                                     <div>
                                                         <asp:FileUpload ID="fuCategoryImage" runat="server" CssClass="form-control"
                                                             onchange="ImagePreview(this);" />
                                                     </div>
                                                 </div>
                                                 <div class="form-check pl-4">
-                                                    <asp:CheckBox ID="cbIsActive" runat="server" Text="&nbsp; IsActive"
+                                                    <asp:CheckBox ID="cbIsActive" runat="server" Text="&nbsp; Activo"
                                                         CssClass="form-check-input" />
                                                 </div>
                                                 <div class="pb-5">
-                                                    <asp:Button ID="btnAddOrUpdate" runat="server" Text="Add" CssClass="btn btn-primary"
+                                                    <asp:Button ID="btnAddOrUpdate" runat="server" Text="Añadir" CssClass="btn btn-primary"
                                                         OnClick="btnAddOrUpdate_Click" />
                                                     &nbsp;
-                                                    <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="btn btn-primary"
+                                                    <asp:Button ID="btnClear" runat="server" Text="Eliminar" CssClass="btn btn-primary"
                                                         CausesValidation="false" OnClick="btnClear_Click" />
                                                 </div>
                                                 <div>
@@ -82,36 +82,36 @@
 
 
                                         <div class="col-sm-6 col-md-8 col-lg-8 mobile-inputs">
-                                            <h4 class="sub-title">Category Lists</h4>
+                                            <h4 class="sub-title">Lista de Categorias</h4>
                                             <div class="card-block table-border-style">
                                                 <div class="table-responsive">
 
                                                     <asp:Repeater ID="rCategory" runat="server" OnItemCommand="rCategory_ItemCommand"
-                                                        OnItemDataBound="rCategory_ItemDataBound1"> 
-                                                                         
+                                                        OnItemDataBound="rCategory_ItemDataBound1">
+
                                                         <HeaderTemplate>
                                                             <table class="table data-table-export table-hover nowrap">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th class="table-plus">Name</th>
-                                                                        <th>Image</th>
-                                                                        <th>IsActive</th>
-                                                                        <th>CreatedDate</th>
-                                                                        <th class="datatable-nosort">Action</th>
+                                                                        <th class="table-plus">Nombre</th>
+                                                                        <th>Imagen</th>
+                                                                        <th>Activo</th>
+                                                                        <th>Fecha Creada</th>
+                                                                        <th class="datatable-nosort">Accion</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                         </HeaderTemplate>
                                                         <ItemTemplate>
                                                             <tr>
-                                                                <td class="table-plus"><%# Eval("Name") %> </td>
+                                                                <td class="table-plus"><%# Eval("Nombre_Cat") %> </td>
                                                                 <td>
-                                                                    <img alt="" width="40" src="<%# Utils.GetImageUrl( Eval("ImageUrl")) %>" />
+                                                                    <img alt="" width="40" src="<%# Utils.GetImageUrl( Eval("ImagenUrl_Cat")) %>" />
                                                                 </td>
                                                                 <td>
-                                                                    <asp:Label ID="lblIsActive" runat="server" Text='<%# Eval("IsActive") %>'></asp:Label>
+                                                                    <asp:Label ID="lblIsActive" runat="server" Text='<%# Eval("Activo_Cat") %>'></asp:Label>
                                                                 </td>
-                                                                <td><%# Eval("CreatedDate") %> </td>
+                                                                <td><%# Eval("CrearFecha_Cat") %> </td>
                                                                 <td>
                                                                     <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server" CssClass="badge badge-primary"
                                                                         CommandArgument='<%# Eval("Cod_Cat") %>' CommandName="edit">

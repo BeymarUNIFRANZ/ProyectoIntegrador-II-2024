@@ -21,7 +21,7 @@
     <meta name="keywords" content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="CodedThemes">
     <!-- Favicon icon -->
-    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icons">
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <!-- Required Fremwork -->
@@ -33,6 +33,33 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/jquery.mCustomScrollbar.css">
+
+    <!--Datatables start -->
+    <link rel="stylesheet" type="text/css" href="../assets/datatables/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/datatables/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/datatables/css/icon-font.min.css">
+    <!--Datatables end -->
+
+
+    <script type="text/javascript" src="../assets/js/jquery/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            //this will get the full URL at the address bar
+            var url = window.location.href;
+
+            //paases on every "a" tag
+            $("#navbarSupportedContent a").each(function () {
+                //chucks if its the same on the address bar
+                if (url == (this.href)) {
+                    $(this).closest("li").addClass("active");
+                }
+            });
+        });
+
+
+    </script>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -91,11 +118,9 @@
                             <a class="mobile-menu" id="mobile-collapse" href="#!">
                                 <i class="ti-menu"></i>
                             </a>
-                            <a class="mobile-search morphsearch-search" href="#">
-                                <i class="ti-search"></i>
-                            </a>
                             <a href="index.html">
-                                <img class="img-fluid" src="../assets/images/logo.png" alt="LOGO" />
+
+                                <img class="img-fluid" src="../assets/images/Logo-0about-img.png" alt="LOGO" />
                             </a>
                             <a class="mobile-options">
                                 <i class="ti-more"></i>
@@ -161,10 +186,11 @@
                                 </ul>
                             </li>--%>
                                 <!-- Notificaciones-Menu -->
+
                                 <li class="user-profile header-notification">
                                     <a href="#!">
                                         <img src="../assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                        <span>John Doe</span>
+                                        <span>Admin</span>
                                         <i class="ti-angle-down"></i>
                                     </a>
                                     <ul class="show-notification profile-notification">
@@ -190,8 +216,8 @@
                                     </li>--%>
 
                                         <li>
-                                            <a href="auth-normal-sign-in.html">
-                                                <i class="ti-layout-sidebar-left"></i>Logout
+                                            <a href="../Usuario/Default.aspx">
+                                                <i class="ti-layout-sidebar-left"></i>Cerrar Sesion
                                             </a>
                                         </li>
                                     </ul>
@@ -212,7 +238,7 @@
                     <div class="pcoded-wrapper">
                         <nav class="pcoded-navbar">
                             <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
-                            <div class="pcoded-inner-navbar main-menu">
+                            <div class="pcoded-inner-navbar main-menu" id="navbarSupportedContent">
                                 <%-- <div class="">
                                 <div class="main-menu-header">
                                     <img class="img-40 img-radius" src="../assets/images/avatar-4.jpg" alt="User-Profile-Image">
@@ -248,6 +274,7 @@
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
+                            
                                     <%--<li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
@@ -332,7 +359,7 @@
                                 <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Categoria Crud</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
-                                        <a href="form-elements-component.html">
+                                        <a href="Category.aspx">
                                             <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Categorias</span>
                                             <span class="pcoded-mcaret"></span>
@@ -350,7 +377,7 @@
                                 <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Producto Crud</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
-                                        <a href="chart.html">
+                                        <a href="Product.aspx">
                                             <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.form-components.main">Productos</span>
                                             <span class="pcoded-mcaret"></span>
@@ -448,7 +475,7 @@
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
-                                          
+
                                         <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Usuarios Consulta/Comentario</div>
                                         <ul class="pcoded-item pcoded-left-item">
                                             <li>
@@ -497,9 +524,9 @@
                                 </div>
                             </div>
                             <!-- Danger-color Breadcrumb card end -->
-                            
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-                </asp:ContentPlaceHolder>
+
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                            </asp:ContentPlaceHolder>
 
                         </div>
                     </div>
@@ -544,6 +571,23 @@
         });
     </script>
     <!-- end Required Jquery -->
+
+    <!-- Added for Datatables - start here -->
+    <script src="../assets/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../assets/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="../assets/datatables/js/responsive.bootstrap4.min.js"></script>
+    <!-- buttons for export datatable-->
+    <script src="../assets/datatables/js/dataTables.buttons.min.js"></script>
+    <script src="../assets/datatables/js/buttons.bootstrap4.min.js"></script>
+    <script src="../assets/datatables/js/buttons.print.min.js"></script>
+    <script src="../assets/datatables/js/buttons.html5.min.js"></script>
+    <script src="../assets/datatables/js/buttons.flash.min.js"></script>
+    <script src="../assets/datatables/js/pdfmake.min.js"></script>
+    <script src="../assets/datatables/js/vfs_fonts.js"></script>
+    <!-- Datable setting js-->
+    <script src="../assets/datatables/js/datatable-setting.js"></script>
+    <!-- Added for Datatables - ends here -->
 
 </body>
 </html>

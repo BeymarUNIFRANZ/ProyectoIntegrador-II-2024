@@ -8,7 +8,7 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Book A Table
+          Comentanos!
         </h2>
       </div>
       <div class="row">
@@ -16,18 +16,18 @@
           <div class="form_container">
             <form action="">
               <div>
-                <input type="text" class="form-control" placeholder="Your Name" />
+                <input type="text" class="form-control" placeholder="Tu Nombre" />
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Phone Number" />
+                <input type="text" class="form-control" placeholder="Numero de Celular" />
               </div>
               <div>
-                <input type="email" class="form-control" placeholder="Your Email" />
+                <input type="email" class="form-control" placeholder="Tu Correo Electronico" />
               </div>
               <div>
                 <select class="form-control nice-select wide">
                   <option value="" disabled selected>
-                    How many persons?
+                    Cuantas personas son
                   </option>
                   <option value="">
                     2
@@ -48,7 +48,7 @@
               </div>
               <div class="btn_box">
                 <button>
-                  Book Now
+                  Enviar Ahora
                 </button>
               </div>
             </form>

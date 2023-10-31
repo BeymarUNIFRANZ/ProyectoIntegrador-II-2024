@@ -89,6 +89,7 @@
     <Content Include="assets\images\flags\FRANCE.jpg" />
     <Content Include="assets\images\flags\PORTO.jpg" />
     <Content Include="assets\images\flags\SPAIN.jpg" />
+    <Content Include="assets\images\Logo-about-img.png" />
     <Content Include="assets\images\logo.png" />
     <Content Include="assets\images\mega-menu\01.jpg" />
     <Content Include="assets\images\mega-menu\02.jpg" />
@@ -162,6 +163,8 @@
     <Content Include="Images\Category\ddd9cfcf-8734-4f21-9a8c-738f82444964.jpg" />
     <Content Include="Images\Category\f454c17b-9715-4adf-b105-da9c04e6aeca.png" />
     <Content Include="Images\Login.jpg" />
+    <Content Include="Images\Login.png" />
+    <Content Include="Images\No_image.png" />
     <Content Include="PlantillaArchivos\css\bootstrap.css" />
     <Content Include="PlantillaArchivos\css\font-awesome.min.css" />
     <Content Include="PlantillaArchivos\css\responsive.css" />
@@ -179,6 +182,7 @@
     <Content Include="PlantillaArchivos\images\f8.png" />
     <Content Include="PlantillaArchivos\images\f9.png" />
     <Content Include="PlantillaArchivos\images\favicon.png" />
+    <Content Include="PlantillaArchivos\images\hero-bg.jpeg" />
     <Content Include="PlantillaArchivos\images\hero-bg.jpg" />
     <Content Include="PlantillaArchivos\images\o1.jpg" />
     <Content Include="PlantillaArchivos\images\o2.jpg" />
@@ -195,6 +199,7 @@
     <Content Include="Usuario\SliderUserControl1.ascx" />
     <Content Include="Vendedor\Category.aspx" />
     <Content Include="Vendedor\Dashboard.aspx" />
+    <Content Include="Vendedor\Product.aspx" />
     <Content Include="Vendedor\Usuarios.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -283,6 +288,13 @@
     <Compile Include="Vendedor\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vendedor\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendedor\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vendedor\Usuarios.aspx.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -336,6 +348,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Product\" />
     <Folder Include="Images\User\" />
     <Folder Include="Models\" />
   </ItemGroup>

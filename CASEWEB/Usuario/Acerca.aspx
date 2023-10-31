@@ -11,24 +11,21 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="img-box">
-            <img src="../PlantillaArchivos/images/about-img.png" alt="">
+            <img src="../PlantillaArchivos/images/about-imga.png" alt="">
           </div>
         </div>
         <div class="col-md-6">
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                We Are Feane
+                Quienes Somos?
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+              Somos unos chicos que intentan hacer la diferencia ne un pais que carece de novedades, para lo mismo se penso en una idea que podria revolucionar uno de los elementos mas importantes del pais
             </p>
             <a href="">
-              Read More
+              Leer Mas
             </a>
           </div>
         </div>
