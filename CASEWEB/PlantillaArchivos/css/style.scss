@@ -6,14 +6,15 @@ $textCol: #1f1f1f;
 
 // import fonts -  font-family: 'Open Sans', sans-serif and  font-family: 'Dancing Script', cursive;
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato:ital,wght@0,100;0,700;1,400;1,700;1,900&family=Open+Sans:ital,wght@1,500;1,600&display=swap');
+
 
 @mixin main-font {
-  font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 @mixin second-font {
-  font-family: 'Dancing Script', cursive;
+    font-family: "Open Sans", sans-serif;
 }
 
 @mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
@@ -256,7 +257,7 @@ a:focus {
   }
 
   .order_online {
-    @include hero_btn($primary1, $white, 8px, 30px, 45px);
+    @include hero_btn($primary1, $black, 8px, 30px, 45px);
   }
 }
 
@@ -408,7 +409,7 @@ a:focus {
       height: 175px;
       margin-right: 15px;
       position: relative;
-      transition: all .1.5s;
+      transition: all 1.5s;
       border-radius: 100%;
       border: 5px solid $primary1;
       overflow: hidden;

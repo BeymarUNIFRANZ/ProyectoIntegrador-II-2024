@@ -19,7 +19,6 @@
   <link rel="shortcut icon" href="../PlantillaArchivos/images/favicon.png" type="">
 
   <title> CASERA WEB </title>
-
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="../PlantillaArchivos/css/bootstrap.css" />
 
@@ -31,7 +30,8 @@
   <link href="../PlantillaArchivos/css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="../PlantillaArchivos/css/style.css" rel="stylesheet" />
+    <link href="../PlantillaArchivos/css/style.css" rel="stylesheet" />
+    <link href="../PlantillaArchivos/css/letra.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="../PlantillaArchivos/css/responsive.css" rel="stylesheet" />
 
@@ -60,7 +60,7 @@
 
        <div class="hero_area">
     <div class="bg-box">
-      <img src="../PlantillaArchivos/images/hero-bg.jpeg" alt="">
+      <img src="../PlantillaArchivos/images/FondodeNoche2.jpeg" />
     </div>
     <!-- header section strats -->
     <header class="header_section">
@@ -99,7 +99,7 @@
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>--%>
               <a class="cart_link" href="#">
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456 456;" xml:space="preserve">
                   <g>
                     <g>
                       <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
@@ -190,19 +190,19 @@
               Cotactanos!
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <a href="#">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Ubicacion
                 </span>
               </a>
-              <a href="">
+              <a href="#">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
                   Cel:75254640
                 </span>
               </a>
-              <a href="">
+              <a href="#">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
                   TuCaserita@gmail.com

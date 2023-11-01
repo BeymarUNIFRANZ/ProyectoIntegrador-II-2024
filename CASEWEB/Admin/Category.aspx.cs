@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CASEWEB.Vendedor
+namespace CASEWEB.Admin
 {
     public partial class Category : System.Web.UI.Page
     {

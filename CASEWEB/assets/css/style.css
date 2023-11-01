@@ -27,11 +27,12 @@ File: style.css
       Custom css start
 ==========================  **/
 body {
-  background-color: #f3f3f3;
-  font-size: 0.875em;
-  overflow-x: hidden;
-  color: #353c4e;
-  font-family: "Open Sans", sans-serif; }
+    background-color: #f3f3f3;
+    font-size: 0.875em;
+    overflow-x: hidden;
+    color: #353c4e;
+    font-family: "Open Sans", sans-serif;
+}
 
 ul {
   padding-left: 0;
@@ -6174,7 +6175,7 @@ body[themebg-pattern="pattern9"] {
 
 .open .selector-toggle > a:before {
   font-family: 'themify';
-  font-size: 25spx;
+  font-size: 25px;
   content: "\e646";
   position: relative;
   float: left;

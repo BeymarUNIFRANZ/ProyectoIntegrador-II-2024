@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Vendedor.master.cs" Inherits="CASEWEB.Vendedor.Vendedor" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="CASEWEB.Admin.Admin" %>
 
 <!DOCTYPE html>
 
@@ -268,7 +268,7 @@
                                 <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Dashboard</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li class="active">
-                                        <a href="Dashboard.aspx">
+                                        <a href="Dashboard2.aspx">
                                             <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                             <span class="pcoded-mcaret"></span>
@@ -374,15 +374,7 @@
                                 </li>--%>
                                 </ul>
 
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Producto Crud</div>
-                                <ul class="pcoded-item pcoded-left-item">
-                                    <li>
-                                        <a href="Product.aspx">
-                                            <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Productos</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
+                       
                                     <%--<li>
                                     <a href="map-google.html">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
@@ -419,9 +411,9 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>--%>
+                                
                                 </ul>
-
+                                        </li>--%>
                                 <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Estado Producto Delivery</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
@@ -430,7 +422,7 @@
                                             <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Estado Actualizado</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
-
+                                        
                                         <%--<ul class="pcoded-submenu">
                                         <li class="">
                                             <a href="javascript:void(0)">
@@ -466,12 +458,12 @@
                                     </ul>--%>
                                     </li>
 
-                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Lista  Usuarios</div>
+                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registro Caseras</div>
                                     <ul class="pcoded-item pcoded-left-item">
                                         <li>
-                                            <a href="Usuarios.aspx">
+                                            <a href="RegistroCasera.aspx">
                                                 <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Usuarios</span>
+                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Caseras</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
@@ -503,7 +495,7 @@
                         <div class="pcoded-content">
                             <!-- Danger-color Breadcrumb card start -->
                             <div class="card borderless-card">
-                                <div class="card-block danger-breadcrumb">
+                                <div class="card-block primary-breadcrumb">
                                     <%--<div class="breadcrumb-header">
                                         <h5>Danger Color Breadcrumb</h5>
                                         <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
@@ -525,7 +517,7 @@
                             </div>
                             <!-- Danger-color Breadcrumb card end -->
 
-                            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                             </asp:ContentPlaceHolder>
 
                         </div>
@@ -591,3 +583,4 @@
 
 </body>
 </html>
+

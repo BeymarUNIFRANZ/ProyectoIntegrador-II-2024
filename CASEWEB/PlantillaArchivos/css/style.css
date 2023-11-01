@@ -1,13 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
-body {
-  font-family: "Open Sans", sans-serif;
-  color: #0c0c0c;
-  background-color: #ffffff;
-  overflow-x: hidden;
-}
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato:ital,wght@0,100;0,700;1,400;1,700;1,900&family=Open+Sans:ital,wght@1,500;1,600&display=swap');
 
 .layout_padding {
-  padding: 90px 0;
+    padding: 90px 0;
 }
 
 .layout_padding2 {
@@ -30,10 +24,6 @@ body {
   padding-bottom: 90px;
 }
 
-h1,
-h2 {
-  font-family: 'Dancing Script', cursive;
-}
 
 .heading_container {
   display: -webkit-box;
@@ -147,9 +137,6 @@ a:focus {
   padding-left: 25px;
 }
 
-.navbar-brand {
-  font-family: 'Dancing Script', cursive;
-}
 
 .navbar-brand span {
   font-weight: bold;
@@ -341,11 +328,6 @@ a:focus {
   margin-bottom: 145px;
 }
 
-.slider_section .detail-box h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
 
 .slider_section .detail-box p {
   font-size: 14px;
@@ -421,8 +403,8 @@ a:focus {
   height: 175px;
   margin-right: 15px;
   position: relative;
-  -webkit-transition: all 0.1 0.5s;
-  transition: all 0.1 0.5s;
+  -webkit-transition: all 0.1s 0.5s;
+  transition: all 0.1s 0.5s;
   border-radius: 100%;
   border: 5px solid #ffbe33;
   overflow: hidden;
@@ -434,16 +416,16 @@ a:focus {
   transition: all .2s;
 }
 
-.offer_section .box .detail-box h5 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 24px;
-  margin: 0;
-}
+    .offer_section .box .detail-box h5 {
+        font-family: "Open Sans", sans-serif;
+        font-size: 24px;
+        margin: 0;
+    }
 
-.offer_section .box .detail-box h6 {
-  font-family: 'Dancing Script', cursive;
-  margin: 10px 0;
-}
+    .offer_section .box .detail-box h6 {
+        font-family: "Open Sans", sans-serif;
+        margin: 10px 0;
+    }
 
 .offer_section .box .detail-box h6 span {
   font-size: 2.5rem;
@@ -693,7 +675,7 @@ a:focus {
   color: #222222;
 }
 
-.book_section .form_container .form-control::-ms-input-placeholder {
+.book_section .form_container .form-control:-ms-input-placeholder {
   color: #222222;
 }
 
@@ -858,7 +840,7 @@ a:focus {
   color: #222222;
 }
 
-.contact_section .form_container input::-ms-input-placeholder {
+.contact_section .form_container input:-ms-input-placeholder {
   color: #222222;
 }
 
@@ -910,12 +892,12 @@ a:focus {
   font-size: 28px;
 }
 
-.footer_section h4,
-.footer_section .footer-logo {
-  font-weight: 600;
-  margin-bottom: 20px;
-  font-family: 'Dancing Script', cursive;
-}
+    .footer_section h4,
+    .footer_section .footer-logo {
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-family: "Open Sans", sans-serif;
+    }
 
 .footer_section p {
   color: #dbdbdb;

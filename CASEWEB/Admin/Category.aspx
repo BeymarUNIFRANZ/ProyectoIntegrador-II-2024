@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vendedor/Vendedor.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="CASEWEB.Vendedor.Category" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="CASEWEB.Admin.Category" %>
 
 <%@ Import Namespace="CASEWEB" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -26,7 +26,7 @@
         }
     </script>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="pcoded-inner-content pt-0">
         <div class="align-align-self-end">
@@ -48,12 +48,22 @@
                                         <div class="col-sm-6 col-md-4 col-lg-4">
                                             <h4 class="sub-title">Categoria</h4>
                                             <div>
+                                                <!--
+                                                <div class="form-group">
+                                                    <label>Numero de Caseta</label>
+                                                    <div>
+                                                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"
+                                                            placeholder="Ingrese Numero" required></asp:TextBox>
+                                                        <asp:HiddenField ID="HiddenField1" Value="0" runat="server" />
+                                                    </div>
+                                                </div>
+                                                -->
                                                 <div class="form-group">
                                                     <label>Nombre de la Categoria</label>
                                                     <div>
                                                         <asp:TextBox ID="txtName" runat="server" CssClass="form-control"
                                                             placeholder="Ingrese Nombre" required></asp:TextBox>
-                                                        <asp:HiddenField ID="hdnId" Value="0" runat="server"  />
+                                                        <asp:HiddenField ID="hdnId" Value="0" runat="server" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

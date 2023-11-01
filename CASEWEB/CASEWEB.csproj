@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Dashboard2.aspx" />
+    <Content Include="Admin\RegistroCasera.aspx" />
     <Content Include="assets\css\animate.css\css\animate.css" />
     <Content Include="assets\css\bootstrap\css\bootstrap.min.css" />
     <Content Include="assets\css\jquery.mCustomScrollbar.css" />
@@ -168,6 +170,7 @@
     <Content Include="PlantillaArchivos\css\bootstrap.css" />
     <Content Include="PlantillaArchivos\css\font-awesome.min.css" />
     <Content Include="PlantillaArchivos\css\responsive.css" />
+    <Content Include="PlantillaArchivos\css\letra.css" />
     <Content Include="PlantillaArchivos\css\style.css" />
     <Content Include="PlantillaArchivos\images\about-img.png" />
     <Content Include="PlantillaArchivos\images\client1.jpg" />
@@ -197,7 +200,7 @@
     <Content Include="Usuario\Perfil.aspx" />
     <Content Include="Usuario\Registro.aspx" />
     <Content Include="Usuario\SliderUserControl1.ascx" />
-    <Content Include="Vendedor\Category.aspx" />
+    <Content Include="Admin\Category.aspx" />
     <Content Include="Vendedor\Dashboard.aspx" />
     <Content Include="Vendedor\Product.aspx" />
     <Content Include="Vendedor\Usuarios.aspx" />
@@ -206,6 +209,27 @@
     <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard2.aspx.cs">
+      <DependentUpon>Dashboard2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard2.aspx.designer.cs">
+      <DependentUpon>Dashboard2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RegistroCasera.aspx.cs">
+      <DependentUpon>RegistroCasera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RegistroCasera.aspx.designer.cs">
+      <DependentUpon>RegistroCasera.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connetion.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -274,11 +298,11 @@
     <Compile Include="Usuario\Usuario.Master.designer.cs">
       <DependentUpon>Usuario.Master</DependentUpon>
     </Compile>
-    <Compile Include="Vendedor\Category.aspx.cs">
+    <Compile Include="Admin\Category.aspx.cs">
       <DependentUpon>Category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vendedor\Category.aspx.designer.cs">
+    <Compile Include="Admin\Category.aspx.designer.cs">
       <DependentUpon>Category.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vendedor\Dashboard.aspx.cs">
@@ -331,6 +355,7 @@
     <Content Include="assets\icon\themify-icons\fonts\themify.eot" />
     <Content Include="assets\icon\themify-icons\fonts\themify.ttf" />
     <Content Include="assets\icon\themify-icons\fonts\themify.woff" />
+    <Content Include="Admin\Admin.Master" />
     <None Include="packages.config" />
     <Content Include="PlantillaArchivos\css\style.css.map" />
     <Content Include="PlantillaArchivos\css\style.scss" />
