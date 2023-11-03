@@ -118,68 +118,96 @@
                                             </div>
                                         </div>
 
+
+
                                         <div class="col-sm-6 col-md-8 col-lg-8 mobile-inputs">
                                             <h4 class="sub-title">Lista de Caseras(os)</h4>
                                             <div class="card-block table-border-style">
                                                 <div class="table-responsive">
 
-                                                    <asp:Repeater ID="rCasera" runat="server" OnItemCommand="rCasera_ItemCommand"
-                                                        OnItemDataBound="rCasera_ItemDataBound">
-
-                                                        <HeaderTemplate>
-                                                            <table class="table data-table-export table-hover nowrap">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th class="table-plus">Nombre</th>
-                                                                        <th>Imagen</th>
-                                                                        <th>Teléfono</th>
-                                                                        <th>Correo</th>
-                                                                        <th>Dirección</th>
-                                                                        <th>NIT</th>
-                                                                        <th>Fecha de Creacion</th>
-                                                                        <th class="datatable-nosort">Accion</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                        </HeaderTemplate>
-                                                        <ItemTemplate>
-                                                            <tr>
-                                                                <td class="table-plus"><%# Eval("Nombre_Cas") %></td>
-                                                                <td>
-                                                                    <img alt="" width="40" src="<%# Utils.GetImageUrl( Eval("ImagenUrl_Cas")) %>" />
-                                                                </td>
-
-                                                                <td><%# Eval("Telefono_Cas") %> </td>
-                                                                <td><%# Eval("Correo_Cas") %> </td>
-                                                                <td><%# Eval("Direccion_Cas") %> </td>
-                                                                <th><%# Eval("Nit_Cas") %></th>
-                                                                <td><%# Eval("CreadoFecha_Cas") %></td>
+                                                    <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server" CssClass="badge badge-success"
+                                                        CommandArgument='<%# Eval("Cod_Cas") %>' CommandName="edit" data-toggle="modal" data-target="#exampleModal">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" fill="currentColor" class="bi bi-hand-index" viewBox="0 0 16 16">
+                                                       <h6>Abrir PDF</h6>
+                                                    </svg>  
+                                                    </asp:LinkButton>
 
 
-                                                                <td>
-                                                                    <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server" CssClass="badge badge-primary"
-                                                                        CommandArgument='<%# Eval("Cod_Cas") %>' CommandName="edit">
-                <i class="ti-pencil"></i>
-                                                                    </asp:LinkButton>
-                                                                    <asp:LinkButton ID="lnkDelete" Text="Delete" runat="server" CommandName="delete"
-                                                                        CssClass="badge bg-danger" CommandArgument='<%# Eval("Cod_Cas") %>'
-                                                                        OnClientClick="return confirm('Do you want to delete this casera?');">
-                <i class="ti-trash"></i>
-                                                                    </asp:LinkButton>
-                                                                </td>
-                                                            </tr>
-                                                        </ItemTemplate>
-                                                        <FooterTemplate>
-                                                            </tbody>
+                                                    <!-- Cuadro de diálogo -->
+                                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Selecciona una Caseta</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                   
+                                                                </div>
+                                                                <h2>hola</h2>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                                <asp:Repeater ID="rCasera" runat="server" OnItemCommand="rCasera_ItemCommand"
+                                                                    OnItemDataBound="rCasera_ItemDataBound">
+
+                                                                    <HeaderTemplate>
+                                                                        <table class="table data-table-export table-hover nowrap">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th class="table-plus">Nombre</th>
+                                                                                    <th>Imagen</th>
+                                                                                    <th>Teléfono</th>
+                                                                                    <th>Correo</th>
+                                                                                    <th>Dirección</th>
+                                                                                    <th>NIT</th>
+                                                                                    <th>Fecha de Creacion</th>
+                                                                                    <th class="datatable-nosort">Accion</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                    </HeaderTemplate>
+                                                                    <ItemTemplate>
+                                                                        <tr>
+                                                                            <td class="table-plus"><%# Eval("Nombre_Cas") %></td>
+                                                                            <td>
+                                                                                <img alt="" width="40" src="<%# Utils.GetImageUrl( Eval("ImagenUrl_Cas")) %>" />
+                                                                            </td>
+
+                                                                            <td><%# Eval("Telefono_Cas") %> </td>
+                                                                            <td><%# Eval("Correo_Cas") %> </td>
+                                                                            <td><%# Eval("Direccion_Cas") %> </td>
+                                                                            <th><%# Eval("Nit_Cas") %></th>
+                                                                            <td><%# Eval("CreadoFecha_Cas") %></td>
+
+
+                                                                            <td>
+                                                                                <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server" CssClass="badge badge-primary"
+                                                                                    CommandArgument='<%# Eval("Cod_Cas") %>' CommandName="edit">
+                                                                    <i class="ti-pencil"></i>
+                                                                                </asp:LinkButton>
+                                                                                <asp:LinkButton ID="lnkDelete" Text="Delete" runat="server" CommandName="delete"
+                                                                                    CssClass="badge bg-danger" CommandArgument='<%# Eval("Cod_Cas") %>'
+                                                                                    OnClientClick="return confirm('Do you want to delete this casera?');">
+                                                                    <i class="ti-trash"></i>
+                                                                                </asp:LinkButton>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </ItemTemplate>
+                                                                    <FooterTemplate>
+                                                                        </tbody>
                                                             </table>
-                                                        </FooterTemplate>
-                                                    </asp:Repeater>
+                                                                    </FooterTemplate>
+                                                                </asp:Repeater>
 
+                                                            </div>
+
+
+
+
+                                                        </div>
+                                                    </div>
                                                 </div>
-
-
-
-
                                             </div>
                                         </div>
                                     </div>
@@ -188,23 +216,20 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        function validateNumber(input) {
-            // Obtén el valor actual del campo
-            var value = input.value;
+                <script>
+                    function validateNumber(input) {
+                        // Obtén el valor actual del campo
+                        var value = input.value;
 
-            // Usa una expresión regular para verificar si solo contiene números
-            if (/[^0-9]/.test(value)) {
-                // Si se ingresaron caracteres no numéricos, muestra un mensaje de error
-                alert("Por favor, ingrese solo números.");
-                // Elimina los caracteres no numéricos
-                input.value = value.replace(/[^0-9]/g, '');
-            }
+                        // Usa una expresión regular para verificar si solo contiene números
+                        if (/[^0-9]/.test(value)) {
+                            // Si se ingresaron caracteres no numéricos, muestra un mensaje de error
+                            alert("Por favor, ingrese solo números.");
+                            // Elimina los caracteres no numéricos
+                            input.value = value.replace(/[^0-9]/g, '');
+                        }
 
-            return true;
-        }
-    </script>
+                        return true;
+                    }
+                </script>
 </asp:Content>
