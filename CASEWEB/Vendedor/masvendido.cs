@@ -16,14 +16,14 @@ namespace CASEWEB.Vendedor {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class masvendido : ReportClass {
         
-        public CrystalReport1() {
+        public masvendido() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "masvendido.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CASEWEB.Vendedor {
         
         public override string FullResourceName {
             get {
-                return "CASEWEB.Vendedor.CrystalReport1.rpt";
+                return "CASEWEB.Vendedor.masvendido.rpt";
             }
             set {
                 // Do nothing
@@ -106,9 +106,9 @@ namespace CASEWEB.Vendedor {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class Cachedmasvendido : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public Cachedmasvendido() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace CASEWEB.Vendedor {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            masvendido rpt = new masvendido();
             rpt.Site = this.Site;
             return rpt;
         }

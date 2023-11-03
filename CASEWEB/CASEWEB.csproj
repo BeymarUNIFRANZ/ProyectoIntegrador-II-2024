@@ -1338,10 +1338,10 @@
     <Content Include="Usuario\SliderUserControl1.ascx" />
     <Content Include="Admin\Category.aspx" />
     <Content Include="Vendedor\Dashboard.aspx" />
+    <Content Include="Vendedor\masvendido.aspx" />
     <Content Include="Vendedor\Product.aspx" />
     <Content Include="Vendedor\Usuarios.aspx" />
     <Content Include="Vendedor\ventacat.aspx" />
-    <Content Include="Vendedor\masven.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1460,10 +1460,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>cate.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Vendedor\CrystalReport1.cs">
+    <Compile Include="Vendedor\masvendi.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>masvendi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedor\masvendido.aspx.cs">
+      <DependentUpon>masvendido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendedor\masvendido.aspx.designer.cs">
+      <DependentUpon>masvendido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedor\masvendido.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>masvendido.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Vendedor\Dashboard.aspx.cs">
@@ -1472,11 +1484,6 @@
     </Compile>
     <Compile Include="Vendedor\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vendedor\DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Vendedor\Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
@@ -1512,13 +1519,6 @@
       <DependentUpon>ventacat.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Vendedor\masven.aspx.cs">
-      <DependentUpon>masven.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vendedor\masven.aspx.designer.cs">
-      <DependentUpon>masven.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icon\icofont\fonts\icofont.eot" />
@@ -1547,16 +1547,16 @@
     <Content Include="Vendedor\cate.xss">
       <DependentUpon>cate.xsd</DependentUpon>
     </Content>
-    <Content Include="Vendedor\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <Content Include="Vendedor\masvendi.xsc">
+      <DependentUpon>masvendi.xsd</DependentUpon>
     </Content>
-    <None Include="Vendedor\DataSet1.xsd">
+    <None Include="Vendedor\masvendi.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>masvendi.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Vendedor\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <Content Include="Vendedor\masvendi.xss">
+      <DependentUpon>masvendi.xsd</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1573,9 +1573,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Vendedor\CrystalReport1.rpt">
+    <EmbeddedResource Include="Vendedor\masvendido.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>masvendido.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Vendedor\ventacat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

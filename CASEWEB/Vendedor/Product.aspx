@@ -46,7 +46,7 @@
     </script>
      <script type="text/javascript">
          function openPdfPage2() {
-             var pdfPageUrl = 'Usuarios.aspx'; // Reemplaza 'TuArchivo.aspx' con la URL de tu archivo ASPX
+             var pdfPageUrl = 'masvendido.aspx'; // Reemplaza 'TuArchivo.aspx' con la URL de tu archivo ASPX
              var iframe = '<iframe width="100%" height="700px" src="' + pdfPageUrl + '"></iframe>';
 
              // Limpia el contenido previo del cuadro de diálogo
