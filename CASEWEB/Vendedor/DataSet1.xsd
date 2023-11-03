@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="CaseBDConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="CaseBDConnectionString1 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.CaseBDConnectionString1.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="masvenTableAdapter" GeneratorDataComponentClassName="masvenTableAdapter" Name="masven" UserDataComponentName="masvenTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CaseBDConnectionString1 (Web.config)" DbObjectName="CaseBD.dbo.masven" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Nombre_Pro, Precio_Pro, Cantidad_Pro, Cantidad_Ord FROM dbo.masven</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nombre_Pro" DataSetColumn="Nombre_Pro" />
+              <Mapping SourceColumn="Precio_Pro" DataSetColumn="Precio_Pro" />
+              <Mapping SourceColumn="Cantidad_Pro" DataSetColumn="Cantidad_Pro" />
+              <Mapping SourceColumn="Cantidad_Ord" DataSetColumn="Cantidad_Ord" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="masven" msprop:Generator_RowEvHandlerName="masvenRowChangeEventHandler" msprop:Generator_RowDeletedName="masvenRowDeleted" msprop:Generator_RowDeletingName="masvenRowDeleting" msprop:Generator_RowEvArgName="masvenRowChangeEvent" msprop:Generator_TablePropName="masven" msprop:Generator_RowChangedName="masvenRowChanged" msprop:Generator_RowChangingName="masvenRowChanging" msprop:Generator_TableClassName="masvenDataTable" msprop:Generator_RowClassName="masvenRow" msprop:Generator_TableVarName="tablemasven" msprop:Generator_UserTableName="masven">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nombre_Pro" msprop:Generator_ColumnPropNameInRow="Nombre_Pro" msprop:Generator_ColumnPropNameInTable="Nombre_ProColumn" msprop:Generator_ColumnVarNameInTable="columnNombre_Pro" msprop:Generator_UserColumnName="Nombre_Pro" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Precio_Pro" msprop:Generator_ColumnPropNameInRow="Precio_Pro" msprop:Generator_ColumnPropNameInTable="Precio_ProColumn" msprop:Generator_ColumnVarNameInTable="columnPrecio_Pro" msprop:Generator_UserColumnName="Precio_Pro" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cantidad_Pro" msprop:Generator_ColumnPropNameInRow="Cantidad_Pro" msprop:Generator_ColumnPropNameInTable="Cantidad_ProColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad_Pro" msprop:Generator_UserColumnName="Cantidad_Pro" type="xs:int" minOccurs="0" />
+              <xs:element name="Cantidad_Ord" msprop:Generator_ColumnPropNameInRow="Cantidad_Ord" msprop:Generator_ColumnPropNameInTable="Cantidad_OrdColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad_Ord" msprop:Generator_UserColumnName="Cantidad_Ord" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

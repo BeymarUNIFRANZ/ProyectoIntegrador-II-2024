@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vendedor/Vendedor.Master" AutoEventWireup="true" CodeBehind="Product.aspx.cs" Inherits="CASEWEB.Vendedor.Product" %>
-  <%@ Import Namespace="CASEWEB" %>
+
+<%@ Import Namespace="CASEWEB" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
 
-     <script>
+    <script>
         /*for disappearing alert massage*/
         window.onload = function () {
             var seconds = 5;
@@ -27,8 +28,56 @@
         }
     </script>
 
+    <!-- JavaScript para abrir la página ASPX en un cuadro de diálogo modal -->
+    <script type="text/javascript">
+        function openPdfPage() {
+            var pdfPageUrl = 'ventacat.aspx'; // Reemplaza 'TuArchivo.aspx' con la URL de tu archivo ASPX
+            var iframe = '<iframe width="100%" height="700px" src="' + pdfPageUrl + '"></iframe>';
+
+            // Limpia el contenido previo del cuadro de diálogo
+            $('#exampleModal .modal-body').empty();
+
+            // Asigna el iframe al cuerpo del cuadro de diálogo
+            $('#exampleModal .modal-body').html(iframe);
+
+            // Abre el cuadro de diálogo modal
+            $('#exampleModal').modal('show');
+        }
+    </script>
+     <script type="text/javascript">
+         function openPdfPage2() {
+             var pdfPageUrl = 'Usuarios.aspx'; // Reemplaza 'TuArchivo.aspx' con la URL de tu archivo ASPX
+             var iframe = '<iframe width="100%" height="700px" src="' + pdfPageUrl + '"></iframe>';
+
+             // Limpia el contenido previo del cuadro de diálogo
+             $('#exampleModal .modal-body').empty();
+
+             // Asigna el iframe al cuerpo del cuadro de diálogo
+             $('#exampleModal .modal-body').html(iframe);
+
+             // Abre el cuadro de diálogo modal
+             $('#exampleModal').modal('show');
+         }
+     </script>
+
+    <!-- Cuadro de diálogo modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <!-- Puedes ajustar el tamaño del cuadro de diálogo modal según tus necesidades -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Reportes de Ventas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
 </asp:Content>
-<asp:Content ID="Content2"  ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
     <div class="pcoded-inner-content pt-0">
         <div class="align-align-self-end">
@@ -147,8 +196,24 @@
                                             <div class="card-block table-border-style">
                                                 <div class="table-responsive">
 
+                                                    <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server" CssClass="badge badge-success"
+                                                        CommandArgument='<%# Eval("Cod_Pro") %>' CommandName="edit" OnClientClick="openPdfPage(); return false;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" fill="currentColor" class="bi bi-hand-index" viewBox="0 0 16 16">
+                                                            <h6>Abrir PDF</h6>
+                                                        </svg>
+                                                    </asp:LinkButton>
+
+                                                    <asp:LinkButton ID="LinkButton1" Text="Edit" runat="server" CssClass="badge badge-success"
+                                                        CommandArgument='<%# Eval("Cod_Pro") %>' CommandName="edit" OnClientClick="openPdfPage2(); return false;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" fill="currentColor" class="bi bi-hand-index" viewBox="0 0 16 16">
+                                                            <h6>Mas Vendidos</h6>
+                                                        </svg>
+                                                    </asp:LinkButton>
+
                                                     <asp:Repeater ID="rProduct" runat="server" OnItemCommand="rProduct_ItemCommand"
                                                         OnItemDataBound="rProduct_ItemDataBound">
+
+
 
                                                         <HeaderTemplate>
                                                             <table class="table data-table-export table-hover nowrap">
@@ -195,7 +260,7 @@
                                                                 <td><%# Eval("CreadoFecha_Pro") %> </td>
 
                                                                 <td>
-                                                                    <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server" 
+                                                                    <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server"
                                                                         CssClass="badge badge-primary" CausesValidation="false"
                                                                         CommandArgument='<%# Eval("Cod_Pro") %>' CommandName="edit">
                                                                         <i class="ti-pencil"></i>
