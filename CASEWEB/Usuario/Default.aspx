@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Usuario/Usuario.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CASEWEB.Usuario.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="ruta/al/archivo.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -197,7 +198,7 @@
          Comentarios
         </h2>
       </div>
-      <div class="carousel-wrap row ">
+      <div class="carousel-wrap row">
         <div class="owl-carousel client_owl-carousel">
           <div class="item">
             <div class="box">

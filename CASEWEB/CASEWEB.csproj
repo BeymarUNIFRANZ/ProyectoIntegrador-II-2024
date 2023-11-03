@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AsignacionCaseta.aspx" />
     <Content Include="Admin\Dashboard2.aspx" />
     <Content Include="Admin\RegistroCasera.aspx" />
     <Content Include="assets\css\animate.css\css\animate.css" />
@@ -216,6 +217,13 @@
     </Compile>
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AsignacionCaseta.aspx.cs">
+      <DependentUpon>AsignacionCaseta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AsignacionCaseta.aspx.designer.cs">
+      <DependentUpon>AsignacionCaseta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Dashboard2.aspx.cs">
       <DependentUpon>Dashboard2.aspx</DependentUpon>

@@ -220,19 +220,19 @@
             Si quieres aysudar a que este proyecto sigua adelante y ayudarnos a mejorar las cosas a un futuro muy proximo por favor colaboranos con una nota 25 sobre 25 en este hito y en los proximos             
             </p>
             <div class="footer_social">
-              <a href="">
+              <a href="#">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="#">
                 <i class="fa fa-twitter" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="#">
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="#">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="#">
                 <i class="fa fa-pinterest" aria-hidden="true"></i>
               </a>
             </div>

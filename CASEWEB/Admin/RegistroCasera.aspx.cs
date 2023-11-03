@@ -165,10 +165,16 @@ namespace CASEWEB.Admin
                     lblMsg.CssClass = "alert alert-success";
                     getCaseras();
                 }
+                catch (SqlException ex)
+                {
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "Error SQL: " + ex.Message;
+                    lblMsg.CssClass = "alert alert-danger";
+                }
                 catch (Exception ex)
                 {
                     lblMsg.Visible = true;
-                    lblMsg.Text = "Error - " + ex.Message;
+                    lblMsg.Text = "Error: " + ex.Message;
                     lblMsg.CssClass = "alert alert-danger";
                 }
                 finally
