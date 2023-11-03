@@ -32,8 +32,14 @@ namespace CASEWEB.Usuario
             if (txtUsername.Text.Trim() == "Admin" && txtClave.Text.Trim() == "123")
             {
                 Session["admin"] = txtUsername.Text.Trim();
+                Response.Redirect("../Admin/Dashboard2.aspx");
+            }
+            if (txtUsername.Text.Trim() == "Rosa" && txtClave.Text.Trim() == "1233")
+            {
+                Session["admin"] = txtUsername.Text.Trim();
                 Response.Redirect("../Vendedor/Dashboard.aspx");
-            } else {
+            }
+            else {
                 con = new SqlConnection(Connetion.GetConnectionString());
                 cmd = new SqlCommand("User_Crud", con);
                 cmd.Parameters.AddWithValue("@Action", "SELECT4LOGIN");

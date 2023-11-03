@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato:ital,wght@0,100;0,700;1,400;1,700;1,900&family=Open+Sans:ital,wght@1,500;1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
 
 .layout_padding {
     padding: 90px 0;
@@ -223,16 +223,6 @@ a:focus {
   fill: #ffbe33;
 }
 
-.user_option .order_online {
-  display: inline-block;
-  padding: 8px 30px;
-  background-color: #ffbe33;
-  color: #ffffff;
-  border-radius: 45px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  border: none;
-}
 
 .user_option .order_online:hover {
   background-color: #e69c00;
@@ -892,12 +882,7 @@ a:focus {
   font-size: 28px;
 }
 
-    .footer_section h4,
-    .footer_section .footer-logo {
-        font-weight: 600;
-        margin-bottom: 20px;
-        font-family: "Open Sans", sans-serif;
-    }
+
 
 .footer_section p {
   color: #dbdbdb;

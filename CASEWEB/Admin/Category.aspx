@@ -62,7 +62,7 @@
                                                     <label>Nombre de la Categoria</label>
                                                     <div>
                                                         <asp:TextBox ID="txtName" runat="server" CssClass="form-control"
-                                                            placeholder="Ingrese Nombre" required></asp:TextBox>
+                                                            placeholder="Ingrese Nombre"></asp:TextBox>
                                                         <asp:HiddenField ID="hdnId" Value="0" runat="server" />
                                                     </div>
                                                 </div>

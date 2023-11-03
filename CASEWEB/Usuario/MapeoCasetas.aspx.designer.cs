@@ -7,137 +7,146 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CASEWEB.Admin
+namespace CASEWEB.Usuario
 {
 
 
-    public partial class RegistroCasera
+    public partial class MapeoCasetas
     {
 
         /// <summary>
-        /// Control lblMsg.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsg;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// Control txtNombre.
+        /// Control Button2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
-        /// Control hdnId.
+        /// Control Button3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnId;
+        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
-        /// Control txtTelefono.
+        /// Control Button4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
+        protected global::System.Web.UI.WebControls.Button Button4;
 
         /// <summary>
-        /// Control txtCorreo.
+        /// Control Button5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCorreo;
+        protected global::System.Web.UI.WebControls.Button Button5;
 
         /// <summary>
-        /// Control txtDireccion.
+        /// Control Button6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDireccion;
+        protected global::System.Web.UI.WebControls.Button Button6;
 
         /// <summary>
-        /// Control RequiredFieldValidator2.
+        /// Control Button7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.Button Button7;
 
         /// <summary>
-        /// Control fuCaseraImage.
+        /// Control Button8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuCaseraImage;
+        protected global::System.Web.UI.WebControls.Button Button8;
 
         /// <summary>
-        /// Control txtNitCas.
+        /// Control Button9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNitCas;
+        protected global::System.Web.UI.WebControls.Button Button9;
 
         /// <summary>
-        /// Control cbIsActive.
+        /// Control Button10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbIsActive;
+        protected global::System.Web.UI.WebControls.Button Button10;
 
         /// <summary>
-        /// Control btnAddOrUpdate.
+        /// Control Button11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddOrUpdate;
+        protected global::System.Web.UI.WebControls.Button Button11;
 
         /// <summary>
-        /// Control btnClear.
+        /// Control Button12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClear;
+        protected global::System.Web.UI.WebControls.Button Button12;
 
         /// <summary>
-        /// Control imgCasera.
+        /// Control Button13.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgCasera;
+        protected global::System.Web.UI.WebControls.Button Button13;
 
         /// <summary>
-        /// Control rCasera.
+        /// Control Button14.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rCasera;
+        protected global::System.Web.UI.WebControls.Button Button14;
+
+        /// <summary>
+        /// Control Button15.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button15;
     }
 }

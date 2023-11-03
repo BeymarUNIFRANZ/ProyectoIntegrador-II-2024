@@ -196,6 +196,7 @@
     <Content Include="Usuario\Contacto.aspx" />
     <Content Include="Usuario\Default.aspx" />
     <Content Include="Usuario\Login.aspx" />
+    <Content Include="Usuario\MapeoCasetas.aspx" />
     <Content Include="Usuario\Menu.aspx" />
     <Content Include="Usuario\Perfil.aspx" />
     <Content Include="Usuario\Registro.aspx" />
@@ -262,6 +263,13 @@
     </Compile>
     <Compile Include="Usuario\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\MapeoCasetas.aspx.cs">
+      <DependentUpon>MapeoCasetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\MapeoCasetas.aspx.designer.cs">
+      <DependentUpon>MapeoCasetas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
@@ -373,6 +381,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Casera\" />
     <Folder Include="Images\Product\" />
     <Folder Include="Images\User\" />
     <Folder Include="Models\" />

@@ -21,7 +21,7 @@
                 <div class="align-self-end">
                     <asp:Label runat="server" ID="lblMsg"></asp:Label>
                 </div>
-                <h2>Login</h2>
+                <h2>Inicias Sesion</h2>
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -46,7 +46,7 @@
                                 placeholder="Ingrese su Contraseña" TextMode="Password"></asp:TextBox>
                         </div>
                         <div class="btn_box">
-                            <asp:Button ID="btnLogin" runat="server" Text="Logueo" CssClass="btn btn-success rounded-pill pl-4 pr-4 text-white"
+                            <asp:Button ID="btnLogin" runat="server" Text="Iniciar Sesion" CssClass="btn btn-success rounded-pill pl-4 pr-4 text-white"
                                 OnClick="btnLogin_Click" />
                             <span class="pl-3 text-info">Nuevo Usuario? <a href="Registro.aspx" class="badge badge-info">Registrate Aqui..</a></span>
                         </div>

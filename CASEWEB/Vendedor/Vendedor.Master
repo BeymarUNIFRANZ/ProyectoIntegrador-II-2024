@@ -190,7 +190,7 @@
                                 <li class="user-profile header-notification">
                                     <a href="#!">
                                         <img src="../assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                        <span>Admin</span>
+                                        <span>Casera(o)</span>
                                         <i class="ti-angle-down"></i>
                                     </a>
                                     <ul class="show-notification profile-notification">
@@ -355,16 +355,8 @@
 
                                     </ul>
                                 </li>--%>
-                                </ul>
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Categoria Crud</div>
-                                <ul class="pcoded-item pcoded-left-item">
-                                    <li>
-                                        <a href="Category.aspx">
-                                            <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Categorias</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                    </li>
+                               
+                                
                                     <%--<li>
                                     <a href="bs-basic-table.html">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>

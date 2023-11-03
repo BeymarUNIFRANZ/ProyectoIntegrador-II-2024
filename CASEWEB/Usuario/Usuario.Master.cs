@@ -29,12 +29,12 @@ namespace CASEWEB.Usuario
 
             if (Session["Cod_Usu"] != null)
             {
-                LbLoginOrLogout.Text = "Logout";
+                LbLoginOrLogout.Text = "Cerras Sesion";
             }
 
             else
             {
-                LbLoginOrLogout.Text = "Login";
+                LbLoginOrLogout.Text = "Iniciar Sesion";
 
             }
         }

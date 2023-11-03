@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato:ital,wght@0,100;0,700;1,400;1,700;1,900&family=Open+Sans:ital,wght@1,500;1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
 
 body {
     font-family: "Open Sans", sans-serif;
@@ -17,4 +17,20 @@ h2 {
     font-size: 3.5rem;
     font-weight: bold;
     margin-bottom: 10px;
+}
+.footer_section h4,
+.footer_section .footer-logo {
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+.user_option .order_online {
+    display: inline-block;
+    padding: 8px 30px;
+    background-color: #ffbe33;
+    color: #000000;
+    border-radius: 45px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    border: none;
 }

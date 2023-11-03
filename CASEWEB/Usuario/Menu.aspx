@@ -10,8 +10,7 @@
     <section class="food_section layout_padding">
         <div class="container">
             <div class="heading_container heading_center">
-                <h2>Our Menu
-        </h2>
+                <h2>MERCADO</h2>
             </div>
 
             <ul class="filters_menu">
@@ -22,6 +21,7 @@
                             data-id="<%# Eval("Cod_Cat") %>"><%# Eval("Nombre_Cat") %></li>
                     </ItemTemplate>
                 </asp:Repeater>
+                <asp:HyperLink ID="lnkCaseta" runat="server" NavigateUrl="MapeoCasetas.aspx" Text="Niveles de Piso" CssClass="btn btn-primary" />
             </ul>
 
             <div class="filters-content">

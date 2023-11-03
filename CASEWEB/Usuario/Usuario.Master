@@ -82,7 +82,7 @@
                 <a class="nav-link" href="Default.aspx">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Menu.aspx">Menu</a>
+                <a class="nav-link" href="Menu.aspx">Mercado</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="Acerca.aspx">Nosotros</a>
