@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Web;
 
-namespace CASEWEB.Vendedor
+namespace CASEWEB.Admin
 {
     public partial class ventacat1 : System.Web.UI.Page
     {

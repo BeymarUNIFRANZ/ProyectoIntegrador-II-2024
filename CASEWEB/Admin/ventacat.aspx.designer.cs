@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CASEWEB.Vendedor
+namespace CASEWEB.Admin
 {
 
 

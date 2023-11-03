@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
 
+.custom-modal-dialog {
+    max-width: 800px; /* Ajusta el ancho deseado en píxeles o usando otro valor que prefieras */
+}
+
+
 .layout_padding {
     padding: 90px 0;
 }

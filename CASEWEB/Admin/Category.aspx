@@ -25,6 +25,24 @@
             }
         }
     </script>
+
+    <!-- JavaScript para abrir la página ASPX en un cuadro de diálogo modal -->
+    <script type="text/javascript">
+        function openPdfPage() {
+            var pdfPageUrl = 'ventacat.aspx'; // Reemplaza 'TuArchivo.aspx' con la URL de tu archivo ASPX
+            var iframe = '<iframe width="100%" height="700px" src="' + pdfPageUrl + '"></iframe>';
+
+            // Limpia el contenido previo del cuadro de diálogo
+            $('#exampleModal .modal-body').empty();
+
+            // Asigna el iframe al cuerpo del cuadro de diálogo
+            $('#exampleModal .modal-body').html(iframe);
+
+            // Abre el cuadro de diálogo modal
+            $('#exampleModal').modal('show');
+        }
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -95,6 +113,30 @@
                                             <h4 class="sub-title">Lista de Categorias</h4>
                                             <div class="card-block table-border-style">
                                                 <div class="table-responsive">
+
+                                                    <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server" CssClass="badge badge-primary"
+                                                        CommandArgument='<%# Eval("Cod_Pro") %>' CommandName="edit" OnClientClick="openPdfPage(); return false;">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" fill="currentColor" class="bi bi-hand-index" viewBox="0 0 16 16">
+                                                        <h6>Abrir PDF</h6>
+                                                    </svg>
+                                                    </asp:LinkButton>
+                                                    <hr />
+
+                                                    <!-- Cuadro de diálogo modal -->
+                                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg">
+                                                            <!-- Puedes ajustar el tamaño del cuadro de diálogo modal según tus necesidades -->
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Reportes por Categoria</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
                                                     <asp:Repeater ID="rCategory" runat="server" OnItemCommand="rCategory_ItemCommand"
                                                         OnItemDataBound="rCategory_ItemDataBound1">

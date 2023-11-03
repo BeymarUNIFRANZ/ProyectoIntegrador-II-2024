@@ -1341,7 +1341,7 @@
     <Content Include="Vendedor\masvendido.aspx" />
     <Content Include="Vendedor\Product.aspx" />
     <Content Include="Vendedor\Usuarios.aspx" />
-    <Content Include="Vendedor\ventacat.aspx" />
+    <Content Include="Admin\ventacat.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1455,7 +1455,7 @@
     <Compile Include="Admin\Category.aspx.designer.cs">
       <DependentUpon>Category.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vendedor\cate.Designer.cs">
+    <Compile Include="Admin\cate.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>cate.xsd</DependentUpon>
@@ -1506,14 +1506,14 @@
     <Compile Include="Vendedor\Vendedor.Master.designer.cs">
       <DependentUpon>Vendedor.Master</DependentUpon>
     </Compile>
-    <Compile Include="Vendedor\ventacat.aspx.cs">
+    <Compile Include="Admin\ventacat.aspx.cs">
       <DependentUpon>ventacat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vendedor\ventacat.aspx.designer.cs">
+    <Compile Include="Admin\ventacat.aspx.designer.cs">
       <DependentUpon>ventacat.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vendedor\ventacat.cs">
+    <Compile Include="Admin\ventacat.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ventacat.rpt</DependentUpon>
@@ -1536,15 +1536,15 @@
     <Content Include="PlantillaArchivos\fonts\fontawesome-webfont.woff2" />
     <Content Include="Usuario\Usuario.Master" />
     <Content Include="Vendedor\Vendedor.Master" />
-    <Content Include="Vendedor\cate.xsc">
+    <Content Include="Admin\cate.xsc">
       <DependentUpon>cate.xsd</DependentUpon>
     </Content>
-    <None Include="Vendedor\cate.xsd">
+    <None Include="Admin\cate.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>cate.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Vendedor\cate.xss">
+    <Content Include="Admin\cate.xss">
       <DependentUpon>cate.xsd</DependentUpon>
     </Content>
     <Content Include="Vendedor\masvendi.xsc">
@@ -1577,7 +1577,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>masvendido.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vendedor\ventacat.rpt">
+    <EmbeddedResource Include="Admin\ventacat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ventacat.cs</LastGenOutput>
     </EmbeddedResource>
