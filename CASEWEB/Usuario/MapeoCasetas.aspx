@@ -1,9 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Usuario/Usuario.Master" AutoEventWireup="true" CodeBehind="MapeoCasetas.aspx.cs" Inherits="CASEWEB.Usuario.MapeoCasetas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+      <!-- imagen de PLANTA BAJA -->
+    <link href="../PlantillaArchivos/css/letra.css" rel="stylesheet" type="text/css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-
+        
+     <img id="imagenPlantabaja" src="../Images/NivelesPiso/PLANTABAJA.jpg" alt="PLANTABAJA" />
            <div class="container">
        <!-- Primera fila de asientos -->
        <div class="row">
@@ -93,12 +95,4 @@
     </div>
 </div>
        </div>
-<style>
-    body {
-    background-image: url('~/Images/NivelesPiso/PLANTABAJA.jpg');
-    background-size: cover; /* Ajusta el tamaño de la imagen al tamaño de la ventana del navegador */
-    background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo */
-    background-attachment: fixed; /* Fija la imagen de fondo, para que no se desplace con el contenido */
-}
-</style>
 </asp:Content>

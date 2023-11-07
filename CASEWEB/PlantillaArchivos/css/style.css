@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
 
+.narrow-btn {
+    width: 50px; /* Ajusta el ancho según tus necesidades */
+}
+
+
+.butacas-panel .btn {
+    margin: 8px; /* Establece el espacio entre los botones a 5px (puedes ajustarlo según tus preferencias) */
+}
+
+
 .custom-modal-dialog {
     max-width: 800px; /* Ajusta el ancho deseado en píxeles o usando otro valor que prefieras */
 }

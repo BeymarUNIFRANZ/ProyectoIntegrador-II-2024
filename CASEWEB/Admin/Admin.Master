@@ -15,6 +15,7 @@
       <![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="CodedThemes">
@@ -25,7 +26,7 @@
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap/css/bootstrap.min.css" />
     <!-- themify-icons line icon -->
     <link rel="stylesheet" type="text/css" href="../assets/icon/themify-icons/themify-icons.css">
     <!-- ico font -->
@@ -274,7 +275,7 @@
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
-                            
+
                                     <%--<li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
@@ -374,8 +375,8 @@
                                 </li>--%>
                                 </ul>
 
-                       
-                                    <%--<li>
+
+                                <%--<li>
                                     <a href="map-google.html">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Maps</span>
@@ -414,20 +415,21 @@
                                 
                                 </ul>
                                         </li>--%>
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Estado Producto Delivery</div>
+
+                                <!--<div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registros</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
                                         <a href="javascript:void(0)">
                                             <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Estado Actualizado</span>
+                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Mercado</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                         
-                                        <%--<ul class="pcoded-submenu">
+                                        <ul class="pcoded-submenu">
                                         <li class="">
                                             <a href="javascript:void(0)">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Menu Level 2.1</span>
+                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Menu Le</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
@@ -455,41 +457,83 @@
                                             </a>
                                         </li>
 
-                                    </ul>--%>
+                                    </ul>
                                     </li>
+                                    </ul>-->
+
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registros</div>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li class="pcoded-hasmenu">
+                                        <a href="javascript:void(0)">
+                                            <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                            <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Mercado</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                        <ul class="pcoded-submenu">
+                                            <li>
+                                                <a href="NivelPiso.aspx">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Niveles/Piso</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
+
+
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Casetas</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+                                                    <!-- Contenido del submenú 2 -->
+
+                                                    <li>
+                                                        <a href="Category.aspx">
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Categoria</span>
+                                                            <span class="pcoded-mcaret"></span>
+                                                        </a>
+
+                                                    </li>
+
+                                                </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                             
+
 
                                     <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registro Caseras</div>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li>
+                                        <a href="RegistroCasera.aspx">
+                                            <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
+                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Caseras</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+
+                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Asignacion Casetas</div>
                                     <ul class="pcoded-item pcoded-left-item">
                                         <li>
-                                            <a href="RegistroCasera.aspx">
+                                            <a href="AsignacionCaseta.aspx">
                                                 <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Caseras</span>
+                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Casetas</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
 
-                                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Asignacion Casetas</div>
+                                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Reportes</div>
                                         <ul class="pcoded-item pcoded-left-item">
                                             <li>
-                                                <a href="AsignacionCaseta.aspx">
+                                                <a href="javascript:void(0)">
                                                     <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Casetas</span>
+                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Seguimiento Reportes</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>
 
-                                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Reportes</div>
-                                            <ul class="pcoded-item pcoded-left-item">
-                                                <li>
-                                                    <a href="javascript:void(0)">
-                                                        <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Seguimiento Reportes</span>
-                                                        <span class="pcoded-mcaret"></span>
-                                                    </a>
-                                                </li>
 
-
-                                            </ul>
+                                        </ul>
                             </div>
                         </nav>
                         <div class="pcoded-content">

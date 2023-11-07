@@ -72,8 +72,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AsignacionCaseta.aspx" />
+    <Content Include="Admin\CasetasPBaja.aspx" />
     <Content Include="Admin\Dashboard2.aspx" />
+    <Content Include="Admin\NivelPiso.aspx" />
     <Content Include="Admin\RegistroCasera.aspx" />
+    <Content Include="Admin\RegistrosMercado.aspx" />
     <Content Include="aspnet_client\system_web\2_0_50727\crystalreportviewers13\ActiveXControls\PrintControl.cab" />
     <Content Include="aspnet_client\system_web\2_0_50727\crystalreportviewers13\ActiveXControls\PrintControl_res_cs.cab" />
     <Content Include="aspnet_client\system_web\2_0_50727\crystalreportviewers13\ActiveXControls\PrintControl_res_da.cab" />
@@ -1360,6 +1363,13 @@
     <Compile Include="Admin\AsignacionCaseta.aspx.designer.cs">
       <DependentUpon>AsignacionCaseta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\CasetasPBaja.aspx.cs">
+      <DependentUpon>CasetasPBaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CasetasPBaja.aspx.designer.cs">
+      <DependentUpon>CasetasPBaja.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Dashboard2.aspx.cs">
       <DependentUpon>Dashboard2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1367,12 +1377,26 @@
     <Compile Include="Admin\Dashboard2.aspx.designer.cs">
       <DependentUpon>Dashboard2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\NivelPiso.aspx.cs">
+      <DependentUpon>NivelPiso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NivelPiso.aspx.designer.cs">
+      <DependentUpon>NivelPiso.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\RegistroCasera.aspx.cs">
       <DependentUpon>RegistroCasera.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\RegistroCasera.aspx.designer.cs">
       <DependentUpon>RegistroCasera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RegistrosMercado.aspx.cs">
+      <DependentUpon>RegistrosMercado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RegistrosMercado.aspx.designer.cs">
+      <DependentUpon>RegistrosMercado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connetion.cs" />
     <Compile Include="Global.asax.cs">
