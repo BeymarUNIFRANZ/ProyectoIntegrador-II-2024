@@ -495,14 +495,23 @@
 
                                                     </li>
 
+                                                    <li>
+                                                        <a href="RegistroCasera.aspx">
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Caseras</span>
+                                                            <span class="pcoded-mcaret"></span>
+                                                        </a>
+
+                                                    </li>
+
                                                 </li>
                                         </ul>
                                     </li>
                                 </ul>
-                             
 
 
-                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registro Caseras</div>
+
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registro Caseras</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
                                         <a href="RegistroCasera.aspx">
@@ -522,12 +531,12 @@
                                             </a>
                                         </li>
 
-                                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Reportes</div>
+                                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Historial de Registros</div>
                                         <ul class="pcoded-item pcoded-left-item">
                                             <li>
-                                                <a href="javascript:void(0)">
+                                                <a href="RegistrosMercado.aspx">
                                                     <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Seguimiento Reportes</span>
+                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Registros Mercado</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>

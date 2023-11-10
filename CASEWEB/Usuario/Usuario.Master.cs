@@ -30,12 +30,14 @@ namespace CASEWEB.Usuario
             if (Session["Cod_Usu"] != null)
             {
                 LbLoginOrLogout.Text = "Cerras Sesion";
+                Utils utils = new Utils();
+                Session["cartCount"] = utils.cartCount(Convert.ToInt32(Session["Cod_Usu"])).ToString();
             }
 
             else
             {
                 LbLoginOrLogout.Text = "Iniciar Sesion";
-
+                Session["cartCount"] = "0";
             }
         }
         protected void LbLoginOrLogout_Click(object sender, EventArgs e)

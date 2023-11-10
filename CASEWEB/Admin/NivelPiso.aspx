@@ -15,13 +15,16 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h5>NIVELES DE PISO DEL MERCADO LANZA</h5>
     <div class="vertical-center">
         <div class="vertical-buttons">
+            
             <asp:Button ID="btnSubterraneo" runat="server" Text="Subterraneo" CssClass="btn btn-primary large-button" OnClick="btnSubterraneo_Click" />
             <asp:Button ID="btnPlantaBaja" runat="server" Text="Planta Baja" CssClass="btn btn-primary large-button" OnClick="btnPlantaBaja_Click" />
             <asp:Button ID="btnPiso1" runat="server" Text="Piso 1" CssClass="btn btn-primary large-button" OnClick="btnPiso1_Click" />
             <asp:Button ID="btnPiso2" runat="server" Text="Piso 2" CssClass="btn btn-primary large-button" OnClick="btnPiso2_Click" />
         </div>
     </div>
+
 </asp:Content>
  
