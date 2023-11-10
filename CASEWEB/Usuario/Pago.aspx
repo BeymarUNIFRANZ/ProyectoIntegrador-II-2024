@@ -92,7 +92,7 @@
                                             <label for="txtName">
                                                 <h6>Titular</h6>
                                             </label>
-                                            <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Name is required"
+                                            <asp:RequiredFieldValidator ID="rfvName" runat="server" ErrorMessage="Se requiere el nombre"
                                                 ControlToValidate="txtName" ForeColor="Red" Display="Dynamic" SetFocusOnError="true"
                                                 ValidationGroup="card">*</asp:RequiredFieldValidator>
                                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
@@ -105,7 +105,7 @@
                                             <label for="txtCardNo">
                                                 <h6>Numero de Tarjeta</h6>
                                             </label>
-                                            <asp:RequiredFieldValidator ID="rfvCardNo" runat="server" ErrorMessage="Card number is required"
+                                            <asp:RequiredFieldValidator ID="rfvCardNo" runat="server" ErrorMessage="Se requiere el número de tarjeta"
                                                 ControlToValidate="txtCardNo" ForeColor="Red" Display="Dynamic" SetFocusOnError="true"
                                                 ValidationGroup="card">*</asp:RequiredFieldValidator>
                                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"
@@ -132,14 +132,14 @@
                                                             <h6>Fecha de Expiracion</h6>
                                                         </span>
                                                     </label>
-                                                    <asp:RequiredFieldValidator ID="rfvExpMonth" runat="server" ErrorMessage="Expiry month is required"
+                                                    <asp:RequiredFieldValidator ID="rfvExpMonth" runat="server" ErrorMessage="Se requiere mes de vencimiento"
                                                         ControlToValidate="txtExpMonth" ForeColor="Red" Display="Dynamic" SetFocusOnError="true"
                                                         ValidationGroup="card">*</asp:RequiredFieldValidator>
                                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" Display="Dynamic"
                                               ErrorMessage="El mes de vencimiento debe tener 2 dígitos." ForeColor="Red" SetFocusOnError="true"
                                                         ValidationExpression="[0-9]{2}" ControlToValidate="txtExpMonth" ValidationGroup="card">*
                                                     </asp:RegularExpressionValidator>
-                                                    <asp:RequiredFieldValidator ID="rfvExpYear" runat="server" ErrorMessage="Expiry year is required"
+                                                    <asp:RequiredFieldValidator ID="rfvExpYear" runat="server" ErrorMessage="Se requiere año de caducidad"
                                                         ControlToValidate="txtExpYear" ForeColor="Red" Display="Dynamic" SetFocusOnError="true"
                                                         ValidationGroup="card">*</asp:RequiredFieldValidator>
                                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" Display="Dynamic"
@@ -159,7 +159,7 @@
                                                     <label data-toggle="tooltip" title="Código CV de tres dígitos en el reverso de su tarjeta">
                                                         <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
                                                     </label>
-                                                    <asp:RequiredFieldValidator ID="rfvCvv" runat="server" ErrorMessage="CVV no. is required"
+                                                    <asp:RequiredFieldValidator ID="rfvCvv" runat="server" ErrorMessage="El numero de CVV se requiere"
                                                         ControlToValidate="txtCvv" ForeColor="Red" Display="Dynamic" SetFocusOnError="true"
                                                         ValidationGroup="card">*</asp:RequiredFieldValidator>
                                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" Display="Dynamic"
@@ -198,7 +198,7 @@
                                             TextMode="MultiLine"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvCODAddress" runat="server" ErrorMessage="La dirección es necesaria" ForeColor="Red"
                                             ControlToValidate="txtCODAddress" Display="Dynamic" SetFocusOnError="true" ValidationGroup="cod"
-                                            Font-Names="Segoe Script"></asp:RequiredFieldValidator>
+                                            Font-Names="Open Sans"></asp:RequiredFieldValidator>
                                     </div>
                                     <p>
                                         <asp:LinkButton ID="lbCodSubmit" runat="server" CssClass="btn btn-info" ValidationGroup="cod" OnClick="lbCodSubmit_Click">
@@ -217,7 +217,7 @@
                             <b class="badge badge-success badge-pill shadow-sm">Precio Total: Bs <% Response.Write(Session["TotalPrecio"]); %> </b>
                             <div class="pt-1">
                                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="card"
-                                    HeaderText="Fix the following errors" Font-Names="Segoe Script" />
+                                    HeaderText="Corrija los siguientes errores" Font-Names="Open Sans" />
                             </div>
                         </div>
                     </div>

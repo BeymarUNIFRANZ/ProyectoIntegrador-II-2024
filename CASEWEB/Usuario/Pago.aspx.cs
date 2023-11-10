@@ -103,7 +103,7 @@ namespace CASEWEB.Usuario
                 while (dr.Read())
                 {
                     productId = (int)dr["Cod_Pro"];
-                    quantity = (int)dr["Cantidad_Pro"];
+                    quantity = (int)dr["Cantidad_Car"];
                     //update product quantity
                     UpdateQuantity(productId, quantity, transaction, con);
                     //update product quantity end
