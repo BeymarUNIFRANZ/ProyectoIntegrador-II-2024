@@ -357,7 +357,9 @@
                                     </ul>
                                 </li>--%>
                                 </ul>
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Categoria Crud</div>
+                                <%--<div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">
+                                    Categoria Crud
+                                </div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
                                         <a href="Category.aspx">
@@ -366,14 +368,15 @@
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
-                                    <%--<li>
+                                    </ul>--%>
+                                <%--<li>
                                     <a href="bs-basic-table.html">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Basic Table</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>--%>
-                                </ul>
+
 
 
                                 <%--<li>
@@ -478,40 +481,50 @@
                                                 </a>--%>
 
 
+                                            <li>
+                                                <a href="CasetasPBaja.aspx">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Casetas</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
+                                                <!-- Contenido del submenú 2 -->
+
                                                 <li>
-                                                    <a href="CasetasPBaja.aspx">
+                                                    <a href="Category.aspx">
                                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Casetas</span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Categoria</span>
                                                         <span class="pcoded-mcaret"></span>
                                                     </a>
-                                                    <!-- Contenido del submenú 2 -->
-
-                                                    <li>
-                                                        <a href="Category.aspx">
-                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Categoria</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="RegistroCasera.aspx">
-                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Caseras</span>
-                                                            <span class="pcoded-mcaret"></span>
-                                                        </a>
-
-                                                    </li>
 
                                                 </li>
+
+                                                <li>
+                                                    <a href="RegistroCasera.aspx">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Caseras</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+
+                                                </li>
+
+
+                                                <li>
+                                                    <a href="Product.aspx">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Prodcutos</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+
+                                                </li>
+
+                                            </li>
                                         </ul>
                                     </li>
                                 </ul>
 
 
 
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registro Caseras</div>
+                                <%-- <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registro Caseras</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
                                         <a href="RegistroCasera.aspx">
@@ -542,7 +555,7 @@
                                             </li>
 
 
-                                        </ul>
+                                        </ul>--%>
                             </div>
                         </nav>
                         <div class="pcoded-content">
@@ -562,7 +575,7 @@
                                             </li>
                                             <li class="breadcrumb-item"><a href="Dashboard2.aspx">Inicio</a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!"></a> 
+                                            <li class="breadcrumb-item"><a href="#!"></a>
                                             </li>
                                         </ul>
                                     </div>

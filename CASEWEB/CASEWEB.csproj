@@ -1335,6 +1335,7 @@
     <Content Include="PlantillaArchivos\js\jquery-3.4.1.min.js" />
     <Content Include="Usuario\Acerca.aspx" />
     <Content Include="Usuario\Carrito.aspx" />
+    <Content Include="Usuario\Casetas.aspx" />
     <Content Include="Usuario\Contacto.aspx" />
     <Content Include="Usuario\Default.aspx" />
     <Content Include="Usuario\Login.aspx" />
@@ -1422,6 +1423,13 @@
     </Compile>
     <Compile Include="Usuario\Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Casetas.aspx.cs">
+      <DependentUpon>Casetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\Casetas.aspx.designer.cs">
+      <DependentUpon>Casetas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario\Contacto.aspx.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
