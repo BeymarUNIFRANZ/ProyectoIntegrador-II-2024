@@ -47,6 +47,9 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="itextsharp">
+      <HintPath>.\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -1339,6 +1342,7 @@
     <Content Include="Usuario\Menu.aspx" />
     <Content Include="Usuario\Pago.aspx" />
     <Content Include="Usuario\Perfil.aspx" />
+    <Content Include="Usuario\Recibo.aspx" />
     <Content Include="Usuario\Registro.aspx" />
     <Content Include="Usuario\SliderUserControl1.ascx" />
     <Content Include="Admin\Category.aspx" />
@@ -1467,6 +1471,13 @@
     </Compile>
     <Compile Include="Usuario\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Recibo.aspx.cs">
+      <DependentUpon>Recibo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\Recibo.aspx.designer.cs">
+      <DependentUpon>Recibo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
@@ -1659,6 +1670,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

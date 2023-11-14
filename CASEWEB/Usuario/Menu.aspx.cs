@@ -122,7 +122,7 @@ namespace CASEWEB.Usuario
                 if (Convert.ToInt32(lblQuantity.Text) <= 5)
                 {
                     lblQuantity.CssClass = "badge badge-danger";
-                    lblQuantity.ToolTip = "El Prodcuto!";
+                    lblQuantity.ToolTip = "El Producto!";
                 }
             }
         }

@@ -471,15 +471,15 @@
                                         </a>
                                         <ul class="pcoded-submenu">
                                             <li>
-                                                <a href="NivelPiso.aspx">
+                                                <%--<a href="NivelPiso.aspx">
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                     <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Niveles/Piso</span>
                                                     <span class="pcoded-mcaret"></span>
-                                                </a>
+                                                </a>--%>
 
 
                                                 <li>
-                                                    <a href="#">
+                                                    <a href="CasetasPBaja.aspx">
                                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                         <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Casetas</span>
                                                         <span class="pcoded-mcaret"></span>
@@ -560,9 +560,9 @@
                                                     <i class="icofont icofont-home"></i>
                                                 </a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Breadcrumb</a>
+                                            <li class="breadcrumb-item"><a href="Dashboard2.aspx">Inicio</a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Caption Breadcrumb</a>
+                                            <li class="breadcrumb-item"><a href="#!"></a> 
                                             </li>
                                         </ul>
                                     </div>

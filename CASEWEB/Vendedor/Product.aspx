@@ -150,12 +150,13 @@
                                                             <asp:ListItem Value="0">Seleccionar Categoria</asp:ListItem>
                                                         </asp:DropDownList>
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server"
-                                                            ErrorMessage="Category is required" ForeColor="Red" Display="Dynamic"
+                                                            ErrorMessage="Categoria es Necesaria" ForeColor="Red" Display="Dynamic"
                                                             SetFocusOnError="true" ControlToValidate="ddlCategories" InitialValue="0">
                                                         </asp:RequiredFieldValidator>
                                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="SELECT [Cod_Cat], [Nombre_Cat] FROM [CATEGORIAS]"></asp:SqlDataSource>
                                                     </div>
                                                 </div>
+
                                                 <div class="form-check pl-4">
                                                     <asp:CheckBox ID="cbIsActive" runat="server" Text="&nbsp; Activo"
                                                         CssClass="form-check-input" />

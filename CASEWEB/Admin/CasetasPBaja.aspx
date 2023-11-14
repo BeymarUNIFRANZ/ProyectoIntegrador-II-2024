@@ -30,6 +30,21 @@
                                             <h4 class="sub-title">Casetas</h4>
 
                                             <div class="form-group">
+                                                <label>Nivel de Piso</label>
+                                                <div>
+                                                    <asp:DropDownList ID="txtPiso" runat="server" CssClass="form-control">
+                                                        <asp:ListItem Text="Seleccione una opción" Value="0" />
+                                                        <asp:ListItem Text="Piso 1" Value="P1" />
+                                                        <asp:ListItem Text="Piso 2" Value="P2" />
+                                                        <asp:ListItem Text="Planta Baja" Value="PlantaBaja" />
+                                                        <asp:ListItem Text="Subterraneo" Value="Subterraneo" />
+                                                    </asp:DropDownList>
+
+                                                </div>
+                                                <asp:HiddenField ID="HiddenField1" Value="0" runat="server" />
+                                            </div>
+
+                                            <div class="form-group">
                                                 <label>Numero de Caseta</label>
                                                 <div>
                                                     <asp:DropDownList ID="txtName" runat="server" CssClass="form-control">
@@ -39,12 +54,13 @@
                                                         <asp:ListItem Text="3" Value="3" />
                                                         <asp:ListItem Text="4" Value="4" />
                                                         <asp:ListItem Text="5" Value="5" />
-                                                        <asp:ListItem Text="6" Value="5" />
-                                                        <asp:ListItem Text="7" Value="5" />
-                                                        <asp:ListItem Text="8" Value="5" />
-                                                        <asp:ListItem Text="9" Value="5" />
-                                                        <asp:ListItem Text="10" Value="5" />
-                                                        <asp:ListItem Text="11" Value="5" />
+                                                        <asp:ListItem Text="6" Value="6" />
+                                                        <asp:ListItem Text="7" Value="7" />
+                                                        <asp:ListItem Text="8" Value="8" />
+                                                        <asp:ListItem Text="9" Value="9" />
+                                                        <asp:ListItem Text="10" Value="10" />
+                                                        <asp:ListItem Text="11" Value="11" />
+                                                        <asp:ListItem Text="12" Value="12" />
                                                     </asp:DropDownList>
 
                                                 </div>
@@ -60,10 +76,46 @@
                                                         <asp:ListItem Text="Azul" Value="azul" />
                                                         <asp:ListItem Text="Verde" Value="verde" />
                                                         <asp:ListItem Text="Amarillo" Value="amarillo" />
-                                                        <asp:ListItem Text="Rosa" Value="blanco" />
+                                                        <asp:ListItem Text="Rosa" Value="rosa" />
                                                     </asp:DropDownList>
                                                 </div>
                                             </div>
+                                            <div class="form-group">
+
+                                                <div>
+                                                    <label>Categoria</label>
+                                                    <asp:DropDownList ID="ddlCategories" runat="server" CssClass="form-control"
+                                                        DataSourceID="SqlDataSource1" DataTextField="Nombre_Cat" DataValueField="Cod_Cat"
+                                                        AppendDataBoundItems="true">
+                                                        <asp:ListItem Value="0">Seleccionar Categoria</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server"
+                                                        ErrorMessage="Categoria es Necesaria" ForeColor="Red" Display="Dynamic"
+                                                        SetFocusOnError="true" ControlToValidate="ddlCategories" InitialValue="0">
+                                                    </asp:RequiredFieldValidator>
+                                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="SELECT [Cod_Cat], [Nombre_Cat] FROM [CATEGORIAS]"></asp:SqlDataSource>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <div>
+                                                    <label>Caseras(os)</label>
+                                                    <asp:DropDownList ID="ddlCaseras" runat="server" CssClass="form-control"
+                                                        DataSourceID="SqlDataSource2" DataTextField="Nombre_Cas" DataValueField="Cod_Cas"
+                                                        AppendDataBoundItems="true">
+                                                        <asp:ListItem Value="0">Seleccionar Casera</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                                        ErrorMessage="Casera es Necesaria" ForeColor="Red" Display="Dynamic"
+                                                        SetFocusOnError="true" ControlToValidate="ddlCaseras" InitialValue="0">
+                                                    </asp:RequiredFieldValidator>
+                                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="SELECT [Cod_Cas], [Nombre_Cas] FROM [CASERA]"></asp:SqlDataSource>
+                                                </div>
+
+                                            </div>
+
                                             <div class="form-check pl-4">
                                                 <asp:CheckBox ID="cbIsActive" runat="server" Text="&nbsp; Activo"
                                                     CssClass="form-check-input" />
@@ -84,8 +136,11 @@
                                                             <table class="table data-table-export table-hover nowrap">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th class="table-plus">Numero Caseta</th>
+                                                                        <th class="table-plus">Piso</th>
+                                                                        <th>Numero Caseta</th>
                                                                         <th>Color</th>
+                                                                        <th>Categoria</th>
+                                                                        <th>Casera(o)</th>
                                                                         <th>Activo</th>
                                                                         <th>Fecha Creada</th>
                                                                         <th class="datatable-nosort">Accion</th>
@@ -95,10 +150,14 @@
                                                         </HeaderTemplate>
                                                         <ItemTemplate>
                                                             <tr>
+                                                                <td class="table-plus"><%# Eval("Piso_Cast") %> </td>
                                                                 <td class="table-plus"><%# Eval("Numero_Cast") %> </td>
 
                                                                 <td><%# Eval("Color_Cast") %> </td>
-
+                                                                <td><%# Eval("Cod_Cat") %> </td>
+                                                                
+                                                                 <td><%# Eval("Cod_Cas") %> </td>
+                                                                
                                                                 <td>
                                                                     <asp:Label ID="lblIsActive" runat="server" Text='<%# Eval("Activo_Cast") %>'></asp:Label>
                                                                 </td>
@@ -131,9 +190,7 @@
                                                     </asp:Repeater>
 
                                                     <br />
-                                                    <div class="pb-5">
-                                                        <asp:Button ID="btnRedirect" runat="server" Text="Ir a Categoria" CssClass="btn btn-primary" OnClick="btnRedirect_Click"/>
-                                                    </div>
+
 
                                                 </div>
                                             </div>

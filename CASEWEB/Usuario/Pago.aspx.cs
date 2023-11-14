@@ -67,19 +67,19 @@ namespace CASEWEB.Usuario
             int paymentId; int productId; int quantity;
             dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[7] {
-                new DataColumn("OrderNo", typeof(string)),
-                new DataColumn("ProductId", typeof(int)),
-                new DataColumn("Quantity", typeof(int)),
-                new DataColumn("UserId", typeof(int)),
-                new DataColumn("Status", typeof(string)),
-                new DataColumn("PaymentId", typeof(int)),
-                new DataColumn("OrderDate", typeof(DateTime)),
+                new DataColumn("NumOrden_Ord", typeof(string)),
+                new DataColumn("Cod_Pro", typeof(int)),
+                new DataColumn("Cantidad_Ord", typeof(int)),
+                new DataColumn("Cod_Usu", typeof(int)),
+                new DataColumn("Estado_Ord", typeof(string)),
+                new DataColumn("Cod_Pag", typeof(int)),
+                new DataColumn("Fecha_Ord", typeof(DateTime)),
             });
             con = new SqlConnection(Connetion.GetConnectionString());
             con.Open();
             #region Sql Transaction
             transaction = con.BeginTransaction();
-            cmd = new SqlCommand("Save_Payment", con, transaction);
+            cmd = new SqlCommand("Guardar_Pago", con, transaction);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Name", name);
             cmd.Parameters.AddWithValue("@CardNo", cardNO);
@@ -88,7 +88,7 @@ namespace CASEWEB.Usuario
             cmd.Parameters.AddWithValue("@Address", adrress);
             cmd.Parameters.AddWithValue("@PaymentMode", paymentMode);
             cmd.Parameters.Add("@InsertedId", SqlDbType.Int);
-            cmd.Parameters["InsertedId"].Direction = ParameterDirection.Output;
+            cmd.Parameters["@InsertedId"].Direction = ParameterDirection.Output;
             try
             {
                 cmd.ExecuteNonQuery();
@@ -112,7 +112,7 @@ namespace CASEWEB.Usuario
                     DeleteCartItem(productId, transaction, con);
                     //delete cart item end
 
-                    dt.Rows.Add(Utils.GetUniqueId(), productId, quantity, (int)Session["Cod_Usu"], "Pending",
+                    dt.Rows.Add(Utils.GetUniqueId(), productId, quantity, (int)Session["Cod_Usu"], "Pendig",
                         paymentId, Convert.ToDateTime(DateTime.Now));
                 }
                 dr.Close();
@@ -130,9 +130,9 @@ namespace CASEWEB.Usuario
 
                 transaction.Commit();
                 lblMsg.Visible = true;
-                lblMsg.Text = "your item ordered successfu!!!";
+                lblMsg.Text = "¡¡¡Tu artículo se ordenó exitosamente!!!";
                 lblMsg.CssClass = "alert alert-success";
-                Response.AddHeader("REFRESH", "1;URL=Invoice.aspx?id=" + paymentId);
+                Response.AddHeader("REFRESH", "1;URL=Recibo.aspx?id=" + paymentId);
 
             }
             catch (Exception e)
@@ -165,7 +165,7 @@ namespace CASEWEB.Usuario
                 dr1 = cmd.ExecuteReader();
                 while (dr1.Read())
                 {
-                    dbQuantity = (int)dr1["Cantidad_Car"];
+                    dbQuantity = (int)dr1["Cantidad_Pro"];
 
                     if (dbQuantity > _quantity && dbQuantity > 2)
                     {

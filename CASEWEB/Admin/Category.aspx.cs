@@ -16,6 +16,7 @@ namespace CASEWEB.Admin
         SqlCommand cmd;
         SqlDataAdapter sda;
         DataTable dt;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -24,6 +25,7 @@ namespace CASEWEB.Admin
                 getCategories();
             }
             lblMsg.Visible = false;
+            
         }
 
         protected void btnAddOrUpdate_Click(object sender, EventArgs e)

@@ -151,7 +151,7 @@ namespace CASEWEB.Usuario
                 else
                 {
                     lblMsg.Visible = true;
-                    lblMsg.Text = "Item <b>'" + pName + "' is iot of stock :( ";
+                    lblMsg.Text = "El Producto <b>'" + pName + "' No tiene Stock :( ";
                     lblMsg.CssClass = "alert alert-warning";
                 }
             }

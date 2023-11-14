@@ -33,9 +33,12 @@ namespace CASEWEB.Admin
             cmd = new SqlCommand("Casetas_Crud", con);
             cmd.Parameters.AddWithValue("@Action", casetaId == 0 ? "INSERT" : "UPDATE");
             cmd.Parameters.AddWithValue("@CasetasId", casetaId);
+            cmd.Parameters.AddWithValue("@Piso", txtPiso.Text.Trim());
             cmd.Parameters.AddWithValue("@Numero", txtName.Text.Trim());
             cmd.Parameters.AddWithValue("@IsActive", cbIsActive.Checked);
-            cmd.Parameters.AddWithValue("@Color", ddlColorCaseta.SelectedValue); // Cambio aquí
+            cmd.Parameters.AddWithValue("@Color", ddlColorCaseta.SelectedValue);// Cambio aquí
+            cmd.Parameters.AddWithValue("@CategoryId", ddlCategories.SelectedValue);
+            cmd.Parameters.AddWithValue("@CaseraId", ddlCaseras.SelectedValue);
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
                 lblMsg.Visible = true;
@@ -110,6 +113,8 @@ namespace CASEWEB.Admin
                 cmd.CommandType = CommandType.StoredProcedure;
                 sda = new SqlDataAdapter(cmd);
                 dt = new DataTable();
+                ddlCategories.SelectedValue = dt.Rows[0]["Cod_Cat"].ToString();
+                ddlCaseras.SelectedValue = dt.Rows[0]["Cod_Cas"].ToString();
                 sda.Fill(dt);
                 btnAddOrUpdate.Text = "Actualizar";
                 LinkButton btn = e.Item.FindControl("lnkEdit") as LinkButton;
@@ -159,11 +164,6 @@ namespace CASEWEB.Admin
                     lbl.CssClass = "badge badge-danger";
                 }
             }
-        }
-        protected void btnRedirect_Click(object sender, EventArgs e)
-        {
-            // Aquí realizamos la redirección a Category.aspx
-            Response.Redirect("Category.aspx");
         }
 
     }
