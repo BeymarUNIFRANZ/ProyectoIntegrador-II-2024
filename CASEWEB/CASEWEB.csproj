@@ -78,6 +78,7 @@
     <Content Include="Admin\CasetasPBaja.aspx" />
     <Content Include="Admin\Dashboard2.aspx" />
     <Content Include="Admin\NivelPiso.aspx" />
+    <Content Include="Admin\Product.aspx" />
     <Content Include="Admin\RegistroCasera.aspx" />
     <Content Include="Admin\RegistrosMercado.aspx" />
     <Content Include="aspnet_client\system_web\2_0_50727\crystalreportviewers13\ActiveXControls\PrintControl.cab" />
@@ -1391,6 +1392,13 @@
     <Compile Include="Admin\NivelPiso.aspx.designer.cs">
       <DependentUpon>NivelPiso.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\RegistroCasera.aspx.cs">
       <DependentUpon>RegistroCasera.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1657,6 +1665,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\Casera\" />
+    <Folder Include="Images\Casetas\" />
     <Folder Include="Images\NivelesPiso\" />
     <Folder Include="Images\Product\" />
     <Folder Include="Images\User\" />

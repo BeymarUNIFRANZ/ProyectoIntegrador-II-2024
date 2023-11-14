@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Web.UI.WebControls;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CASEWEB.Admin
 {
@@ -35,6 +36,7 @@ namespace CASEWEB.Admin
             cmd.Parameters.AddWithValue("@CasetasId", casetaId);
             cmd.Parameters.AddWithValue("@Piso", txtPiso.Text.Trim());
             cmd.Parameters.AddWithValue("@Numero", txtName.Text.Trim());
+            cmd.Parameters.AddWithValue("@Nombre", txtNombre.Text.Trim());
             cmd.Parameters.AddWithValue("@IsActive", cbIsActive.Checked);
             cmd.Parameters.AddWithValue("@Color", ddlColorCaseta.SelectedValue);// Cambio aquí
             cmd.Parameters.AddWithValue("@CategoryId", ddlCategories.SelectedValue);
@@ -45,6 +47,29 @@ namespace CASEWEB.Admin
                 lblMsg.Text = "Por favor, ingresa un nombre válido.";
                 lblMsg.CssClass = "alert alert-danger";
                 isValidToExecute = false; // Si hay un problema, establece isValidToExecute en false
+            }
+            if (fuCasetaImage.HasFile)
+            {
+                if (Utils.IsValidExtension(fuCasetaImage.FileName))
+                {
+                    Guid obj = Guid.NewGuid();
+                    fileExtension = Path.GetExtension(fuCasetaImage.FileName);
+                    imagePath = "Images/Casetas/" + obj.ToString() + fileExtension;
+                    fuCasetaImage.PostedFile.SaveAs(Server.MapPath("~/Images/Casetas/") + obj.ToString() + fileExtension);
+                    cmd.Parameters.AddWithValue("@ImageUrl", imagePath);
+                    isValidToExecute = true;
+                }
+                else
+                {
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "Por favor solo formatos .jpg, .jpeg or png image";
+                    lblMsg.CssClass = "alert alert-danger";
+                    isValidToExecute = false;
+                }
+            }
+            else
+            {
+                isValidToExecute = true;
             }
             if (isValidToExecute)
             {
@@ -89,11 +114,12 @@ namespace CASEWEB.Admin
         private void clear()
         {
             txtName.Text = string.Empty;
+            txtNombre.Text = string.Empty;
             ddlColorCaseta.SelectedValue = string.Empty;
             cbIsActive.Checked = false;
             hdnId.Value = "0";
             btnAddOrUpdate.Text = "Agregar";
-
+            imgCaseta.ImageUrl = String.Empty;
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
@@ -113,9 +139,19 @@ namespace CASEWEB.Admin
                 cmd.CommandType = CommandType.StoredProcedure;
                 sda = new SqlDataAdapter(cmd);
                 dt = new DataTable();
+                sda.Fill(dt);
+                txtPiso.Text = dt.Rows[0]["Piso_Cast"].ToString();
                 ddlCategories.SelectedValue = dt.Rows[0]["Cod_Cat"].ToString();
                 ddlCaseras.SelectedValue = dt.Rows[0]["Cod_Cas"].ToString();
-                sda.Fill(dt);
+                txtName.Text = dt.Rows[0]["Numero_Cast"].ToString();
+                txtNombre.Text = dt.Rows[0]["Nombre_Cast"].ToString();
+                ddlColorCaseta.SelectedValue = dt.Rows[0]["Color_Cast"].ToString();
+                cbIsActive.Checked = Convert.ToBoolean(dt.Rows[0]["Activo_Cast"]);
+                imgCaseta.ImageUrl = string.IsNullOrEmpty(dt.Rows[0]["ImagenUrl_Cast"].ToString()) ?
+                    "..//Images/No_image.png" : "../" + dt.Rows[0]["ImagenUrl_Cast"].ToString();
+                imgCaseta.Height = 200;
+                imgCaseta.Width = 200;
+                hdnId.Value = dt.Rows[0]["Cod_Cast"].ToString();
                 btnAddOrUpdate.Text = "Actualizar";
                 LinkButton btn = e.Item.FindControl("lnkEdit") as LinkButton;
                 btn.CssClass = "badge badge-warning";

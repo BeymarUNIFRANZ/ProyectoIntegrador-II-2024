@@ -1,52 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using System.IO;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
+
 
 namespace CASEWEB.Admin
 {
-    public partial class Category : System.Web.UI.Page
+    public partial class Product : System.Web.UI.Page
     {
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter sda;
         DataTable dt;
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                Session["breadCrum"] = "Category";
-                getCategories();
+                Session["breadCrum"] = "Product";
+                getProducts();
             }
             lblMsg.Visible = false;
-            
         }
 
         protected void btnAddOrUpdate_Click(object sender, EventArgs e)
         {
             string actionName = string.Empty, imagePath = string.Empty, fileExtension = string.Empty;
             bool isValidToExecute = false;
-            int categoryId = Convert.ToInt32(hdnId.Value);
+            int productId = Convert.ToInt32(hdnId.Value);
             con = new SqlConnection(Connetion.GetConnectionString());
-            cmd = new SqlCommand("Category_Crud", con);
-            cmd.Parameters.AddWithValue("@Action", categoryId == 0 ? "INSERT" : "UPDATE");
-            cmd.Parameters.AddWithValue("@CategoryId", categoryId);
+            cmd = new SqlCommand("Product_Crud", con);
+            cmd.Parameters.AddWithValue("@Action", productId == 0 ? "INSERT" : "UPDATE");
+            cmd.Parameters.AddWithValue("@ProductId", productId);
             cmd.Parameters.AddWithValue("@Name", txtName.Text.Trim());
+            cmd.Parameters.AddWithValue("@Description", txtDescription.Text.Trim());
+            cmd.Parameters.AddWithValue("@Price", txtPrice.Text.Trim());
+            cmd.Parameters.AddWithValue("@Quantity", txtQunatity.Text.Trim());
+            cmd.Parameters.AddWithValue("@CategoryId", ddlCategories.SelectedValue);
+            cmd.Parameters.AddWithValue("@CasetasId", ddlCasetas.SelectedValue);
             cmd.Parameters.AddWithValue("@IsActive", cbIsActive.Checked);
-            if (fuCategoryImage.HasFile)
+            if (fuProductImage.HasFile)
             {
-                if (Utils.IsValidExtension(fuCategoryImage.FileName))
+                if (Utils.IsValidExtension(fuProductImage.FileName))
                 {
                     Guid obj = Guid.NewGuid();
-                    fileExtension = Path.GetExtension(fuCategoryImage.FileName);
-                    imagePath = "Images/Category/" + obj.ToString() + fileExtension;
-                    fuCategoryImage.PostedFile.SaveAs(Server.MapPath("~/Images/Category/") + obj.ToString() + fileExtension);
+                    fileExtension = Path.GetExtension(fuProductImage.FileName);
+                    imagePath = "Images/Product/" + obj.ToString() + fileExtension;
+                    fuProductImage.PostedFile.SaveAs(Server.MapPath("~/Images/Product/") + obj.ToString() + fileExtension);
                     cmd.Parameters.AddWithValue("@ImageUrl", imagePath);
                     isValidToExecute = true;
                 }
@@ -70,11 +75,11 @@ namespace CASEWEB.Admin
                 {
                     con.Open();
                     cmd.ExecuteNonQuery();
-                    actionName = categoryId == 0 ? "inserted" : "updated";
+                    actionName = productId == 0 ? "inserted" : "updated";
                     lblMsg.Visible = true;
-                    lblMsg.Text = "La Categoria se Guardo/Actualizo!"; // se elimino del medio de los dos : + actionName +
+                    lblMsg.Text = "El Producto se añadio/actualizo!";
                     lblMsg.CssClass = "alert alert-success";
-                    getCategories();
+                    getProducts();
                     clear();
                 }
                 catch (Exception ex)
@@ -90,26 +95,30 @@ namespace CASEWEB.Admin
             }
         }
 
-        private void getCategories()
+        private void getProducts()
         {
             con = new SqlConnection(Connetion.GetConnectionString());
-            cmd = new SqlCommand("Category_Crud", con);
+            cmd = new SqlCommand("Product_Crud", con);
             cmd.Parameters.AddWithValue("@Action", "SELECT");
             cmd.CommandType = CommandType.StoredProcedure;
             sda = new SqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
-            rCategory.DataSource = dt;
-            rCategory.DataBind();
+            rProduct.DataSource = dt;
+            rProduct.DataBind();
         }
 
         private void clear()
         {
             txtName.Text = string.Empty;
+            txtDescription.Text = string.Empty;
+            txtQunatity.Text = string.Empty;
+            txtPrice.Text = string.Empty;
+            ddlCategories.ClearSelection();
             cbIsActive.Checked = false;
             hdnId.Value = "0";
             btnAddOrUpdate.Text = "Añadir";
-            imgCategory.ImageUrl = String.Empty;
+            imgProduct.ImageUrl = String.Empty;
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
@@ -117,26 +126,31 @@ namespace CASEWEB.Admin
             clear();
         }
 
-        protected void rCategory_ItemCommand(object source, RepeaterCommandEventArgs e)
+        protected void rProduct_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             lblMsg.Visible = false;
             con = new SqlConnection(Connetion.GetConnectionString());
             if (e.CommandName == "edit")
             {
-                cmd = new SqlCommand("Category_Crud", con);
+                cmd = new SqlCommand("Product_Crud", con);
                 cmd.Parameters.AddWithValue("@Action", "GETBYID");
-                cmd.Parameters.AddWithValue("@CategoryId", e.CommandArgument);
+                cmd.Parameters.AddWithValue("@ProductId", e.CommandArgument);
                 cmd.CommandType = CommandType.StoredProcedure;
                 sda = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 sda.Fill(dt);
-                txtName.Text = dt.Rows[0]["Nombre_Cat"].ToString();
-                cbIsActive.Checked = Convert.ToBoolean(dt.Rows[0]["Activo_Cat"]);
-                imgCategory.ImageUrl = string.IsNullOrEmpty(dt.Rows[0]["ImagenUrl_Cat"].ToString()) ?
-                    "..//Images/No_image.png" : "../" + dt.Rows[0]["ImagenUrl_Cat"].ToString();
-                imgCategory.Height = 200;
-                imgCategory.Width = 200;
-                hdnId.Value = dt.Rows[0]["Cod_Cat"].ToString();
+                txtName.Text = dt.Rows[0]["Nombre_Pro"].ToString();
+                txtDescription.Text = dt.Rows[0]["Descripcion_Pro"].ToString();
+                txtPrice.Text = dt.Rows[0]["Precio_Pro"].ToString();
+                txtQunatity.Text = dt.Rows[0]["Cantidad_Pro"].ToString();
+                ddlCategories.SelectedValue = dt.Rows[0]["Cod_Cat"].ToString();
+                ddlCasetas.SelectedValue = dt.Rows[0]["Cod_Cast"].ToString();
+                cbIsActive.Checked = Convert.ToBoolean(dt.Rows[0]["Activo_Pro"]);
+                imgProduct.ImageUrl = string.IsNullOrEmpty(dt.Rows[0]["ImagenUrl_Pro"].ToString()) ?
+                    "..//Images/No_image.png" : "../" + dt.Rows[0]["ImagenUrl_Pro"].ToString();
+                imgProduct.Height = 200;
+                imgProduct.Width = 200;
+                hdnId.Value = dt.Rows[0]["Cod_Pro"].ToString();
                 btnAddOrUpdate.Text = "Actualizar";
                 LinkButton btn = e.Item.FindControl("lnkEdit") as LinkButton;
                 btn.CssClass = "badge badge-warning";
@@ -144,18 +158,18 @@ namespace CASEWEB.Admin
             else if (e.CommandName == "delete")
             {
                 //con = new SqlConnection(Connetion.GetConnectionString());
-                cmd = new SqlCommand("Category_Crud", con);
+                cmd = new SqlCommand("Product_Crud", con);
                 cmd.Parameters.AddWithValue("@Action", "DELETE");
-                cmd.Parameters.AddWithValue("@CategoryId", e.CommandArgument);
+                cmd.Parameters.AddWithValue("@ProductId", e.CommandArgument);
                 cmd.CommandType = CommandType.StoredProcedure;
                 try
                 {
                     con.Open();
                     cmd.ExecuteNonQuery();
                     lblMsg.Visible = true;
-                    lblMsg.Text = "La Categoria se Elimino Exitosamente";
+                    lblMsg.Text = "El Producto se Elimino!";
                     lblMsg.CssClass = "alert alert-success";
-                    getCategories();
+                    getProducts();
                 }
                 catch (Exception ex)
                 {
@@ -170,22 +184,27 @@ namespace CASEWEB.Admin
             }
         }
 
-
-
-        protected void rCategory_ItemDataBound1(object sender, RepeaterItemEventArgs e)
+        protected void rProduct_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
-                Label lbl = e.Item.FindControl("lblIsActive") as Label;
-                if (lbl.Text == "True")
+                Label lblIsActive = e.Item.FindControl("lblIsActive") as Label;
+                Label lblQuantity = e.Item.FindControl("lblQuantity") as Label;
+                if (lblIsActive.Text == "True")
                 {
-                    lbl.Text = "Activo";
-                    lbl.CssClass = "badge badge-success";
+                    lblIsActive.Text = "Activo";
+                    lblIsActive.CssClass = "badge badge-success";
                 }
                 else
                 {
-                    lbl.Text = "Inactivo";
-                    lbl.CssClass = "badge badge-danger";
+                    lblIsActive.Text = "Inactivo";
+                    lblIsActive.CssClass = "badge badge-danger";
+                }
+
+                if (Convert.ToInt32(lblQuantity.Text) <= 5)
+                {
+                    lblQuantity.CssClass = "badge badge-danger";
+                    lblQuantity.ToolTip = "Item about to be 'Out of stock'!";
                 }
             }
         }

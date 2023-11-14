@@ -132,15 +132,6 @@ namespace CASEWEB.Admin
         protected global::System.Web.UI.WebControls.Image imgCasera;
 
         /// <summary>
-        /// Control lnkEdit.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkEdit;
-
-        /// <summary>
         /// Control rCasera.
         /// </summary>
         /// <remarks>

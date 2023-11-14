@@ -31,11 +31,11 @@
                             <div class="col-sm-6 col-lg-4 all <%# Regex.Replace(Eval("Numero_Cast").ToString().ToLower(),@"\s+","") %>">
                                 <div class="box">
                                     <div>
-                                        <%--<div class="img-box">
-                                <img src="<%# Utils.GetImageUrl( Eval("ImagenUrl_Pro")) %>" alt="">
-                            </div>--%>
+                                        <div class="img-box">
+                                <img src="<%# Utils.GetImageUrl( Eval("ImagenUrl_Cast")) %>" alt="">
+                            </div>
                                         <div class="detail-box">
-                                            <%--<h5><%# Eval("Nombre_Cas") %></h5>--%>
+                                            <h5><%# Eval("Nombre_Cast") %></h5>
                                             <div class="options">
                                                 <h6><%# Eval("Piso_Cast") %></h6>
                                                 <asp:LinkButton runat="server" ID="lbAddToCart" CommandName="addToCart"

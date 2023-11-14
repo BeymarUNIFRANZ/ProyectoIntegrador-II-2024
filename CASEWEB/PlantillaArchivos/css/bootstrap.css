@@ -90,7 +90,7 @@ abbr[data-original-title] {
   text-decoration: underline dotted;
   cursor: help;
   border-bottom: 0;
-  -webkit-text-decoration-: none;       
+  text-decoration: none;       
   text-decoration-skip-ink: none;
 }
 
@@ -4129,9 +4129,9 @@ input[type="button"].btn-block {
 }
 
 .nav-justified .nav-item {
-  -ms-flex-preferred-size: 0;
+  --flex-preferred-size: 0;
   flex-basis: 0;
-  -ms-flex-positive: 1;
+  --ms-flex-positive: 1;
   flex-grow: 1;
   text-align: center;
 }
@@ -4275,7 +4275,7 @@ input[type="button"].btn-block {
   .navbar-expand-sm .navbar-collapse {
     display: -ms-flexbox !important;
     display: flex !important;
-    -ms-flex-preferred-size: auto;
+    --flex-preferred-size: auto;
     flex-basis: auto;
   }
   .navbar-expand-sm .navbar-toggler {

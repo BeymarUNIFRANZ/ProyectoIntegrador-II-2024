@@ -1,6 +1,23 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Usuario/Usuario.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CASEWEB.Usuario.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" type="text/css" href="ruta/al/archivo.css">
+   <!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="../PlantillaArchivos/css/bootstrap.css" />
+
+<!--owl slider stylesheet -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<!-- nice select  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+<!-- font awesome style -->
+<link href="../PlantillaArchivos/css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="../PlantillaArchivos/css/style.css" rel="stylesheet" type="text/css" />
+<link href="../PlantillaArchivos/css/letra.css" rel="stylesheet" type="text/css" />
+<!-- responsive style -->
+<link href="../PlantillaArchivos/css/responsive.css" rel="stylesheet" />
+
+<!-- jQery -->
+<script src="../PlantillaArchivos/js/jquery-3.4.1.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -164,7 +181,7 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="img-box">
-              <img src="../PlantillaArchivos/images/client1.jpg" /> 
+              <img src="../PlantillaArchivos/images/about-img.png" />
 
           </div>
         </div>
@@ -176,7 +193,7 @@
               </h2>
             </div>
             <p>
-              Descripcion de Quienes Somos
+              Somos unos chicos que intentan hacer la diferencia en un pais que carece de novedades, para lo mismo se penso en una idea que podria revolucionar uno de los elementos mas importantes del pais pero en especifico la ciudad Marravilla
             </p>
             <a href="#">
              

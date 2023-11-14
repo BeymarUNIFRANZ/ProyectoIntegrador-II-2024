@@ -119,9 +119,9 @@
                             <a class="mobile-menu" id="mobile-collapse" href="#!">
                                 <i class="ti-menu"></i>
                             </a>
-                            <a href="index.html">
-
-                                <img class="img-fluid" src="../assets/images/Logo-0about-img.png" alt="LOGO" />
+                            <a href="Dasboard2.aspx">
+                          
+                                <img class="img-fluid" src="../assets/images/logoA.png" alt="LOGO" />
                             </a>
                             <a class="mobile-options">
                                 <i class="ti-more"></i>
@@ -511,7 +511,7 @@
                                                 <li>
                                                     <a href="Product.aspx">
                                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Prodcutos</span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Productos</span>
                                                         <span class="pcoded-mcaret"></span>
                                                     </a>
 

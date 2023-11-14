@@ -12,14 +12,17 @@ getYear();
 
 // isotope js
 $(window).on('load', function () {
+    console.log('Window loaded');
     $('.filters_menu li').click(function () {
+        console.log('Filter clicked');
         $('.filters_menu li').removeClass('active');
         $(this).addClass('active');
 
         var data = $(this).attr('data-filter');
+        console.log('Filter data:', data);
         $grid.isotope({
             filter: data
-        })
+        });
     });
 
     var $grid = $(".grid").isotope({
@@ -28,20 +31,21 @@ $(window).on('load', function () {
         masonry: {
             columnWidth: ".all"
         }
-    })
+    });
 
     $(document).ready(function () {
-        //Read a page's GET URL varaibles & retunr them as an associative aaray
+        // Read a page's GET URL variables & return them as an associative array
+        console.log('Document ready');
         function getUrlVars() {
             var vars = [], hash;
             var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
             for (var i = 0; i < hashes.length; i++) {
                 hash = hashes[i].split('=');
-                vars.push(hasg[0]);
+                vars.push(hash[0]);
                 vars[hash[0]] = hash[1];
             }
             return vars;
-        };
+        }
 
         var id = getUrlVars()["id"];
         if (id > 0) {
@@ -49,19 +53,18 @@ $(window).on('load', function () {
         }
 
         $('.filters_menu li').each(function () {
-            //checks if it is the same on the address bar 
+            // Checks if it is the same in the address bar 
             if (id == this.attributes["data-id"].value) {
-                $(this).closest("li").addClass("active");
+                $(this).addClass("active");
 
                 var data = $(this).attr('data-filter');
                 $grid.isotope({
                     filter: data
-                })
+                });
 
                 return;
             }
         });
-
     });
 });
 

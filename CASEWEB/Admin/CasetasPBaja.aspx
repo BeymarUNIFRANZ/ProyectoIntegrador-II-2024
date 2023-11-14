@@ -80,6 +80,19 @@
                                                     </asp:DropDownList>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group">
+                                                <label>Nombre de la Caseta</label>
+                                                <div>
+                                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"
+                                                        placeholder="Ingresar Nombre de la Caseta"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                                        ErrorMessage="Requiere Nombre" ForeColor="Red" Display="Dynamic"
+                                                        SetFocusOnError="true" ControlToValidate="txtNombre"></asp:RequiredFieldValidator>
+                                                    <asp:HiddenField ID="HiddenField2" runat="server" Value="0" />
+                                                </div>
+                                            </div>
+
                                             <div class="form-group">
 
                                                 <div>
@@ -116,6 +129,14 @@
 
                                             </div>
 
+                                            <div class="form-group">
+                                                <label>Imagen de la Categoria</label>
+                                                <div>
+                                                    <asp:FileUpload ID="fuCasetaImage" runat="server" CssClass="form-control"
+                                                        onchange="ImagePreview(this);" />
+                                                </div>
+                                            </div>
+
                                             <div class="form-check pl-4">
                                                 <asp:CheckBox ID="cbIsActive" runat="server" Text="&nbsp; Activo"
                                                     CssClass="form-check-input" />
@@ -124,6 +145,11 @@
                                                 <asp:Button ID="btnAddOrUpdate" runat="server" Text="Agregar" CssClass="btn btn-primary" OnClick="btnAddOrUpdate_Click"
                                                     OnItemDataBound="rCasetas_ItemDataBound1" />
                                             </div>
+
+                                            <div>
+                                                <asp:Image ID="imgCaseta" runat="server" CssClass="img-thumbnail" />
+                                            </div>
+
                                         </div>
 
                                         <div class="col-sm-6 col-md-8 col-lg-8 mobile-inputs">
@@ -139,6 +165,8 @@
                                                                         <th class="table-plus">Piso</th>
                                                                         <th>Numero Caseta</th>
                                                                         <th>Color</th>
+                                                                        <th>Nombre</th>
+                                                                        <th>Imagen</th>
                                                                         <th>Categoria</th>
                                                                         <th>Casera(o)</th>
                                                                         <th>Activo</th>
@@ -154,10 +182,17 @@
                                                                 <td class="table-plus"><%# Eval("Numero_Cast") %> </td>
 
                                                                 <td><%# Eval("Color_Cast") %> </td>
+
+                                                                <td><%# Eval("Nombre_Cast") %> </td>
+
+                                                                <td>
+                                                                    <img alt="" width="40" src="<%# Utils.GetImageUrl( Eval("ImagenUrl_Cast")) %>" />
+                                                                </td>
+
                                                                 <td><%# Eval("Cod_Cat") %> </td>
-                                                                
-                                                                 <td><%# Eval("Cod_Cas") %> </td>
-                                                                
+
+                                                                <td><%# Eval("Cod_Cas") %> </td>
+
                                                                 <td>
                                                                     <asp:Label ID="lblIsActive" runat="server" Text='<%# Eval("Activo_Cast") %>'></asp:Label>
                                                                 </td>

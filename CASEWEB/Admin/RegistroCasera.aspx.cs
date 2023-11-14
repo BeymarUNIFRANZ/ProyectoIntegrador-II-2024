@@ -51,6 +51,7 @@ namespace CASEWEB.Admin
                     imagePath = "Images/Casera/" + obj.ToString() + fileExtension;
                     fuCaseraImage.PostedFile.SaveAs(Server.MapPath("~/Images/Casera/") + obj.ToString() + fileExtension);
                     imageUrl = imagePath;
+                    cmd.Parameters.AddWithValue("@ImageNUrl", imagePath);
                     isValidToExecute = true;
                 }
                 else

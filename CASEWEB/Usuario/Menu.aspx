@@ -3,6 +3,9 @@
 <%@ Import Namespace="CASEWEB" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="../PlantillaArchivos/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -21,7 +24,7 @@
                 <li class="active" data-filter="*" data-id="0">Todo</li>
                 <asp:Repeater ID="rCategory" runat="server">
                     <ItemTemplate>
-                        <li data-filter=".<%# Regex.Replace(Eval("Nombre_Cat").ToString().ToLower(),@"\s+","") %>"
+                        <li data-filter="<%# Regex.Replace(Eval("Nombre_Cat").ToString().ToLower(),@"\s+","") %>"
                             data-id="<%# Eval("Cod_Cat") %>"><%# Eval("Nombre_Cat") %></li>
                     </ItemTemplate>
                 </asp:Repeater>
@@ -47,7 +50,7 @@
                                                 <h6>Bs<%# Eval("Precio_Pro") %></h6>
                                                 <asp:LinkButton runat="server" ID="lbAddToCart" CommandName="addToCart"
                                                     CommandArgument='<%# Eval("Cod_Pro") %>'>
-                                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background: new 0 0 456.029 456.029;" xml:space="preserve">
+                                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background: new 0 0 456 456;" xml:space="preserve">
                                                         <g>
                                                             <g>
                                                                 <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
