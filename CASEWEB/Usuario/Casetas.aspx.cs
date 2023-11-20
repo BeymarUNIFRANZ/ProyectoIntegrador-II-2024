@@ -21,8 +21,14 @@ namespace CASEWEB.Usuario
         {
             if (!IsPostBack)
             {
-                //getCategories();
                 getCasetas();
+            }
+            if (Request.QueryString["Cod_Cast"] != null)
+            {
+                string casetaId = Request.QueryString["Cod_Cast"].ToString();
+                System.Diagnostics.Debug.WriteLine($"CasetaId: {casetaId}");
+                MostrarInformacionCaseta(casetaId);
+                //getCategories();
             }
         }
 
@@ -38,7 +44,20 @@ namespace CASEWEB.Usuario
         //    rPiso.DataSource = dt;
         //    rPiso.DataBind();
         //}
+        private void MostrarInformacionCaseta(string casetaId)
+        {
+            con = new SqlConnection(Connetion.GetConnectionString());
+            cmd = new SqlCommand("Casetas_Crud", con);
+            cmd.Parameters.AddWithValue("@Action", "GETBYID"); // Cambia "ACTIVECAT" por el nombre de tu acción para obtener por ID
+            cmd.Parameters.AddWithValue("@Cod_Cast", casetaId); // Añade parámetro para filtrar por ID
+            cmd.CommandType = CommandType.StoredProcedure;
+            sda = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            sda.Fill(dt);
 
+            rCasetas.DataSource = dt;
+            rCasetas.DataBind();
+        }
         private void getCasetas()
         {
             con = new SqlConnection(Connetion.GetConnectionString());
@@ -55,15 +74,18 @@ namespace CASEWEB.Usuario
         protected void rCasetas_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
 
-            if (Session["Cod_Usu"] != null)
+            try
             {
-                lblMsg.Visible = true;
-                lblMsg.CssClass = "alert alert-success";
-                Response.AddHeader("REFRESH", "1;URL=Carrito.aspx");
+                if (e.CommandName == "MostrarInformacionCaseta")
+                {
+                    string codCaseta = e.CommandArgument.ToString();
+                    Response.Redirect($"PerfilCasero.aspx?casetaId={codCaseta}");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Response.Redirect("Login.aspx");
+                // Agrega una impresión de depuración o registra el error en el registro de eventos.
+                System.Diagnostics.Debug.WriteLine($"Error en rCasetas_ItemCommand: {ex.Message}");
             }
         }
         protected void rProduct_ItemDataBound(object sender, RepeaterItemEventArgs e)

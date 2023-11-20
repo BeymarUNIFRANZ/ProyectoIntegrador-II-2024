@@ -118,9 +118,9 @@
                             <a class="mobile-menu" id="mobile-collapse" href="#!">
                                 <i class="ti-menu"></i>
                             </a>
-                            <a href="index.html">
+                            <a href="Dashboard.aspx">
 
-                                <img class="img-fluid" src="../assets/images/Logo-0about-img.png" alt="LOGO" />
+                                <img class="img-fluid" src="../assets/images/logoA.png" alt="LOGO" />
                             </a>
                             <a class="mobile-options">
                                 <i class="ti-more"></i>
@@ -274,7 +274,7 @@
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
-                            
+
                                     <%--<li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
@@ -355,8 +355,8 @@
 
                                     </ul>
                                 </li>--%>
-                               
-                                
+
+
                                     <%--<li>
                                     <a href="bs-basic-table.html">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
@@ -507,9 +507,9 @@
                                                     <i class="icofont icofont-home"></i>
                                                 </a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Breadcrumb</a>
+                                            <li class="breadcrumb-item"><a href="Dashboard.aspx">Inicio</a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Caption Breadcrumb</a>
+                                            <li class="breadcrumb-item"><a href="#!"></a>
                                             </li>
                                         </ul>
                                     </div>

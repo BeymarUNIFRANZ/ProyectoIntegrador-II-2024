@@ -67,6 +67,12 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="zxing">
+      <HintPath>.\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation">
+      <HintPath>.\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -1344,6 +1350,7 @@
     <Content Include="Usuario\Menu.aspx" />
     <Content Include="Usuario\Pago.aspx" />
     <Content Include="Usuario\Perfil.aspx" />
+    <Content Include="Usuario\PerfilCasero.aspx" />
     <Content Include="Usuario\Recibo.aspx" />
     <Content Include="Usuario\Registro.aspx" />
     <Content Include="Usuario\SliderUserControl1.ascx" />
@@ -1487,6 +1494,13 @@
     </Compile>
     <Compile Include="Usuario\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\PerfilCasero.aspx.cs">
+      <DependentUpon>PerfilCasero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\PerfilCasero.aspx.designer.cs">
+      <DependentUpon>PerfilCasero.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario\Recibo.aspx.cs">
       <DependentUpon>Recibo.aspx</DependentUpon>

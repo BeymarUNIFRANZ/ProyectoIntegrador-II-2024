@@ -119,7 +119,7 @@
                             <a class="mobile-menu" id="mobile-collapse" href="#!">
                                 <i class="ti-menu"></i>
                             </a>
-                            <a href="Dasboard2.aspx">
+                            <a href="Dashboard2.aspx">
                           
                                 <img class="img-fluid" src="../assets/images/logoA.png" alt="LOGO" />
                             </a>

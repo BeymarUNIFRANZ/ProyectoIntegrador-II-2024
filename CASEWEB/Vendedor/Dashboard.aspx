@@ -4,5 +4,5 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 
       <h1>Bienvenido Caserita(o)...!!!</h1>
-
+    <img src="../Images/fondoVendedor.png" />
 </asp:Content>

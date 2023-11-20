@@ -213,6 +213,42 @@ namespace CASEWEB.Usuario
         protected global::System.Web.UI.WebControls.LinkButton lbCodSubmit;
 
         /// <summary>
+        /// Control imgQRCode.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgQRCode;
+
+        /// <summary>
+        /// Control litMonto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litMonto;
+
+        /// <summary>
+        /// Control btnGenerarCodigo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGenerarCodigo;
+
+        /// <summary>
+        /// Control LinkButton1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+
+        /// <summary>
         /// Control ValidationSummary1.
         /// </summary>
         /// <remarks>

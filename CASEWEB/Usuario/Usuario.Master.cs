@@ -29,7 +29,7 @@ namespace CASEWEB.Usuario
 
             if (Session["Cod_Usu"] != null)
             {
-                LbLoginOrLogout.Text = "Cerras Sesion";
+                LbLoginOrLogout.Text = "Cerrar Sesion";
                 Utils utils = new Utils();
                 Session["cartCount"] = utils.cartCount(Convert.ToInt32(Session["Cod_Usu"])).ToString();
             }
@@ -43,7 +43,7 @@ namespace CASEWEB.Usuario
         protected void LbLoginOrLogout_Click(object sender, EventArgs e)
         {
 
-            if (Session["Cod_Usu"] == null)
+            if (Session["Cod_Usu"] == null && Session["Cod_Cas"] == null)
             {
                 Response.Redirect("Login.aspx");
             }

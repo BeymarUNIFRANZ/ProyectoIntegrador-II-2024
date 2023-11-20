@@ -1,8 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Usuario/Usuario.Master" AutoEventWireup="true" CodeBehind="Pago.aspx.cs" Inherits="CASEWEB.Usuario.Pago" %>
+
 <%@ Import Namespace="CASEWEB" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-        <style>
+    <style>
+        .boton {
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #60036f; /* Color de fondo (puedes cambiarlo) */
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+    .boton:last-child {
+        margin-right: 0; /* Elimina el margen derecho del último botón */
+    }
+        #imgQRCode {
+    display: block;
+    margin: auto;
+}
         .rounded {
             border-radius: 1rem
         }
@@ -27,7 +46,7 @@
         }
     </style>
     <script>
-         /*For disappearing alert message*/
+        /*For disappearing alert message*/
         window.onload = function () {
             var seconds = 5;
             setTimeout(function () {
@@ -42,22 +61,21 @@
 
     <%--Function for preventing back button--%>
     <script type="text/javascript">
-      function DisableBackButton() {
-       window.history.forward()
-      }
-      DisableBackButton();
-       window.onload = DisableBackButton;
-       window.onpageshow = function(evt) { if (evt.persisted) DisableBackButton() }
-        window.onunload = function() { void (0) }
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
     </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    
-    <section class="book_section" style="background-image: url('../Images/payment-bg.png'); width: 100%; height: 100%; background-repeat: no-repeat; 
-        background-size: auto; background-attachment: fixed; background-position: left;">
+
+    <section class="book_section" style="background-image: url('../Images/payment-bg.png'); width: 100%; height: 100%; background-repeat: no-repeat; background-size: auto; background-attachment: fixed; background-position: left;">
 
         <div class="container py-5">
             <div class="align-self-end">
@@ -79,6 +97,9 @@
                                 <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
                                     <li class="nav-item"><a data-toggle="pill" href="#credit-card" class="nav-link active "><i class="fa fa-credit-card mr-2"></i>Tarjeta de Credito </a></li>
                                     <li class="nav-item"><a data-toggle="pill" href="#paypal" class="nav-link "><i class="fa fa-money mr-2"></i>Delivery </a></li>
+                                    <li class="nav-item"><a data-toggle="pill" href="#Yape" class="nav-link ">
+                                        <i class="fa fa-money mr-2"></i>Yape </a>
+                                    </li>
                                     <%--<li class="nav-item"><a data-toggle="pill" href="#net-banking" class="nav-link "><i class="fa fa-mobile mr-2"></i>Net Banking </a></li>--%>
                                 </ul>
                                 <!-- End -->
@@ -136,7 +157,7 @@
                                                         ControlToValidate="txtExpMonth" ForeColor="Red" Display="Dynamic" SetFocusOnError="true"
                                                         ValidationGroup="card">*</asp:RequiredFieldValidator>
                                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" Display="Dynamic"
-                                              ErrorMessage="El mes de vencimiento debe tener 2 dígitos." ForeColor="Red" SetFocusOnError="true"
+                                                        ErrorMessage="El mes de vencimiento debe tener 2 dígitos." ForeColor="Red" SetFocusOnError="true"
                                                         ValidationExpression="[0-9]{2}" ControlToValidate="txtExpMonth" ValidationGroup="card">*
                                                     </asp:RegularExpressionValidator>
                                                     <asp:RequiredFieldValidator ID="rfvExpYear" runat="server" ErrorMessage="Se requiere año de caducidad"
@@ -210,6 +231,44 @@
                                     </p>
                                 </div>
                                 <!-- End -->
+
+                                <!-- Cash On Delivery info -->
+                                <div id="Yape" class="tab-pane fade pt-3">
+                                    <div class="form-group">
+                                        <section>
+                                            
+                                                <div style="text-align: center; margin-top: 20px;">
+                                                    <div style="width: 400px; margin: auto; background-image:src('../PlantillaArchivos/images/yape.jpeg'); background-size: cover; padding: 20px; border: 2px solid #ccc;">
+                                                        <asp:Image ID="imgQRCode" runat="server" Style="display: block; margin: auto;" />
+
+                                                        <p style="margin-top: 20px; font-size: 18px; color: #fff;">
+                                                            Monto a Cobrar:
+                                                        <asp:Literal ID="litMonto" runat="server"></asp:Literal>
+                                                        </p>
+                                                        
+                                                        <div style="margin-top: 20px;">
+                                                            <!-- Contenido de la página -->
+                                                            <asp:Button ID="btnGenerarCodigo" runat="server" Text="Generar Nuevo Código QR" OnClick="btnGenerarCodigo_Click" CssClass="boton" />
+                                                            <br />
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                        </section>
+
+                                    </div>
+                                    <p>
+                                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-info" ValidationGroup="cod" OnClick="lbCodSubmit_Click">
+                                        <i class="fa fa-cart-arrow-down mr-2"></i>Confirmar Orden</asp:LinkButton>
+                                    </p>
+                                    <p class="text-muted">
+                                        Nota: Al recibir su pedido, debe realizar el pago completo.
+                                        Después de completar el proceso de pago, puede verificar el estado actualizado de su pedido.
+                                    </p>
+                                </div>
+                                <!-- End -->
+
                             </div>
                             <!-- End -->
                         </div>

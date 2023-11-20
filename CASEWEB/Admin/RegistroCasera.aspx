@@ -55,6 +55,34 @@
                                                         <asp:HiddenField ID="hdnId" Value="0" runat="server" />
                                                     </div>
                                                 </div>
+
+                                                <div class="form-group">
+                                                    <label>Nombre de Usuario</label>
+                                                    <div>
+                                                        <asp:RequiredFieldValidator ID="rfvUsername" runat="server"
+                                                            ControlToValidate="txtUsername" ErrorMessage="Requiere Nombre de Usuario"
+                                                            ForeColor="Red" Display="Dynamic" SetFocusOnError="true">
+                                                        </asp:RequiredFieldValidator>
+
+                                                        <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"
+                                                            placeholder="Ingrese Nombre de Usuario" ToolTip="Username">
+                                                        </asp:TextBox>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Contraseña</label>
+                                                    <div>
+                                                        <asp:RequiredFieldValidator ID="rfvClave" runat="server"
+                                                            ErrorMessage="Requiere Contraseña" ControlToValidate="txtClave" ForeColor="Red"
+                                                            Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                        <asp:TextBox ID="txtClave" runat="server" CssClass="form-control"
+                                                            placeholder="Ingrese su Contraseña" TextMode="Password"></asp:TextBox>
+                                                    </div>
+                                                </div>
+
+
                                                 <div class="form-group">
                                                     <label>Teléfono</label>
                                                     <div>
@@ -125,7 +153,7 @@
                                             <div class="card-block table-border-style">
                                                 <div class="table-responsive">
 
-                                                   <%-- <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server" CssClass="badge badge-success"
+                                                    <%-- <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server" CssClass="badge badge-success"
                                                         CommandArgument='<%# Eval("Cod_Cas") %>' CommandName="edit" data-toggle="modal" data-target="#exampleModal">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" fill="currentColor" class="bi bi-hand-index" viewBox="0 0 16 16">
                                                        <h6>Abrir PDF</h6>
@@ -156,6 +184,8 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th class="table-plus">Nombre</th>
+                                                                        <th>Usuario</th>
+                                                                        <th>Contraseña</th>
                                                                         <th>Imagen</th>
                                                                         <th>Teléfono</th>
                                                                         <th>Correo</th>
@@ -171,6 +201,8 @@
                                                         <ItemTemplate>
                                                             <tr>
                                                                 <td class="table-plus"><%# Eval("Nombre_Cas") %></td>
+                                                                <td class="table-plus"><%# Eval("NombreUsuario_Cas") %></td>
+                                                                <td class="table-plus"><%# Eval("Clave_Cas") %></td>
                                                                 <td>
                                                                     <img alt="" width="40" src="<%# Utils.GetImageUrl( Eval("ImagenUrl_Cas")) %>" />
                                                                 </td>
@@ -193,7 +225,7 @@
                                                                     </asp:LinkButton>
                                                                     <asp:LinkButton ID="lnkDelete" Text="Delete" runat="server" CommandName="delete"
                                                                         CssClass="badge bg-danger" CommandArgument='<%# Eval("Cod_Cas") %>'
-                                                                        OnClientClick="return confirm('Do you want to delete this casera?');">
+                                                                        OnClientClick="return confirm('¿Quieres eliminar esta casera?);">
                                                                     <i class="ti-trash"></i>
                                                                     </asp:LinkButton>
                                                                 </td>

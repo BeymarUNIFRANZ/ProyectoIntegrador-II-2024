@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using iTextSharp.text;
 
 namespace CASEWEB.Usuario
 {
@@ -20,7 +21,7 @@ namespace CASEWEB.Usuario
         DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Cod_Usu"] != null) 
+            if (Session["Cod_Usu"] != null || Session["Cod_Cas"] != null) 
             {
                 Response.Redirect("Default.aspx");
             }
@@ -34,12 +35,9 @@ namespace CASEWEB.Usuario
                 Session["admin"] = txtUsername.Text.Trim();
                 Response.Redirect("../Admin/Dashboard2.aspx");
             }
-            if (txtUsername.Text.Trim() == "Rosa" && txtClave.Text.Trim() == "1233")
+            bool encontrado = false;
+            if (!encontrado)
             {
-                Session["admin"] = txtUsername.Text.Trim();
-                Response.Redirect("../Vendedor/Dashboard.aspx");
-            }
-            else {
                 con = new SqlConnection(Connetion.GetConnectionString());
                 cmd = new SqlCommand("User_Crud", con);
                 cmd.Parameters.AddWithValue("@Action", "SELECT4LOGIN");
@@ -51,6 +49,7 @@ namespace CASEWEB.Usuario
                 sda.Fill(dt);
                 if (dt.Rows.Count == 1)
                 {
+                    encontrado = true;
                     Session["username"] = txtUsername.Text.Trim();
                     Session["Cod_Usu"] = dt.Rows[0]["Cod_Usu"]; 
                     Response.Redirect("Default.aspx");
@@ -61,8 +60,36 @@ namespace CASEWEB.Usuario
                     lblMsg.Text = "Usuario o Contraseña Incorrecta..!";
                     lblMsg.CssClass = "alert alert-danger";
                 }
+
+            }
+            if (!encontrado)
+            {
+                con = new SqlConnection(Connetion.GetConnectionString());
+                cmd = new SqlCommand("Casera_Crud", con);
+                cmd.Parameters.AddWithValue("@Action", "SELECT4LOGIN");
+                cmd.Parameters.AddWithValue("@NombreUsuC", txtUsername.Text.Trim());
+                cmd.Parameters.AddWithValue("@ClaveC", txtClave.Text.Trim());
+                cmd.CommandType = CommandType.StoredProcedure;
+                sda = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows.Count == 1)
+                {
+                    Session["usernameC"] = txtUsername.Text.Trim();
+                    Session["Cod_Cas"] = dt.Rows[0]["Cod_Cas"];
+                    Response.Redirect("..\\Vendedor\\Dashboard.aspx");
+                }
+                else
+                {
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "Usuario o Contraseña Incorrecta..!";
+                    lblMsg.CssClass = "alert alert-danger";
+                }
+
             }
 
+
         }
+
     }
 }

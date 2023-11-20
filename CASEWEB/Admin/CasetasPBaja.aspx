@@ -34,8 +34,8 @@
                                                 <div>
                                                     <asp:DropDownList ID="txtPiso" runat="server" CssClass="form-control">
                                                         <asp:ListItem Text="Seleccione una opción" Value="0" />
-                                                        <asp:ListItem Text="Piso 1" Value="P1" />
-                                                        <asp:ListItem Text="Piso 2" Value="P2" />
+                                                        <asp:ListItem Text="Piso 1" Value="Piso1" />
+                                                        <asp:ListItem Text="Piso 2" Value="Piso2" />
                                                         <asp:ListItem Text="Planta Baja" Value="PlantaBaja" />
                                                         <asp:ListItem Text="Subterraneo" Value="Subterraneo" />
                                                     </asp:DropDownList>

@@ -94,7 +94,7 @@ namespace CASEWEB.Usuario
                 lblMsg.Visible = true;
                 lblMsg.Text = "¡El Prodcuto se agrego a tu Carrito!";
                 lblMsg.CssClass = "alert alert-success";
-                Response.AddHeader("REFRESH", "1;URL=Carrito.aspx");
+                Response.AddHeader("REFRESH", "1;");
             }
             else
             {

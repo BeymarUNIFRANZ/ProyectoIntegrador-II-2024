@@ -21,7 +21,7 @@
                 <div class="align-self-end">
                     <asp:Label runat="server" ID="lblMsg"></asp:Label>
                 </div>
-                <h2>Inicias Sesion</h2>
+                <h2>Iniciar Sesion</h2>
             </div>
             <div class="row">
                 <div class="col-md-6">

@@ -39,6 +39,8 @@ namespace CASEWEB.Admin
             cmd.Parameters.AddWithValue("@Correo", txtCorreo.Text);
             cmd.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
             cmd.Parameters.AddWithValue("@NitCas", txtNitCas.Text);
+            cmd.Parameters.AddWithValue("@NombreUsuC", txtUsername.Text.Trim());
+            cmd.Parameters.AddWithValue("@ClaveC", txtClave.Text.Trim());
 
             string imageUrl = null;
 
@@ -78,6 +80,10 @@ namespace CASEWEB.Admin
                     lblMsg.Visible = true;
                     lblMsg.Text = "La Casera se actualizó!";
                     lblMsg.CssClass = "alert alert-success";
+                    if (caseraId != 0)
+                    {
+                        Response.AddHeader("REFRESH", "2;");
+                    }
                     getCaseras();
                     clear();
                 }
@@ -110,6 +116,8 @@ namespace CASEWEB.Admin
         private void clear()
         {
             txtNombre.Text = string.Empty;
+            txtUsername.Text = string.Empty;
+            txtClave.Text = string.Empty;
             txtTelefono.Text = string.Empty;
             txtCorreo.Text = string.Empty;
             txtDireccion.Text = string.Empty;

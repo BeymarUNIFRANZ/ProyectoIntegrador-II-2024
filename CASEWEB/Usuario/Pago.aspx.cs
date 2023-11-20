@@ -6,6 +6,11 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Drawing;
+using System.IO;
+using System.Net.NetworkInformation;
+using ZXing;
+
 
 namespace CASEWEB.Usuario
 {
@@ -22,6 +27,7 @@ namespace CASEWEB.Usuario
         {
             if (!IsPostBack)
             {
+                GenerarYMostrarCodigoQR();
                 if (Session["Cod_Usu"] == null)
                 {
                     Response.Redirect("Login.aspx");
@@ -201,6 +207,56 @@ namespace CASEWEB.Usuario
             catch (Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
+        }
+        protected void btnGenerarCodigo_Click(object sender, EventArgs e)
+        {
+            GenerarYMostrarCodigoQR();
+        }
+        private void GenerarYMostrarCodigoQR()
+        {
+            // Datos de pago (simulados)
+            string nombreProducto = "Monto a Cobrar";
+            Random random = new Random();
+            decimal monto = Math.Round((decimal)random.NextDouble() * 100, 2);  // Número aleatorio entre 0 y 100, redondeado a 2 decimales
+            string identificadorPago = Guid.NewGuid().ToString();
+
+            // Asignar el valor de monto al Literal con el símbolo de la moneda boliviana
+            litMonto.Text = $"Bs {monto:N0}";
+
+            // Crear información de pago
+            string infoPago = $"Nombre: {nombreProducto}, Monto: Bs {monto:N0}, ID: {identificadorPago}";
+
+            // Generar código QR
+            Bitmap qrCode = GenerateQRCode(infoPago);
+
+            // Mostrar el código QR en la página
+            imgQRCode.ImageUrl = "data:image/png;base64," + Convert.ToBase64String(BitmapToBytes(qrCode));
+        }
+        private Bitmap GenerateQRCode(string data)
+        {
+            ZXing.BarcodeWriter barcodeWriter = new ZXing.BarcodeWriter();
+            barcodeWriter.Format = ZXing.BarcodeFormat.QR_CODE;
+
+            // Ajusta los parámetros según sea necesario
+            ZXing.Common.EncodingOptions encodingOptions = new ZXing.Common.EncodingOptions
+            {
+                Width = 300,
+                Height = 300,
+                Margin = 0
+            };
+
+            barcodeWriter.Options = encodingOptions;
+
+            return barcodeWriter.Write(data);
+        }
+
+        private byte[] BitmapToBytes(Bitmap bitmap)
+        {
+            using (MemoryStream stream = new MemoryStream())
+            {
+                bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                return stream.ToArray();
             }
         }
     }
