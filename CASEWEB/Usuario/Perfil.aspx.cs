@@ -38,7 +38,8 @@ namespace CASEWEB.Usuario
 
             cmd.Parameters.AddWithValue("@Action", "SELECT4PROFILE");
             cmd.Parameters.AddWithValue("@UserId", Session["Cod_Usu"]);
-            cmd.CommandType = CommandType.StoredProcedure; sda = new SqlDataAdapter(cmd);
+            cmd.CommandType = CommandType.StoredProcedure; 
+            sda = new SqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
             rUserProfile.DataSource = dt;

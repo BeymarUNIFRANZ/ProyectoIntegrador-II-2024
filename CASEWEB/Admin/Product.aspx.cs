@@ -115,6 +115,7 @@ namespace CASEWEB.Admin
             txtQunatity.Text = string.Empty;
             txtPrice.Text = string.Empty;
             ddlCategories.ClearSelection();
+            ddlCasetas.ClearSelection();
             cbIsActive.Checked = false;
             hdnId.Value = "0";
             btnAddOrUpdate.Text = "Añadir";

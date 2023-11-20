@@ -19,17 +19,12 @@ namespace CASEWEB.Usuario
         DataTable dt;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!IsPostBack)
             {
                 getCasetas();
             }
-            if (Request.QueryString["Cod_Cast"] != null)
-            {
-                string casetaId = Request.QueryString["Cod_Cast"].ToString();
-                System.Diagnostics.Debug.WriteLine($"CasetaId: {casetaId}");
-                MostrarInformacionCaseta(casetaId);
-                //getCategories();
-            }
+            
         }
 
         //private void getCategories()
@@ -54,7 +49,6 @@ namespace CASEWEB.Usuario
             sda = new SqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
-
             rCasetas.DataSource = dt;
             rCasetas.DataBind();
         }
@@ -69,6 +63,8 @@ namespace CASEWEB.Usuario
             sda.Fill(dt);
             rCasetas.DataSource = dt;
             rCasetas.DataBind();
+            
+            
         }
 
         protected void rCasetas_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -76,16 +72,25 @@ namespace CASEWEB.Usuario
 
             try
             {
+                if (Request.QueryString["Cod_Cast"] != null)
+                {
+                    string casetaId = Request.QueryString["Cod_Cast"].ToString(); // Cambiado a "Cod_Cast"
+                    System.Diagnostics.Debug.WriteLine($"CasetaId: {casetaId}");
+                    MostrarInformacionCaseta(casetaId);
+                }
                 if (e.CommandName == "MostrarInformacionCaseta")
                 {
                     string codCaseta = e.CommandArgument.ToString();
                     Response.Redirect($"PerfilCasero.aspx?casetaId={codCaseta}");
+                    return;
                 }
             }
             catch (Exception ex)
             {
                 // Agrega una impresión de depuración o registra el error en el registro de eventos.
                 System.Diagnostics.Debug.WriteLine($"Error en rCasetas_ItemCommand: {ex.Message}");
+                lblMsg.Text = "Error al procesar la solicitud.";
+                lblMsg.Visible = true;
             }
         }
         protected void rProduct_ItemDataBound(object sender, RepeaterItemEventArgs e)
