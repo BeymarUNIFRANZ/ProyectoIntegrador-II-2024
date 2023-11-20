@@ -161,7 +161,7 @@
                                                     <label>Casetas</label>
                                                     <div>
                                                         <asp:DropDownList ID="ddlCasetas" runat="server" CssClass="form-control"
-                                                            DataSourceID="SqlDataSource1" DataTextField="Nombre_Cat" DataValueField="Cod_Cat"
+                                                            DataSourceID="SqlDataSource2" DataTextField="Nombre_Cast" DataValueField="Cod_Cast"
                                                             AppendDataBoundItems="true">
                                                             <asp:ListItem Value="0">Seleccionar Caseta</asp:ListItem>
                                                         </asp:DropDownList>
@@ -169,7 +169,7 @@
                                                             ErrorMessage="Casetas es Necesaria" ForeColor="Red" Display="Dynamic"
                                                             SetFocusOnError="true" ControlToValidate="ddlCasetas" InitialValue="0">
                                                         </asp:RequiredFieldValidator>
-                                                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="SELECT [Cod_Cat],[Nombre_Cat] FROM [CATEGORIA]"></asp:SqlDataSource>
+                                                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="SELECT [Cod_Cast],[Nombre_Cast] FROM [CASETAS]"></asp:SqlDataSource>
                                                     </div>
                                                 </div>
 
@@ -263,6 +263,7 @@
                                                                         <th>Precio(Bs)</th>
                                                                         <th>Cantidad</th>
                                                                         <th>Categoria</th>
+                                                                        <th>Caseta</th>
                                                                         <th>Activo</th>
                                                                         <th>Descripcion</th>
                                                                         <th>Fecha Creada</th>
@@ -288,6 +289,8 @@
                                                                 </td>
 
                                                                 <td><%# Eval("Nombre_Pro") %> </td>
+
+                                                               <td><%# Eval("Cod_Cast") %> </td>
 
                                                                 <td>
                                                                     <asp:Label ID="lblIsActive" runat="server" Text='<%# Eval("Activo_Pro") %>'>
