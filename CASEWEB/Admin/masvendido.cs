@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CASEWEB.Vendedor {
+namespace CASEWEB.Admin {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace CASEWEB.Vendedor {
         
         public override string FullResourceName {
             get {
-                return "CASEWEB.Vendedor.masvendido.rpt";
+                return "CASEWEB.Admin.masvendido.rpt";
             }
             set {
                 // Do nothing

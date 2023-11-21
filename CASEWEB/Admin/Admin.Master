@@ -34,7 +34,7 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/jquery.mCustomScrollbar.css">
-
+    <script type="text/javascript" src="../assets/js/jquery/jquery.min.js"></script>
     <!--Datatables start -->
     <link rel="stylesheet" type="text/css" href="../assets/datatables/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/datatables/css/responsive.bootstrap4.min.css">
@@ -60,6 +60,7 @@
 
 
     </script>
+
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -120,7 +121,7 @@
                                 <i class="ti-menu"></i>
                             </a>
                             <a href="Dashboard2.aspx">
-                          
+
                                 <img class="img-fluid" src="../assets/images/logoA.png" alt="LOGO" />
                             </a>
                             <a class="mobile-options">
@@ -466,7 +467,7 @@
 
                                 <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registros</div>
                                 <ul class="pcoded-item pcoded-left-item">
-                                    <li class="pcoded-hasmenu">
+                                    <li class="pcoded-hasmenu" >
                                         <a href="javascript:void(0)">
                                             <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
                                             <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Mercado</span>
@@ -474,12 +475,6 @@
                                         </a>
                                         <ul class="pcoded-submenu">
                                             <li>
-                                                <%--<a href="NivelPiso.aspx">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Niveles/Piso</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>--%>
-
 
                                             <li>
                                                 <a href="CasetasPBaja.aspx">
@@ -524,17 +519,58 @@
 
 
 
-                                <%-- <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registro Caseras</div>
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Lista de Reportes</div>
                                 <ul class="pcoded-item pcoded-left-item">
-                                    <li>
-                                        <a href="RegistroCasera.aspx">
-                                            <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Caseras</span>
+                                    <li class="pcoded-hasmenu">
+                                        <a href="#">
+                                            <span class="pcoded-micon"><i class="ti-layers"></i><b>M</b></span>
+                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Reportes</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
+                                        <ul class="pcoded-submenu">
+
+                                            <li>
+                                                <a href="ventacat.aspx">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Categoria</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
+                                                <!-- Contenido del submenú 2 -->
+
+                                                <li>
+                                                    <a href="masvendido.aspx">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Productos mas vendidos</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+
+                                                </li>
+                                                
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Pedidos</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+                                                    
+                                                </li>
+                                                
+
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Caseras</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+                                                    
+                                                </li>
+                                                
+                                            </li>
+                                        </ul>
+                                        
                                     </li>
 
-                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Asignacion Casetas</div>
+                                    <%--<div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Asignacion Casetas</div>
                                     <ul class="pcoded-item pcoded-left-item">
                                         <li>
                                             <a href="AsignacionCaseta.aspx">
@@ -552,10 +588,8 @@
                                                     <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Registros Mercado</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
-                                            </li>
-
-
-                                        </ul>--%>
+                                            </li>--%>
+                                </ul>
                             </div>
                         </nav>
                         <div class="pcoded-content">
@@ -575,7 +609,7 @@
                                             </li>
                                             <li class="breadcrumb-item"><a href="Dashboard2.aspx">Inicio</a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!"></a>
+                                            <li class="breadcrumb-item"><a href="#!"><%Response.Write(Session["breadCrum"]);%></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -596,7 +630,7 @@
     </form>
 
     <!-- Required Jquery -->
-    <script type="text/javascript" src="../assets/js/jquery/jquery.min.js"></script>
+    <%--<script type="text/javascript" src="../assets/js/jquery/jquery.min.js"></script>--%>
     <script type="text/javascript" src="../assets/js/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../assets/js/popper.js/popper.min.js"></script>
     <script type="text/javascript" src="../assets/js/bootstrap/js/bootstrap.min.js"></script>

@@ -22,7 +22,7 @@ namespace CASEWEB.Admin
         {
             if (!IsPostBack)
             {
-                Session["breadCrum"] = "Product";
+                Session["breadCrum"] = "Productos";
                 getProducts();
             }
             lblMsg.Visible = false;

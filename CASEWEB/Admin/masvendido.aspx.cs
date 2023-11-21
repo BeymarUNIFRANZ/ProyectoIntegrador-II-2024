@@ -1,10 +1,11 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Web;
 using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace CASEWEB.Vendedor
+namespace CASEWEB.Admin
 {
     public partial class masvendido1 : System.Web.UI.Page
     {

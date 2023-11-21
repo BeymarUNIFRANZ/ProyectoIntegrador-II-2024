@@ -1356,7 +1356,7 @@
     <Content Include="Usuario\SliderUserControl1.ascx" />
     <Content Include="Admin\Category.aspx" />
     <Content Include="Vendedor\Dashboard.aspx" />
-    <Content Include="Vendedor\masvendido.aspx" />
+    <Content Include="Admin\masvendido.aspx" />
     <Content Include="Vendedor\pedidos.aspx" />
     <Content Include="Vendedor\Product.aspx" />
     <Content Include="Vendedor\Usuarios.aspx" />
@@ -1419,6 +1419,12 @@
     </Compile>
     <Compile Include="Admin\RegistrosMercado.aspx.designer.cs">
       <DependentUpon>RegistrosMercado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ventacat.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ventacat.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Connetion.cs" />
     <Compile Include="Global.asax.cs">
@@ -1548,19 +1554,19 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Vendedor\masvendi.Designer.cs">
+    <Compile Include="Admin\masvendi.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>masvendi.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Vendedor\masvendido.aspx.cs">
+    <Compile Include="Admin\masvendido.aspx.cs">
       <DependentUpon>masvendido.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vendedor\masvendido.aspx.designer.cs">
+    <Compile Include="Admin\masvendido.aspx.designer.cs">
       <DependentUpon>masvendido.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vendedor\masvendido.cs">
+    <Compile Include="Admin\masvendido.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>masvendido.rpt</DependentUpon>
@@ -1613,12 +1619,6 @@
     <Compile Include="Admin\ventacat.aspx.designer.cs">
       <DependentUpon>ventacat.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ventacat.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ventacat.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icon\icofont\fonts\icofont.eot" />
@@ -1647,15 +1647,15 @@
     <Content Include="Admin\cate.xss">
       <DependentUpon>cate.xsd</DependentUpon>
     </Content>
-    <Content Include="Vendedor\masvendi.xsc">
+    <Content Include="Admin\masvendi.xsc">
       <DependentUpon>masvendi.xsd</DependentUpon>
     </Content>
-    <None Include="Vendedor\masvendi.xsd">
+    <None Include="Admin\masvendi.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>masvendi.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Vendedor\masvendi.xss">
+    <Content Include="Admin\masvendi.xss">
       <DependentUpon>masvendi.xsd</DependentUpon>
     </Content>
     <Content Include="Vendedor\pedidos.xsc">
@@ -1686,17 +1686,17 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Admin\ventacat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ventacat.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vendedor\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vendedor\masvendido.rpt">
+    <EmbeddedResource Include="Admin\masvendido.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>masvendido.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\ventacat.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ventacat.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

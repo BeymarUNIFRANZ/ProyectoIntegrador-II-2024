@@ -144,25 +144,27 @@
                                         <div class="tab-pane fade" id="connectedServices" role="tabpanel"
                                             aria-labelledby="connectedServices-tab">
                                             <h3>¡Mis Productos!</h3>
-
-                                            <div class="filters-content">
-                                                <div class="row grid">
-                                                    <itemtemplate>
-                                                        <div class="col-sm-6 col-lg-4 all <%# Regex.Replace(Eval("Nombre_Pro").ToString().ToLower(),@"\s+","") %>">
-                                                            <div class="box">
-                                                                <div>
-                                                                    <div class="img-box">
-                                                                        <img src="<%# Utils.GetImageUrl( Eval("ImagenUrl_Pro")) %>" alt="">
-                                                                    </div>
-                                                                    <div class="detail-box">
-                                                                        <h5><%# Eval("Nombre_Pro") %></h5>
-                                                                        <p>
-                                                                            <%# Eval("Descripcion_Pro") %>
-                                                                        </p>
-                                                                        <div class="options">
-                                                                            <h6>Bs<%# Eval("Precio_Pro") %></h6>
-                                                                            <asp:LinkButton runat="server" ID="lbAddToCart" CommandName="addToCart"
-                                                                                CommandArgument='<%# Eval("Cod_Pro") %>'>
+                                            <section class="food_section layout_padding">
+                                                <div class="container">
+                                                    <div class="filters-content">
+                                                        <div class="row grid">
+                                                            <asp:Repeater ID="rCaseraProducts" runat="server">
+                                                                <ItemTemplate>
+                                                                    <div class="col-sm-6 col-lg-4 all <%# Regex.Replace(Eval("Nombre_Pro").ToString().ToLower(),@"\s+","") %>">
+                                                                        <div class="box">
+                                                                            <div>
+                                                                                <div class="img-box">
+                                                                                    <img src="<%# Utils.GetImageUrl( Eval("ImagenUrl_Pro")) %>" alt="">
+                                                                                </div>
+                                                                                <div class="detail-box">
+                                                                                    <h5><%# Eval("Nombre_Pro") %></h5>
+                                                                                    <p>
+                                                                                        <%# Eval("Descripcion_Pro") %>
+                                                                                    </p>
+                                                                                    <div class="options">
+                                                                                        <h6>Bs<%# Eval("Precio_Pro") %></h6>
+                                                                                        <asp:LinkButton runat="server" ID="lbAddToCart" CommandName="addToCart"
+                                                                                            CommandArgument='<%# Eval("Cod_Pro") %>'>
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background: new 0 0 456 456;" xml:space="preserve">
                                 <g>
                                     <g>
@@ -215,15 +217,18 @@
                                 <g>
                                 </g>
                             </svg>
-                                                                            </asp:LinkButton>
+                                                                                        </asp:LinkButton>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                            </div>
+                                                                </ItemTemplate>
+                                                            </asp:Repeater>
                                                         </div>
-                                                    </itemtemplate>
+                                                    </div>
                                                 </div>
-                                                </div>
+                                                </section>
                                             </div>
                                         <%-- Historial de ordenes usuario--%>
                                     </div>

@@ -2,7 +2,5 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-
-      <h1>Bienvenido Caserita(o)...!!!</h1>
-    <img src="../Images/fondoVendedor.png" />
+    <img src="../PlantillaArchivos/images/FONDOCASERA.png" style="display: block; margin: 0 auto; max-width: 100%; height: auto;" />
 </asp:Content>

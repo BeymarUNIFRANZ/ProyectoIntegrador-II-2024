@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace CASEWEB.Vendedor {
+namespace CASEWEB.Admin {
     
     
     /// <summary>
@@ -724,7 +724,7 @@ namespace CASEWEB.Vendedor {
         }
     }
 }
-namespace CASEWEB.Vendedor.masvendiTableAdapters {
+namespace CASEWEB.Admin.masvendiTableAdapters {
     
     
     /// <summary>

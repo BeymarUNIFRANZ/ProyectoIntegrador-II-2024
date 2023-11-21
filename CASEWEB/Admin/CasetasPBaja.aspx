@@ -6,6 +6,9 @@
     <link href="../PlantillaArchivos/css/style.css" rel="stylesheet" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
 
+   
+
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -86,9 +89,7 @@
                                                 <div>
                                                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"
                                                         placeholder="Ingresar Nombre de la Caseta"></asp:TextBox>
-                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
-                                                        ErrorMessage="Requiere Nombre" ForeColor="Red" Display="Dynamic"
-                                                        SetFocusOnError="true" ControlToValidate="txtNombre"></asp:RequiredFieldValidator>
+                                                  
                                                     <asp:HiddenField ID="HiddenField2" runat="server" Value="0" />
                                                 </div>
                                             </div>
@@ -102,10 +103,7 @@
                                                         AppendDataBoundItems="true">
                                                         <asp:ListItem Value="0">Seleccionar Categoria</asp:ListItem>
                                                     </asp:DropDownList>
-                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server"
-                                                        ErrorMessage="Categoria es Necesaria" ForeColor="Red" Display="Dynamic"
-                                                        SetFocusOnError="true" ControlToValidate="ddlCategories" InitialValue="0">
-                                                    </asp:RequiredFieldValidator>
+                                                   
                                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="SELECT [Cod_Cat], [Nombre_Cat] FROM [CATEGORIAS]"></asp:SqlDataSource>
                                                 </div>
 
@@ -120,17 +118,14 @@
                                                         AppendDataBoundItems="true">
                                                         <asp:ListItem Value="0">Seleccionar Casera</asp:ListItem>
                                                     </asp:DropDownList>
-                                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-                                                        ErrorMessage="Casera es Necesaria" ForeColor="Red" Display="Dynamic"
-                                                        SetFocusOnError="true" ControlToValidate="ddlCaseras" InitialValue="0">
-                                                    </asp:RequiredFieldValidator>
+                                                    
                                                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="SELECT [Cod_Cas], [Nombre_Cas] FROM [CASERA]"></asp:SqlDataSource>
                                                 </div>
 
                                             </div>
 
                                             <div class="form-group">
-                                                <label>Imagen de la Categoria</label>
+                                                <label>Imagen de la Caseta</label>
                                                 <div>
                                                     <asp:FileUpload ID="fuCasetaImage" runat="server" CssClass="form-control"
                                                         onchange="ImagePreview(this);" />
@@ -156,6 +151,8 @@
                                             <h4 class="sub-title">Lista de Casetas</h4>
                                             <div class="card-block table-border-style">
                                                 <div class="table-responsive">
+
+
                                                     <asp:Repeater ID="rCasetas" runat="server" OnItemCommand="rCasetas_ItemCommand">
 
                                                         <HeaderTemplate>

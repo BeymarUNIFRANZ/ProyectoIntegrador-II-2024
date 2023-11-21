@@ -34,6 +34,7 @@ namespace CASEWEB.Usuario
                 {
 
                     MostrarInformacionCaseta(casetaId);
+                    ProductosPerfilCasero(casetaId);
                 }
                 else
                 {
@@ -62,20 +63,23 @@ namespace CASEWEB.Usuario
                 Session["CreadoFecha_Cas"] = dt.Rows[0]["CreadoFecha_Cas"].ToString();
             }
         }
-        void getUserDetails()
+        void ProductosPerfilCasero(string casetaId)
         {
             con = new SqlConnection(Connetion.GetConnectionString());
-            cmd = new SqlCommand("Casera_Crud", con);
-
-            cmd.Parameters.AddWithValue("@Action", "SELECT4PROFILE");
-            cmd.Parameters.AddWithValue("@CaseraId", Session["Cod_Cas"]);
-            cmd.CommandType = CommandType.StoredProcedure; sda = new SqlDataAdapter(cmd);
+            cmd = new SqlCommand("Casetas_Crud", con);
+            cmd.Parameters.AddWithValue("@Action", "GETProductosID");
+            cmd.Parameters.AddWithValue("@CasetasId", casetaId);
+            cmd.CommandType = CommandType.StoredProcedure;
+            sda = new SqlDataAdapter(cmd);
             dt = new DataTable();
             sda.Fill(dt);
-            rCaseraProfile.DataSource = dt;
-            rCaseraProfile.DataBind();
-            
 
+            // Almacena la información de los productos en un DataTable
+            if (dt.Rows.Count > 0)
+            {
+                rCaseraProducts.DataSource = dt;
+                rCaseraProducts.DataBind();
+            }
         }
     }
 }

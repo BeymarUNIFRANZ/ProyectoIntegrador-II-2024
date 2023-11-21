@@ -21,7 +21,7 @@ namespace CASEWEB.Admin
         {
             if (!IsPostBack)
             {
-                Session["breadCrum"] = "Category";
+                Session["breadCrum"] = "Categoria";
                 getCategories();
             }
             lblMsg.Visible = false;

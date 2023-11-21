@@ -30,7 +30,7 @@ namespace CASEWEB.Usuario
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text.Trim() == "Admin" && txtClave.Text.Trim() == "123")
+            if (txtUsername.Text.Trim() == "Admin" && txtClave.Text.Trim() == "131313")
             {
                 Session["admin"] = txtUsername.Text.Trim();
                 Response.Redirect("../Admin/Dashboard2.aspx");

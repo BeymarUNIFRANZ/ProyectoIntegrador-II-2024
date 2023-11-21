@@ -59,10 +59,7 @@
                                                 <div class="form-group">
                                                     <label>Nombre de Usuario</label>
                                                     <div>
-                                                        <asp:RequiredFieldValidator ID="rfvUsername" runat="server"
-                                                            ControlToValidate="txtUsername" ErrorMessage="Requiere Nombre de Usuario"
-                                                            ForeColor="Red" Display="Dynamic" SetFocusOnError="true">
-                                                        </asp:RequiredFieldValidator>
+                                                        
 
                                                         <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"
                                                             placeholder="Ingrese Nombre de Usuario" ToolTip="Username">
@@ -74,9 +71,7 @@
                                                 <div class="form-group">
                                                     <label>Contraseña</label>
                                                     <div>
-                                                        <asp:RequiredFieldValidator ID="rfvClave" runat="server"
-                                                            ErrorMessage="Requiere Contraseña" ControlToValidate="txtClave" ForeColor="Red"
-                                                            Display="Dynamic" SetFocusOnError="true" Font-Size="Small"></asp:RequiredFieldValidator>
+                                                        
                                                         <asp:TextBox ID="txtClave" runat="server" CssClass="form-control"
                                                             placeholder="Ingrese su Contraseña" TextMode="Password"></asp:TextBox>
                                                     </div>
@@ -104,10 +99,7 @@
                                                     <div>
                                                         <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"
                                                             placeholder="Ingrese Direccion de Domicilio" TextMode="MultiLine"></asp:TextBox>
-                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
-                                                            ErrorMessage="Requiere Direccion" ForeColor="Red" Display="Dynamic"
-                                                            SetFocusOnError="true" ControlToValidate="txtDireccion">
-                                                        </asp:RequiredFieldValidator>
+                                                       
                                                     </div>
                                                 </div>
 
@@ -120,7 +112,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label>NIT de la Casera(o)</label>
+                                                    <label>NIT de la Casera(o) (Opcional)</label>
                                                     <div>
                                                         <asp:TextBox ID="txtNitCas" runat="server" CssClass="form-control"
                                                             placeholder="Ingrese NIT de la Casera(o)" oninput="return validateNumber(this);"></asp:TextBox>

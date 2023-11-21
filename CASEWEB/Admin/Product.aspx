@@ -198,7 +198,7 @@
 
 
 
-                                                    <asp:LinkButton ID="LinkButton1" Text="Edit" runat="server" CssClass="badge badge-success"
+                                                   <%-- <asp:LinkButton ID="LinkButton1" Text="Edit" runat="server" CssClass="badge badge-success"
                                                         CommandArgument='<%# Eval("Cod_Pro") %>' CommandName="edit" OnClientClick="openPdfPage2(); return false;">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" fill="currentColor" class="bi bi-hand-index" viewBox="0 0 16 16">
                                                             <h6>Mas Vendidos</h6>
@@ -244,7 +244,7 @@
                                                                 <div class="modal-body"></div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div>--%>
 
 
                                                     <br />
@@ -267,7 +267,7 @@
                                                                         <th>Activo</th>
                                                                         <th>Descripcion</th>
                                                                         <th>Fecha Creada</th>
-                                                                        <th class="datatable-nosort">Action</th>
+                                                                        <th class="datatable-nosort">Acciones</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
