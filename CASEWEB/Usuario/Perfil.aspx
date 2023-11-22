@@ -122,7 +122,7 @@
                                                             <%# Eval("Correo_Usu") %>
                                                         </div>
                                                     </div>
-         
+
                                                     <hr />
                                                     <div class="row">
                                                         <div class="col-sm-3 col-md-2 col-5">
@@ -131,7 +131,7 @@
                                                         <div class="col-md-8 col-6">
                                                             <%# Eval("Direccion_Usu") %>
                                                         </div>
-                                                        </div>
+                                                    </div>
                                                     <hr />
 
                                                 </ItemTemplate>
@@ -139,10 +139,77 @@
                                         </div>
                                         <%-- Informacion Basica de usuario--%>
 
-                                         <%-- Historial de ordenes usuario--%>
-                                        <div class="tab-pane fade" id="connectedServices" role="tabpanel" 
+                                        <%-- Historial de ordenes usuario--%>
+                                        <div class="tab-pane fade" id="connectedServices" role="tabpanel"
                                             aria-labelledby="connectedServices-tab">
-                                            <h3> Historial de Pedidos</h3>
+
+                                            <asp:Repeater ID="rPurchaseHistory" runat="server" OnItemDataBound="rPurchaseHistory_ItemDataBound">
+                                                <ItemTemplate>
+                                                    <div class="container">
+                                                        <div class="row pt-1 pb-1" style="background-color: wheat">
+                                                            <div class="col-4">
+                                                                <span class="badge badge-pill badge-dark text-white">
+                                                                    <%# Eval("NumOrden_Ord") %>
+                                                                </span>
+                                                               Modo de Pago: <%# Eval("ModoPago_Pag").ToString() == "cod" ? "Pedido por Delivery" : Eval("ModoPago_Pag").ToString().ToUpper() %>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <%# string.IsNullOrEmpty( Eval("NumTarjeta_Pag").ToString()) ? "" : "Numero de Trajeta: " + Eval("NumTarjeta_Pag") %>
+                                                            </div>
+                                                            <div class="col-2" style="text-align: end">
+                                                                <a href="Recibo.aspx?id=<%# Eval("Cod_Pag") %>" class="btn btn-info btn-sm">
+                                                                    <i class="fa fa-download mr-2"></i>Comprobante</a>
+                                                            </div>
+                                                        </div>
+                                                        <asp:HiddenField ID="hdnPaymentId" runat="server" Value='<%# Eval("Cod_Pag") %>' />
+
+                                                        <asp:Repeater ID="rOrders" runat="server">
+                                                            <HeaderTemplate>
+                                                                <table class="table data-table-export table-responsive-sm table-bordered table-hover">
+                                                                    <thead class="bg-dark text-white">
+                                                                        <tr>
+                                                                            <th>Nombre de Productos</th>
+                                                                            <th>Precio</th>
+                                                                            <th>Cantidad</th>
+                                                                            <th>Precio Total</th>
+                                                                            <th>Numero de Orden</th>
+                                                                            <th>Estado</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                            </HeaderTemplate>
+                                                            <ItemTemplate>
+                                                                <tr>
+                                                                    <td>
+                                                                        <asp:Label ID="lblName" runat="server" Text='<%# Eval("Nombre_Pro") %>'></asp:Label>
+                                                                    </td>
+                                                                    <td>
+                                                                        <asp:Label ID="lblPrice" runat="server" Text='<%#string.IsNullOrEmpty( Eval("Precio_Pro").ToString()) ? "" : "Bs" + Eval("Precio_Pro") %>'></asp:Label>
+                                                                    </td>
+                                                                    <td>
+                                                                        <asp:Label ID="lblQuantity" runat="server" Text='<%# Eval("Cantidad_Ord") %>'></asp:Label>
+                                                                    </td>
+                                                                    <td>Bs<asp:Label ID="lblTotalPrice" runat="server" Text='<%# Eval("TotalPrice") %>'></asp:Label>
+                                                                    </td>
+                                                                    <td>
+                                                                        <asp:Label ID="lblOrderNo" runat="server" Text='<%# Eval("NumOrden_Ord") %>'></asp:Label>
+                                                                    </td>
+                                                                    <td>
+                                                                        <asp:Label ID="lblStatus" runat="server" Text='<%# Eval("Estado_Ord") %>'
+                                                                            CssClass='<%# Eval("Estado_Ord").ToString() == "Entregado" ? "badge badge-success" : "badge badge-warning" %>'></asp:Label>
+                                                                        <%-- en la base de datos poner arreglar el pending con delivered--%>
+                                                                   </td>
+                                                                </tr>
+                                                            </ItemTemplate>
+                                                            <FooterTemplate>
+                                                                </tbody>
+                                                                    </table>
+                                                            </FooterTemplate>
+                                                        </asp:Repeater>
+
+                                                    </div>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
 
                                         </div>
                                         <%-- Historial de ordenes usuario--%>
@@ -156,7 +223,7 @@
                 </div>
 
             </div>
-            </div>
+        </div>
     </section>
 
 </asp:Content>

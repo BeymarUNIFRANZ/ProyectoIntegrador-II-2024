@@ -87,6 +87,9 @@
                                     <div class="tab-content ml-1" id="myTabContent">
                                         <%-- Informacion Basica de usuario--%>
                                         <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                            <div class="align-self-end">
+                                                
+                                            </div>
                                             <asp:Repeater ID="rCaseraProfile" runat="server">
                                                 <ItemTemplate>
 
@@ -148,6 +151,7 @@
                                                 <div class="container">
                                                     <div class="filters-content">
                                                         <div class="row grid">
+                                                            <asp:Label ID="lblMsg" runat="server" Visible="false"></asp:Label>
                                                             <asp:Repeater ID="rCaseraProducts" runat="server">
                                                                 <ItemTemplate>
                                                                     <div class="col-sm-6 col-lg-4 all <%# Regex.Replace(Eval("Nombre_Pro").ToString().ToLower(),@"\s+","") %>">
@@ -228,8 +232,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                </section>
-                                            </div>
+                                            </section>
+                                        </div>
                                         <%-- Historial de ordenes usuario--%>
                                     </div>
                                 </div>

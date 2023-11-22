@@ -3,9 +3,6 @@
 <%@ Import Namespace="CASEWEB" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="../PlantillaArchivos/js/custom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -24,10 +21,11 @@
                 <li class="active" data-filter="*" data-id="0">Todo</li>
                 <asp:Repeater ID="rCategory" runat="server">
                     <ItemTemplate>
-                        <li data-filter="<%# Regex.Replace(Eval("Nombre_Cat").ToString().ToLower(),@"\s+","") %>"
+                        <li data-filter=".<%# Regex.Replace(Eval("Nombre_Cat").ToString().ToLower(),@"\s+","") %>"
                             data-id="<%# Eval("Cod_Cat") %>"><%# Eval("Nombre_Cat") %></li>
                     </ItemTemplate>
                 </asp:Repeater>
+
                 <%--<asp:HyperLink ID="lnkCaseta" runat="server" NavigateUrl="MapeoCasetas.aspx" Text="Niveles de Piso" CssClass="btn btn-primary" />--%>
             </ul>
 

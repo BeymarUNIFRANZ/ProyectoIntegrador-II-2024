@@ -81,5 +81,73 @@ namespace CASEWEB.Usuario
                 rCaseraProducts.DataBind();
             }
         }
+        protected void rProducts_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+            if (Session["Cod_Usu"] != null)
+            {
+                bool isCartItemUpdate = false;
+                int i = isItemExistInCart(Convert.ToInt32(e.CommandArgument));
+                if (i == 0)
+                {
+                    //Adding new item in cart
+                    con = new SqlConnection(Connetion.GetConnectionString());
+                    cmd = new SqlCommand("Carro_Crud", con);
+                    cmd.Parameters.AddWithValue("@Action", "INSERT");
+                    cmd.Parameters.AddWithValue("@ProductId", e.CommandArgument);
+                    cmd.Parameters.AddWithValue("@Quantity", 1);
+                    cmd.Parameters.AddWithValue("@UserId", Session["Cod_Usu"]);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write("<script>alert('Error - " + ex.Message + " ');<script>");
+                    }
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+                else
+                {
+                    //adding existing item into cart
+                    Utils utils = new Utils();
+                    isCartItemUpdate = utils.updateCartQuantity(i + 1, Convert.ToInt32(e.CommandArgument),
+                        Convert.ToInt32(Session["Cod_Usu"]));
+                }
+                lblMsg.Visible = true;
+                lblMsg.Text = "¡El Prodcuto se agrego a tu Carrito!";
+                lblMsg.CssClass = "alert alert-success";
+                Response.AddHeader("REFRESH", "1;");
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+        int isItemExistInCart(int productId)
+        {
+            con = new SqlConnection(Connetion.GetConnectionString());
+            cmd = new SqlCommand("Carro_Crud", con);
+            cmd.Parameters.AddWithValue("@Action", "GETBYID");
+            cmd.Parameters.AddWithValue("@ProductId", productId);
+            cmd.Parameters.AddWithValue("@UserId", Session["Cod_Usu"]);
+            cmd.CommandType = CommandType.StoredProcedure;
+            sda = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            sda.Fill(dt);
+            int quantity = 0;
+            if (dt.Rows.Count > 0)
+            {
+                quantity = Convert.ToInt32(dt.Rows[0]["Cantidad_Car"]);
+            }
+            return quantity;
+        }
+
     }
 }
