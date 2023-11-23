@@ -209,6 +209,8 @@ a:focus {
 
 .custom_nav-container {
   padding: 0;
+    top: -35px;
+    left: 4px;
 }
 
 .custom_nav-container .navbar-nav {

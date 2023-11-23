@@ -118,7 +118,7 @@ namespace CASEWEB.Usuario
                     DeleteCartItem(productId, transaction, con);
                     //delete cart item end
 
-                    dt.Rows.Add(Utils.GetUniqueId(), productId, quantity, (int)Session["Cod_Usu"], "Pendig",
+                    dt.Rows.Add(Utils.GetUniqueId(), productId, quantity, (int)Session["Cod_Usu"], "Pendiente",
                         paymentId, Convert.ToDateTime(DateTime.Now));
                 }
                 dr.Close();
@@ -215,17 +215,14 @@ namespace CASEWEB.Usuario
         }
         private void GenerarYMostrarCodigoQR()
         {
-            // Datos de pago (simulados)
-            string nombreProducto = "Monto a Cobrar";
-            Random random = new Random();
-            decimal monto = Math.Round((decimal)random.NextDouble() * 100, 2);  // Número aleatorio entre 0 y 100, redondeado a 2 decimales
-            string identificadorPago = Guid.NewGuid().ToString();
+            // Obtener el monto de la sesión
+            decimal monto = (decimal)Session["TotalPrecio"];
 
             // Asignar el valor de monto al Literal con el símbolo de la moneda boliviana
             litMonto.Text = $"Bs {monto:N0}";
 
-            // Crear información de pago
-            string infoPago = $"Nombre: {nombreProducto}, Monto: Bs {monto:N0}, ID: {identificadorPago}";
+            // Crear información de pago con el monto
+            string infoPago = $"Nombre: Monto a Cobrar, Monto: Bs {monto:N0}, ID: {Guid.NewGuid()}";
 
             // Generar código QR
             Bitmap qrCode = GenerateQRCode(infoPago);
@@ -233,6 +230,8 @@ namespace CASEWEB.Usuario
             // Mostrar el código QR en la página
             imgQRCode.ImageUrl = "data:image/png;base64," + Convert.ToBase64String(BitmapToBytes(qrCode));
         }
+
+
         private Bitmap GenerateQRCode(string data)
         {
             ZXing.BarcodeWriter barcodeWriter = new ZXing.BarcodeWriter();

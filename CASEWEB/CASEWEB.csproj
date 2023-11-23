@@ -51,6 +51,10 @@
       <HintPath>.\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.SqlClient">
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\Microsoft.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -83,7 +87,9 @@
     <Content Include="Admin\AsignacionCaseta.aspx" />
     <Content Include="Admin\CasetasPBaja.aspx" />
     <Content Include="Admin\Dashboard2.aspx" />
+    <Content Include="Admin\listpedi.aspx" />
     <Content Include="Admin\NivelPiso.aspx" />
+    <Content Include="Admin\pediclien.aspx" />
     <Content Include="Admin\Product.aspx" />
     <Content Include="Admin\RegistroCasera.aspx" />
     <Content Include="Admin\RegistrosMercado.aspx" />
@@ -1392,12 +1398,26 @@
     <Compile Include="Admin\Dashboard2.aspx.designer.cs">
       <DependentUpon>Dashboard2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\listpedi.aspx.cs">
+      <DependentUpon>listpedi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\listpedi.aspx.designer.cs">
+      <DependentUpon>listpedi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\NivelPiso.aspx.cs">
       <DependentUpon>NivelPiso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\NivelPiso.aspx.designer.cs">
       <DependentUpon>NivelPiso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\pediclien.aspx.cs">
+      <DependentUpon>pediclien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\pediclien.aspx.designer.cs">
+      <DependentUpon>pediclien.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
@@ -1431,6 +1451,26 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Admin\listapedi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listapedi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\pediclien.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pediclien.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\productosmasvendidos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>productosmasvendidos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ventaacat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ventaacat.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\Acerca.aspx.cs">
       <DependentUpon>Acerca.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1660,6 +1700,50 @@
     </Content>
     <Content Include="Vendedor\pedidos.xsc">
       <DependentUpon>pedidos.xsd</DependentUpon>
+    </Content>
+    <Content Include="Admin\listapedi.xsc">
+      <DependentUpon>listapedi.xsd</DependentUpon>
+    </Content>
+    <None Include="Admin\listapedi.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>listapedi.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Admin\listapedi.xss">
+      <DependentUpon>listapedi.xsd</DependentUpon>
+    </Content>
+    <Content Include="Admin\pediclien.xsc">
+      <DependentUpon>pediclien.xsd</DependentUpon>
+    </Content>
+    <None Include="Admin\pediclien.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pediclien.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Admin\pediclien.xss">
+      <DependentUpon>pediclien.xsd</DependentUpon>
+    </Content>
+    <Content Include="Reportes\productosmasvendidos.xsc">
+      <DependentUpon>productosmasvendidos.xsd</DependentUpon>
+    </Content>
+    <None Include="Reportes\productosmasvendidos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>productosmasvendidos.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Reportes\productosmasvendidos.xss">
+      <DependentUpon>productosmasvendidos.xsd</DependentUpon>
+    </Content>
+    <Content Include="Reportes\ventaacat.xsc">
+      <DependentUpon>ventaacat.xsd</DependentUpon>
+    </Content>
+    <None Include="Reportes\ventaacat.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ventaacat.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Reportes\ventaacat.xss">
+      <DependentUpon>ventaacat.xsd</DependentUpon>
     </Content>
     <None Include="Vendedor\pedidos.xsd">
       <SubType>Designer</SubType>

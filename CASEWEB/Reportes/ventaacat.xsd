@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ventaacat" targetNamespace="http://tempuri.org/ventaacat.xsd" xmlns:mstns="http://tempuri.org/ventaacat.xsd" xmlns="http://tempuri.org/ventaacat.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="OficialConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="OficialConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.OficialConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ventacatTableAdapter" GeneratorDataComponentClassName="ventacatTableAdapter" Name="ventacat" UserDataComponentName="ventacatTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="OficialConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT CATEGORIAS.Nombre_Cat, PRODUCTOS.Nombre_Pro, PRODUCTOS.Precio_Pro, PRODUCTOS.Cantidad_Pro
+FROM     PRODUCTOS INNER JOIN
+                  CATEGORIAS ON PRODUCTOS.Cod_Cat = CATEGORIAS.Cod_Cat</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nombre_Cat" DataSetColumn="Nombre_Cat" />
+              <Mapping SourceColumn="Nombre_Pro" DataSetColumn="Nombre_Pro" />
+              <Mapping SourceColumn="Precio_Pro" DataSetColumn="Precio_Pro" />
+              <Mapping SourceColumn="Cantidad_Pro" DataSetColumn="Cantidad_Pro" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ventaacat" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="ventaacat" msprop:Generator_DataSetName="ventaacat">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ventacat" msprop:Generator_RowEvHandlerName="ventacatRowChangeEventHandler" msprop:Generator_RowDeletedName="ventacatRowDeleted" msprop:Generator_RowDeletingName="ventacatRowDeleting" msprop:Generator_RowEvArgName="ventacatRowChangeEvent" msprop:Generator_TablePropName="ventacat" msprop:Generator_RowChangedName="ventacatRowChanged" msprop:Generator_RowChangingName="ventacatRowChanging" msprop:Generator_TableClassName="ventacatDataTable" msprop:Generator_RowClassName="ventacatRow" msprop:Generator_TableVarName="tableventacat" msprop:Generator_UserTableName="ventacat">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nombre_Cat" msprop:Generator_ColumnPropNameInRow="Nombre_Cat" msprop:Generator_ColumnPropNameInTable="Nombre_CatColumn" msprop:Generator_ColumnVarNameInTable="columnNombre_Cat" msprop:Generator_UserColumnName="Nombre_Cat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nombre_Pro" msprop:Generator_ColumnPropNameInRow="Nombre_Pro" msprop:Generator_ColumnPropNameInTable="Nombre_ProColumn" msprop:Generator_ColumnVarNameInTable="columnNombre_Pro" msprop:Generator_UserColumnName="Nombre_Pro" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Precio_Pro" msprop:Generator_ColumnPropNameInRow="Precio_Pro" msprop:Generator_ColumnPropNameInTable="Precio_ProColumn" msprop:Generator_ColumnVarNameInTable="columnPrecio_Pro" msprop:Generator_UserColumnName="Precio_Pro" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cantidad_Pro" msprop:Generator_ColumnPropNameInRow="Cantidad_Pro" msprop:Generator_ColumnPropNameInTable="Cantidad_ProColumn" msprop:Generator_ColumnVarNameInTable="columnCantidad_Pro" msprop:Generator_UserColumnName="Cantidad_Pro" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

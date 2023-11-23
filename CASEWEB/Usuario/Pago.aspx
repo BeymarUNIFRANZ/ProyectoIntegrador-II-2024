@@ -248,7 +248,7 @@
                                                         
                                                         <div style="margin-top: 20px;">
                                                             <!-- Contenido de la página -->
-                                                            <asp:Button ID="btnGenerarCodigo" runat="server" Text="Generar Nuevo Código QR" OnClick="btnGenerarCodigo_Click" CssClass="boton" />
+                                                           <%-- <asp:Button ID="btnGenerarCodigo" runat="server" Text="Generar Nuevo Código QR" OnClick="btnGenerarCodigo_Click" CssClass="boton" />--%>
                                                             <br />
                                                             
                                                         </div>

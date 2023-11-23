@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="CASEWEB.Admin.Admin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Vendedor.master.cs" Inherits="CASEWEB.Reportes.Vendedor" %>
 
 <!DOCTYPE html>
 
@@ -15,7 +15,6 @@
       <![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="CodedThemes">
@@ -26,7 +25,7 @@
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <!-- Required Fremwork -->
-    <link rel="stylesheet" href="../assets/css/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap/css/bootstrap.min.css">
     <!-- themify-icons line icon -->
     <link rel="stylesheet" type="text/css" href="../assets/icon/themify-icons/themify-icons.css">
     <!-- ico font -->
@@ -34,7 +33,7 @@
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/jquery.mCustomScrollbar.css">
-    <script type="text/javascript" src="../assets/js/jquery/jquery.min.js"></script>
+
     <!--Datatables start -->
     <link rel="stylesheet" type="text/css" href="../assets/datatables/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/datatables/css/responsive.bootstrap4.min.css">
@@ -60,7 +59,6 @@
 
 
     </script>
-
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -120,9 +118,9 @@
                             <a class="mobile-menu" id="mobile-collapse" href="#!">
                                 <i class="ti-menu"></i>
                             </a>
-                            <a href="Dashboard2.aspx">
+                            <a href="index.html">
 
-                                <img class="img-fluid" src="../assets/images/logoA.png" alt="LOGO" />
+                                <img class="img-fluid" src="../assets/images/Logo-0about-img.png" alt="LOGO" />
                             </a>
                             <a class="mobile-options">
                                 <i class="ti-more"></i>
@@ -143,91 +141,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <!-- Notificaciones -->
-                            <ul class="nav-right">
-                                <%--<li class="header-notification">
-                                <a href="#!">
-                                    <i class="ti-bell"></i>
-                                    <span class="badge bg-c-pink"></span>
-                                </a>
-                                <ul class="show-notification">
-                                    <li>
-                                        <h6>Notifications</h6>
-                                        <label class="label label-danger">New</label>
-                                    </li>
-                                    <li>
-                                        <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="../assets/images/avatar-4.jpg" alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">John Doe</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="../assets/images/avatar-3.jpg" alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">Joseph William</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="../assets/images/avatar-4.jpg" alt="Generic placeholder image">
-                                            <div class="media-body">
-                                                <h5 class="notification-user">Sara Soudein</h5>
-                                                <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                                <span class="notification-time">30 minutes ago</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>--%>
-                                <!-- Notificaciones-Menu -->
-
-                                <li class="user-profile header-notification">
-                                    <a href="#!">
-                                        <img src="../assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                        <span>Admin</span>
-                                        <i class="ti-angle-down"></i>
-                                    </a>
-                                    <ul class="show-notification profile-notification">
-                                        <%--      <li>
-                                        <a href="#!">
-                                            <i class="ti-settings"></i> Settings
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-user"></i> Profile
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-email"></i> My Messages
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="ti-lock"></i> Lock Screen
-                                        </a>
-                                    </li>--%>
-
-                                        <li>
-                                            <a href="../Usuario/Default.aspx">
-                                                <i class="ti-layout-sidebar-left"></i>Cerrar Sesion
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <!-- Notificaciones-Menu -->
-                            </ul>
-                            <!-- Notificaciones -->
-
+   
                         </div>
                         <!-- Barra de Notificaciones y opciones de perfil -->
 
@@ -241,7 +155,7 @@
                         <nav class="pcoded-navbar">
                             <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                             <div class="pcoded-inner-navbar main-menu" id="navbarSupportedContent">
-                                <%-- <div class="">
+                              <%-- <div class="">
                                 <div class="main-menu-header">
                                     <img class="img-40 img-radius" src="../assets/images/avatar-4.jpg" alt="User-Profile-Image">
                                     <div class="user-details">
@@ -267,16 +181,20 @@
                                     <span class="search-icon"><i class="ti-search" aria-hidden="true"></i></span>
                                 </div>
                             </div>--%>
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Dashboard</div>
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Layout</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li class="active">
-                                        <a href="Dashboard2.aspx">
+                                        <a href="Dashboard.aspx">
                                             <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
-
+                                    <a href="Product.aspx">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i><b></b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Product </span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
                                     <%--<li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
@@ -358,9 +276,7 @@
                                     </ul>
                                 </li>--%>
                                 </ul>
-                                <%--<div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">
-                                    Categoria Crud
-                                </div>
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Categoria Crud</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
                                         <a href="Category.aspx">
@@ -369,18 +285,25 @@
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
-                                    </ul>--%>
-                                <%--<li>
+                                    <%--<li>
                                     <a href="bs-basic-table.html">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Basic Table</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>--%>
+                                </ul>
 
-
-
-                                <%--<li>
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Producto Crud</div>
+                                <ul class="pcoded-item pcoded-left-item">
+                                    <li>
+                                        <a href="Product.aspx">
+                                            <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Productos</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                    </li>
+                                    <%--<li>
                                     <a href="map-google.html">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.form-components.main">Maps</span>
@@ -416,24 +339,23 @@
                                             </a>
                                         </li>
                                     </ul>
-                                
+                                </li>--%>
                                 </ul>
-                                        </li>--%>
 
-                                <!--<div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registros</div>
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Estado Producto Delivery</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
                                         <a href="javascript:void(0)">
                                             <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Mercado</span>
+                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Estado Actualizado</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
-                                        
-                                        <ul class="pcoded-submenu">
+
+                                        <%--<ul class="pcoded-submenu">
                                         <li class="">
                                             <a href="javascript:void(0)">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Menu Le</span>
+                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Menu Level 2.1</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
@@ -461,141 +383,47 @@
                                             </a>
                                         </li>
 
-                                    </ul>
-                                    </li>
-                                    </ul>-->
-
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registros</div>
-                                <ul class="pcoded-item pcoded-left-item">
-                                    <li class="pcoded-hasmenu" >
-                                        <a href="javascript:void(0)">
-                                            <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Mercado</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-                                            <li>
-
-                                            <li>
-                                                <a href="CasetasPBaja.aspx">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Casetas</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                                <!-- Contenido del submenú 2 -->
-
-                                                <li>
-                                                    <a href="Category.aspx">
-                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Categoria</span>
-                                                        <span class="pcoded-mcaret"></span>
-                                                    </a>
-
-                                                </li>
-
-                                                <li>
-                                                    <a href="RegistroCasera.aspx">
-                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Caseras</span>
-                                                        <span class="pcoded-mcaret"></span>
-                                                    </a>
-
-                                                </li>
-
-
-                                                <li>
-                                                    <a href="Product.aspx">
-                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Productos</span>
-                                                        <span class="pcoded-mcaret"></span>
-                                                    </a>
-
-                                                </li>
-
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-
-
-
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Lista de Reportes</div>
-                                <ul class="pcoded-item pcoded-left-item">
-                                    <li class="pcoded-hasmenu">
-                                        <a href="#">
-                                            <span class="pcoded-micon"><i class="ti-layers"></i><b>M</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Reportes</span>
-                                            <span class="pcoded-mcaret"></span>
-                                        </a>
-                                        <ul class="pcoded-submenu">
-
-                                            <li>
-                                                <a href="ventacat.aspx">
-                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Categoria</span>
-                                                    <span class="pcoded-mcaret"></span>
-                                                </a>
-                                                <!-- Contenido del submenú 2 -->
-
-                                                <li>
-                                                    <a href="masvendido.aspx">
-                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Productos mas vendidos</span>
-                                                        <span class="pcoded-mcaret"></span>
-                                                    </a>
-
-                                                </li>
-                                                
-                                                <li>
-                                                    <a href="listpedi.aspx">
-                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Pedidos</span>
-                                                        <span class="pcoded-mcaret"></span>
-                                                    </a>
-                                                    
-                                                </li>
-                                                
-
-                                                <li>
-                                                    <a href="pediclien.aspx">
-                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Pedidos por Cliente</span>
-                                                        <span class="pcoded-mcaret"></span>
-                                                    </a>
-                                                    
-                                                </li>
-                                                
-                                            </li>
-                                        </ul>
-                                        
+                                    </ul>--%>
                                     </li>
 
-                                    <%--<div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Asignacion Casetas</div>
+                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Lista  Usuarios</div>
                                     <ul class="pcoded-item pcoded-left-item">
                                         <li>
-                                            <a href="AsignacionCaseta.aspx">
+                                            <a href="Usuarios.aspx">
                                                 <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Casetas</span>
+                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Usuarios</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
 
-                                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Historial de Registros</div>
+                                        <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Usuarios Consulta/Comentario</div>
                                         <ul class="pcoded-item pcoded-left-item">
                                             <li>
-                                                <a href="RegistrosMercado.aspx">
+                                                <a href="javascript:void(0)">
                                                     <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Registros Mercado</span>
+                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Contacto</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
-                                            </li>--%>
-                                </ul>
+                                            </li>
+
+                                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Reportes</div>
+                                            <ul class="pcoded-item pcoded-left-item">
+                                                <li>
+                                                    <a href="javascript:void(0)">
+                                                        <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Seguimiento Reportes</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+                                                </li>
+
+
+                                            </ul>
                             </div>
                         </nav>
                         <div class="pcoded-content">
                             <!-- Danger-color Breadcrumb card start -->
                             <div class="card borderless-card">
-                                <div class="card-block primary-breadcrumb">
+                                <div class="card-block danger-breadcrumb">
                                     <%--<div class="breadcrumb-header">
                                         <h5>Danger Color Breadcrumb</h5>
                                         <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
@@ -607,9 +435,9 @@
                                                     <i class="icofont icofont-home"></i>
                                                 </a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="Dashboard2.aspx">Inicio</a>
+                                            <li class="breadcrumb-item"><a href="#!">Breadcrumb</a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!"><%Response.Write(Session["breadCrum"]);%></a>
+                                            <li class="breadcrumb-item"><a href="#!">Caption Breadcrumb</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -617,7 +445,7 @@
                             </div>
                             <!-- Danger-color Breadcrumb card end -->
 
-                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
                             </asp:ContentPlaceHolder>
 
                         </div>
@@ -630,7 +458,7 @@
     </form>
 
     <!-- Required Jquery -->
-    <%--<script type="text/javascript" src="../assets/js/jquery/jquery.min.js"></script>--%>
+    <script type="text/javascript" src="../assets/js/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/js/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="../assets/js/popper.js/popper.min.js"></script>
     <script type="text/javascript" src="../assets/js/bootstrap/js/bootstrap.min.js"></script>
@@ -683,4 +511,3 @@
 
 </body>
 </html>
-

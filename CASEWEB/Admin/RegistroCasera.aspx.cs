@@ -146,6 +146,8 @@ namespace CASEWEB.Admin
                 dt = new DataTable();
                 sda.Fill(dt);
                 txtNombre.Text = dt.Rows[0]["Nombre_Cas"].ToString();
+                txtUsername.Text = dt.Rows[0]["NombreUsuario_Cas"].ToString();
+                txtClave.Text = dt.Rows[0]["Clave_Cas"].ToString();
                 txtTelefono.Text = dt.Rows[0]["Telefono_Cas"].ToString();
                 txtCorreo.Text = dt.Rows[0]["Correo_Cas"].ToString();
                 txtDireccion.Text = dt.Rows[0]["Direccion_Cas"].ToString();

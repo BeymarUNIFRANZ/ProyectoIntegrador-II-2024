@@ -60,7 +60,7 @@
 
         <div class="hero_area">
             <div class="bg-box">
-                <img src="../PlantillaArchivos/images/FondodeNoche2.jpeg" />
+                <img src="../PlantillaArchivos/images/hero-bg.jpeg" />
             </div>
             <!-- header section strats -->
             <header class="header_section">
