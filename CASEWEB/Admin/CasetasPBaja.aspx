@@ -6,7 +6,7 @@
     <link href="../PlantillaArchivos/css/style.css" rel="stylesheet" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
 
-   
+
 
 
 </asp:Content>
@@ -89,8 +89,10 @@
                                                 <div>
                                                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"
                                                         placeholder="Ingresar Nombre de la Caseta"></asp:TextBox>
-                                                  
-                                                    <asp:HiddenField ID="HiddenField2" runat="server" Value="0" />
+                                                    <%-- <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                                        ErrorMessage="Requiere Nombre" ForeColor="Red" Display="Dynamic"
+                                                        SetFocusOnError="true" ControlToValidate="txtNombre"></asp:RequiredFieldValidator>
+                                                    <asp:HiddenField ID="HiddenField2" runat="server" Value="0" />--%>
                                                 </div>
                                             </div>
 
@@ -103,7 +105,7 @@
                                                         AppendDataBoundItems="true">
                                                         <asp:ListItem Value="0">Seleccionar Categoria</asp:ListItem>
                                                     </asp:DropDownList>
-                                                   
+
                                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="SELECT [Cod_Cat], [Nombre_Cat] FROM [CATEGORIAS]"></asp:SqlDataSource>
                                                 </div>
 
@@ -118,7 +120,7 @@
                                                         AppendDataBoundItems="true">
                                                         <asp:ListItem Value="0">Seleccionar Casera</asp:ListItem>
                                                     </asp:DropDownList>
-                                                    
+
                                                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="SELECT [Cod_Cas], [Nombre_Cas] FROM [CASERA]"></asp:SqlDataSource>
                                                 </div>
 
@@ -137,8 +139,11 @@
                                                     CssClass="form-check-input" />
                                             </div>
                                             <div class="pb-5">
-                                                <asp:Button ID="btnAddOrUpdate" runat="server" Text="Agregar" CssClass="btn btn-primary" OnClick="btnAddOrUpdate_Click"
+                                                <asp:Button ID="btnAddOrUpdate" runat="server" Text="Añadir" CssClass="btn btn-primary" OnClick="btnAddOrUpdate_Click"
                                                     OnItemDataBound="rCasetas_ItemDataBound1" />
+                                                &nbsp;
+                                                <asp:Button ID="btnClear" runat="server" Text="Cancelar" CssClass="btn btn-primary"
+                                                    CausesValidation="false" OnClick="btnClear_Click" />
                                             </div>
 
                                             <div>
@@ -204,7 +209,7 @@
 
                                                                     <asp:LinkButton ID="lnkDelete" Text="Delete" runat="server" CommandName="delete"
                                                                         CssClass="badge bg-danger" CommandArgument='<%# Eval("Cod_Cast") %>'
-                                                                        OnClientClick="return confirm('Do you want to delete this category?');">
+                                                                        OnClientClick="return confirm('Quieres Eliminar esta Caseta?');">
                                                                  <i class="ti-trash"></i>
                                                                     </asp:LinkButton>
 

@@ -3,6 +3,65 @@
 <%@ Import Namespace="CASEWEB" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Agrega esto en tu HTML después del código que proporcionaste -->
+<script>
+    $(window).on('load', function () {
+        $('.filters_menu li').click(function () {
+            $('.filters_menu li').removeClass('active');
+            $(this).addClass('active');
+
+            var data = $(this).attr('data-filter');
+            $grid.isotope({
+                filter: data
+            })
+        });
+
+        var $grid = $(".grid").isotope({
+            itemSelector: ".all",
+            percentPosition: false,
+            masonry: {
+                columnWidth: ".all"
+            }
+        });
+
+        $(document).ready(function () {
+            //Read a page's GET URL varaibles & retunr them as an associative aaray
+            function getUrlVars() {
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < hashes.length; i++) {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            };
+
+            var id = getUrlVars()["id"];
+            if (id > 0) {
+                $('.filters_menu li').removeClass('active');
+            }
+
+            $('.filters_menu li').each(function () {
+                //checks if it is the same on the address bar 
+                if (id == this.attributes["data-id"].value) {
+                    $(this).closest("li").addClass("active");
+
+                    var data = $(this).attr('data-filter');
+                    $grid.isotope({
+                        filter: data
+                    })
+
+                    return;
+                }
+            });
+
+        });
+    });
+
+</script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -25,9 +84,9 @@
                             data-id="<%# Eval("Cod_Cat") %>"><%# Eval("Nombre_Cat") %></li>
                     </ItemTemplate>
                 </asp:Repeater>
+            </ul>
 
                 <%--<asp:HyperLink ID="lnkCaseta" runat="server" NavigateUrl="MapeoCasetas.aspx" Text="Niveles de Piso" CssClass="btn btn-primary" />--%>
-            </ul>
 
             <div class="filters-content">
                 <div class="row grid">

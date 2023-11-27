@@ -39,6 +39,7 @@ namespace CASEWEB.Admin
             cmd.Parameters.AddWithValue("@Correo", txtCorreo.Text);
             cmd.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
             cmd.Parameters.AddWithValue("@NitCas", txtNitCas.Text);
+            cmd.Parameters.AddWithValue("@IsActive", cbIsActive.Checked);
             cmd.Parameters.AddWithValue("@NombreUsuC", txtUsername.Text.Trim());
             cmd.Parameters.AddWithValue("@ClaveC", txtClave.Text.Trim());
 
@@ -53,7 +54,7 @@ namespace CASEWEB.Admin
                     imagePath = "Images/Casera/" + obj.ToString() + fileExtension;
                     fuCaseraImage.PostedFile.SaveAs(Server.MapPath("~/Images/Casera/") + obj.ToString() + fileExtension);
                     imageUrl = imagePath;
-                    cmd.Parameters.AddWithValue("@ImageNUrl", imagePath);
+                    cmd.Parameters.AddWithValue("@ImagenUrl", imagePath);
                     isValidToExecute = true;
                 }
                 else
@@ -82,7 +83,7 @@ namespace CASEWEB.Admin
                     lblMsg.CssClass = "alert alert-success";
                     if (caseraId != 0)
                     {
-                        Response.AddHeader("REFRESH", "2;");
+                        Response.AddHeader("REFRESH", "1;");
                     }
                     getCaseras();
                     clear();
@@ -122,6 +123,7 @@ namespace CASEWEB.Admin
             txtCorreo.Text = string.Empty;
             txtDireccion.Text = string.Empty;
             txtNitCas.Text = string.Empty;
+            cbIsActive.Checked = false;
             hdnId.Value = "0";
             btnAddOrUpdate.Text = "Añadir";
             imgCasera.ImageUrl = String.Empty;
@@ -147,11 +149,23 @@ namespace CASEWEB.Admin
                 sda.Fill(dt);
                 txtNombre.Text = dt.Rows[0]["Nombre_Cas"].ToString();
                 txtUsername.Text = dt.Rows[0]["NombreUsuario_Cas"].ToString();
+                txtClave.TextMode = TextBoxMode.SingleLine;
                 txtClave.Text = dt.Rows[0]["Clave_Cas"].ToString();
                 txtTelefono.Text = dt.Rows[0]["Telefono_Cas"].ToString();
                 txtCorreo.Text = dt.Rows[0]["Correo_Cas"].ToString();
                 txtDireccion.Text = dt.Rows[0]["Direccion_Cas"].ToString();
                 txtNitCas.Text = dt.Rows[0]["Nit_Cas"].ToString();
+                object activoCasValue = dt.Rows[0]["Activo_Cas"];
+                if (activoCasValue != DBNull.Value)
+                {
+                    cbIsActive.Checked = Convert.ToBoolean(activoCasValue);
+                }
+                else
+                {
+                    // Puedes manejar el caso de valor DBNull según tus necesidades
+                    // En este ejemplo, podrías establecer un valor predeterminado para el CheckBox
+                    cbIsActive.Checked = false; // O true, dependiendo de tus necesidades
+                }
                 imgCasera.ImageUrl = string.IsNullOrEmpty(dt.Rows[0]["ImagenUrl_Cas"].ToString()) ?
                     "../Images/No_image.png" : "../" + dt.Rows[0]["ImagenUrl_Cas"].ToString();
                 imgCasera.Height = 200;

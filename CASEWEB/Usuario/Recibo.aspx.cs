@@ -128,7 +128,7 @@ namespace CASEWEB.Usuario
             //Write the table
             PdfPTable table = new PdfPTable(dtblTable.Columns.Count - 2);
             //Table header
-            BaseFont btnColumnHeader = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            BaseFont btnColumnHeader = BaseFont.CreateFont(BaseFont.COURIER, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             iTextSharp.text.Font fntColumnHeader = new iTextSharp.text.Font(btnColumnHeader, 9, 1, iTextSharp.text.Color.WHITE);
             for (int i = 0; i < dtblTable.Columns.Count - 2; i++)
             {

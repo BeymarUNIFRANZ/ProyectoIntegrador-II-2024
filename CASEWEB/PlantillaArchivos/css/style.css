@@ -192,7 +192,8 @@ a:focus {
 }
 
 .header_section {
-  padding: 15px 0;
+   
+    padding-top: 30px;
 }
 
 .header_section .container-fluid {

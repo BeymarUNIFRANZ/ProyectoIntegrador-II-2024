@@ -129,7 +129,7 @@
                                                     <asp:Button ID="btnAddOrUpdate" runat="server" Text="Añadir" CssClass="btn btn-primary"
                                                         OnClick="btnAddOrUpdate_Click" />
                                                     &nbsp;
-                                                    <asp:Button ID="btnClear" runat="server" Text="Eliminar" CssClass="btn btn-primary"
+                                                    <asp:Button ID="btnClear" runat="server" Text="Cancelar" CssClass="btn btn-primary"
                                                         CausesValidation="false" OnClick="btnClear_Click" />
                                                 </div>
                                                 <div>
@@ -183,7 +183,7 @@
                                                                         <th>Correo</th>
                                                                         <th>Dirección</th>
                                                                         <th>NIT</th>
-                                                                        <%--<th>Activo</th>--%>
+                                                                        <th>Activo</th>
                                                                         <th>Fecha de Creacion</th>
                                                                         <th class="datatable-nosort">Accion</th>
                                                                     </tr>
@@ -203,10 +203,10 @@
                                                                 <td><%# Eval("Correo_Cas") %> </td>
                                                                 <td><%# Eval("Direccion_Cas") %> </td>
                                                                 <th><%# Eval("Nit_Cas") %></th>
-                                                                <%--<td>
+                                                                <td>
                                                                     <asp:Label ID="lblIsActive" runat="server" Text='<%# Eval("Activo_Cas") %>'>
                                                                     </asp:Label>
-                                                                </td>--%>
+                                                                </td>
                                                                 <td><%# Eval("CreadoFecha_Cas") %></td>
 
 
@@ -217,7 +217,7 @@
                                                                     </asp:LinkButton>
                                                                     <asp:LinkButton ID="lnkDelete" Text="Delete" runat="server" CommandName="delete"
                                                                         CssClass="badge bg-danger" CommandArgument='<%# Eval("Cod_Cas") %>'
-                                                                        OnClientClick="return confirm('¿Quieres eliminar esta casera?);">
+                                                                        OnClientClick="return confirm('¿Quieres eliminar esta Casera?');">
                                                                     <i class="ti-trash"></i>
                                                                     </asp:LinkButton>
                                                                 </td>

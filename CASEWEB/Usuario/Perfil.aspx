@@ -148,9 +148,9 @@
                                                     <div class="container">
                                                         <div class="row pt-1 pb-1" style="background-color: wheat">
                                                             <div class="col-4">
-                                                                <span class="badge badge-pill badge-dark text-white">
+                                                                <%--<span class="badge badge-pill badge-dark text-white">
                                                                     <%# Eval("NumOrden_Ord") %>
-                                                                </span>
+                                                                </span>--%>
                                                                Modo de Pago: <%# Eval("ModoPago_Pag").ToString() == "cod" ? "Pedido por Delivery" : Eval("ModoPago_Pag").ToString().ToUpper() %>
                                                             </div>
                                                             <div class="col-6">
@@ -172,7 +172,7 @@
                                                                             <th>Precio</th>
                                                                             <th>Cantidad</th>
                                                                             <th>Precio Total</th>
-                                                                            <th>Numero de Orden</th>
+                                                                            <%--<th>Numero de Orden</th>--%>
                                                                             <th>Estado</th>
                                                                         </tr>
                                                                     </thead>
@@ -191,9 +191,9 @@
                                                                     </td>
                                                                     <td>Bs<asp:Label ID="lblTotalPrice" runat="server" Text='<%# Eval("TotalPrice") %>'></asp:Label>
                                                                     </td>
-                                                                    <td>
-                                                                        <asp:Label ID="lblOrderNo" runat="server" Text='<%# Eval("NumOrden_Ord") %>'></asp:Label>
-                                                                    </td>
+                                                                    <%--<td>
+                                                                        <asp:Label ID="lblOrderNo" runat="server" Text='<%#Eval("NumOrden_Ord") %>'></asp:Label>
+                                                                    </td>--%>
                                                                     <td>
                                                                         <asp:Label ID="lblStatus" runat="server" Text='<%# Eval("Estado_Ord") %>'
                                                                             CssClass='<%# Eval("Estado_Ord").ToString() == "Entregado" ? "badge badge-success" : "badge badge-warning" %>'></asp:Label>

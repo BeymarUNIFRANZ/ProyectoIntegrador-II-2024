@@ -42,7 +42,9 @@ namespace CASEWEB.Usuario
                     
                 }
             }
+            rCaseraProducts.ItemCommand += new RepeaterCommandEventHandler(rProducts_ItemCommand);
         }
+
         private void MostrarInformacionCaseta(string casetaId)
         {
             con = new SqlConnection(Connetion.GetConnectionString());

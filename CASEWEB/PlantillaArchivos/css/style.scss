@@ -161,12 +161,13 @@ a:focus {
 }
 
 .header_section {
-  padding: 15px 0;
+    padding: 15px 0;
+    border: 2px solid #000;
 
-  .container-fluid {
-    padding-right: 25px;
-    padding-left: 25px;
-  }
+    .container-fluid {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
 }
 
 .navbar-brand {

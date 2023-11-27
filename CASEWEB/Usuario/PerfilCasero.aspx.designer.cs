@@ -42,15 +42,6 @@ namespace CASEWEB.Usuario
         protected global::System.Web.UI.WebControls.Label lblCreatedDate;
 
         /// <summary>
-        /// Control rCaseraProfile.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rCaseraProfile;
-
-        /// <summary>
         /// Control lblMsg.
         /// </summary>
         /// <remarks>
@@ -67,5 +58,14 @@ namespace CASEWEB.Usuario
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rCaseraProducts;
+
+        /// <summary>
+        /// Control rCaseraProfile.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rCaseraProfile;
     }
 }

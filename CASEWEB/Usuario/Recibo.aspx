@@ -29,7 +29,7 @@
                     <thead class="bg-dark text-white">
                         <tr>
                             <th>Nº</th>
-                            <th>Numero de Orden</th>
+                            <%--<th>Numero de Orden</th>--%>
                             <th>Nombre de Producto(s)</th>
                             <th>Precio</th>
                             <th>Cantidad</th>
@@ -41,7 +41,7 @@
             <ItemTemplate>
                 <tr>
                     <td> <%# Eval("Srno") %> </td>
-                    <td> <%# Eval("NumOrden_Ord") %> </td>
+                    <%--<td> <%# Eval("NumOrden_Ord") %> </td>--%>
                     <td> <%# Eval("Nombre_Pro") %> </td>
                     <td> <%# string.IsNullOrEmpty( Eval("Precio_Pro").ToString()) ? "" : "Bs"+ Eval("Precio_Pro") %> </td>
                     <td> <%# Eval("Cantidad_Ord") %> </td>

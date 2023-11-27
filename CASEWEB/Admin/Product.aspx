@@ -181,7 +181,7 @@
                                                     <asp:Button ID="btnAddOrUpdate" runat="server" Text="Añadir" CssClass="btn btn-primary"
                                                         OnClick="btnAddOrUpdate_Click" />
                                                     &nbsp;
-                                                <asp:Button ID="btnClear" runat="server" Text="Eliminar" CssClass="btn btn-primary"
+                                                <asp:Button ID="btnClear" runat="server" Text="Cancelar" CssClass="btn btn-primary"
                                                     CausesValidation="false" OnClick="btnClear_Click" />
                                                 </div>
                                                 <div>

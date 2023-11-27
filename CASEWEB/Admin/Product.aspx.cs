@@ -205,7 +205,7 @@ namespace CASEWEB.Admin
                 if (Convert.ToInt32(lblQuantity.Text) <= 5)
                 {
                     lblQuantity.CssClass = "badge badge-danger";
-                    lblQuantity.ToolTip = "Item about to be 'Out of stock'!";
+                    lblQuantity.ToolTip = "¡Artículo a punto de estar Agotado!";
                 }
             }
         }

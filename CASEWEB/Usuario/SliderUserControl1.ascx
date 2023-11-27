@@ -1,5 +1,24 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SliderUserControl1.ascx.cs" Inherits="CASEWEB.Usuario.SliderUserControl1" %>
 
+ <style>
+     /* Estilos para el cuadro */
+     .cuadro1 {
+         border: 2px;
+         padding: 15px;
+         margin: 20px;
+         border-radius: 10px;
+         background-color: rgba(0, 0, 0, 0.8); /* 0.8 representa la opacidad (de 0 a 1) */
+     }
+
+         /* Estilos para el contenido dentro del cuadro */
+         .cuadro h1 {
+             color: white;
+         }
+
+         .cuadro p {
+             color: white;
+         }
+ </style>
 
 <!-- slider section -->
 <section class="slider_section ">
@@ -15,28 +34,8 @@
                                 <p>
                                     El mercado Lanza en La Paz, Bolivia, es uno de los mercados más emblemáticos de la ciudad, conocido por su bullicio y la diversidad de productos que ofrece. Este mercado tradicional es un importante centro de comercio donde se pueden encontrar alimentos frescos, artesanías, ropa y una gran variedad de productos locales y regionales. Los visitantes pueden sumergirse en la cultura boliviana mientras exploran sus pasillos llenos de colores y aromas.
                                 </p>--%>
-                                <style>
-                                    /* Estilos para el cuadro */
-                                    .cuadro {
-                                        border: 2px;
-                                        padding: 20px;
-                                        margin: 20px;
-                                        border-radius: 10px;
-                                        background-color: rgba(0, 0, 0, 0.8); /* 0.8 representa la opacidad (de 0 a 1) */
-                                    }
-
-                                        /* Estilos para el contenido dentro del cuadro */
-                                        .cuadro h1 {
-                                            color: white;
-                                        }
-
-                                        .cuadro p {
-                                            color: white;
-                                        }
-                                </style>
-
-
-                                <div class="cuadro">
+                               
+                                <div class="cuadro1">
                                     <h1>Bienvenido a Caserita Web!</h1>
                                     <p>
                                         El mercado Lanza en La Paz, Bolivia, es uno de los mercados más emblemáticos de la ciudad, conocido por su bullicio y la diversidad de productos que ofrece. Este mercado tradicional es un importante centro de comercio donde se pueden encontrar alimentos frescos, artesanías, ropa y una gran variedad de productos locales y regionales. Los visitantes pueden sumergirse en la cultura boliviana mientras exploran sus pasillos llenos de colores y aromas.
