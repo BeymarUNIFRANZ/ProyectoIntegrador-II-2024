@@ -1555,6 +1555,11 @@
     <Compile Include="Usuario\Recibo.aspx.designer.cs">
       <DependentUpon>Recibo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Usuario\recibo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>recibo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1744,6 +1749,17 @@
     </None>
     <Content Include="Reportes\ventaacat.xss">
       <DependentUpon>ventaacat.xsd</DependentUpon>
+    </Content>
+    <Content Include="Usuario\recibo.xsc">
+      <DependentUpon>recibo.xsd</DependentUpon>
+    </Content>
+    <None Include="Usuario\recibo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>recibo.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Usuario\recibo.xss">
+      <DependentUpon>recibo.xsd</DependentUpon>
     </Content>
     <None Include="Vendedor\pedidos.xsd">
       <SubType>Designer</SubType>

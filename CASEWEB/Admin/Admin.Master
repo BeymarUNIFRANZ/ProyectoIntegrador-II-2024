@@ -267,12 +267,12 @@
                                     <span class="search-icon"><i class="ti-search" aria-hidden="true"></i></span>
                                 </div>
                             </div>--%>
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Dashboard</div>
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Inicio</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li class="active">
                                         <a href="Dashboard2.aspx">
                                             <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                                            <span class="pcoded-mtext" data-i18n="nav.dash.main">Inicio</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
@@ -477,12 +477,22 @@
                                             <li>
 
                                             <li>
-                                                <a href="CasetasPBaja.aspx">
+                                                <a href="RegistroCasera.aspx">
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Casetas</span>
+                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Caseras</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                                 <!-- Contenido del submenú 2 -->
+
+
+                                                <li>
+                                                    <a href="CasetasPBaja.aspx">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Casetas</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+
+                                                </li>
 
                                                 <li>
                                                     <a href="Category.aspx">
@@ -492,16 +502,6 @@
                                                     </a>
 
                                                 </li>
-
-                                                <li>
-                                                    <a href="RegistroCasera.aspx">
-                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Caseras</span>
-                                                        <span class="pcoded-mcaret"></span>
-                                                    </a>
-
-                                                </li>
-
 
                                                 <li>
                                                     <a href="Product.aspx">
