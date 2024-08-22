@@ -1,0 +1,29 @@
+a) Nombre de su proyecto integrador: SISTEMA DE COMERCIO ELECTRÓNICO PARA LA ASOCIACIÓN TEXTIL DE DISEÑO ARTESANAL EN LANA DE ALPACA
+
+b) Descripción de la problemática: La Asociación Textil de Diseño Artesanal se encuentra en una encrucijada debido a varios desafíos que limitan su crecimiento y expansión en el mercado nacional e internacional. Uno de los principales obstáculos es la falta de visibilidad y accesibilidad de sus productos. 
+
+c) Descripción de la solución planteada: 
+Objetivo General
+Desarrollar un Sistema de Comercio Electrónico para la Asociación Textil de Diseño Artesanal en Lana de Alpaca mediante un módulo con Ciencia de Datos.
+Objetivos específicos:
+●	Implementar un sistema de gestión de inventario para controlar la disponibilidad de productos.
+●	Crear un sistema de pagos en línea seguro y de fácil uso para facilitar las transacciones de los clientes.
+●	Integrar PayPal como opción de pago para mejorar la experiencia del cliente.
+●	Generar reportes, análisis de las ventas, pedidos y tendencias de consumo para la toma de decisiones.
+●	Implementar un módulo de análisis de datos para comprender el comportamiento y las preferencias de los clientes.
+
+
+d) Tecnologías que se desea usar:
+ASP.NET, SQL Server Express, Crystal Reports
+
+e) Variables de entrada: 
+● Nombre de usuario
+● Correo electrónico
+● Contraseña
+
+f) Variables de salida:
+● Listado de productos
+● Confirmación del pedido
+● Reportes
+
+g) Indicar cómo se obtendrá la información del caso de estudio y la información del experto en la materia: En mi caso tendria que contactarme directamente con los de la asosiacion Textil para recabar informacion para la toma de deciciones
