@@ -5,5 +5,5 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <img src="../PlantillaArchivos/images/FONDOADMIN%20(2).png" style="display: block; margin: 0 auto; max-width: 100%; height: auto;" />
+    <img src="../assets/images/Fondo_Admin.jpg"  style="display: block; margin: 0 auto; max-width: 100%; height: auto;" />
 </asp:Content>

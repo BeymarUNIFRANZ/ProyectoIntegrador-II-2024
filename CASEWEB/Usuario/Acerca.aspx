@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="img-box">
-              <img src="../PlantillaArchivos/images/NosotrosImagen.jpg" />
+              <img src="../Images/MAMAALPACA.png" />
           </div>
         </div>
         <div class="col-md-6">
@@ -22,9 +22,9 @@
               </h2>
             </div>
             <p>
-              Somos unos chicos que intentan hacer la diferencia en un pais que carece de novedades, para lo mismo se penso en una idea que podria revolucionar uno de los elementos mas importantes del pais pero en especifico la ciudad Marravilla
-            </p>
-            <a href="#">
+               Awaj Warmis Es una asociación textil de diseño artesanal en lana de alpaca. Busca mejorar las condiciones de vida de los trabajadores de la asociación civil y ofertar los mejores productos elaborados artesanalmente a partir de fibras naturales principalmente de alpaca mediante el Comercio Justo “Fair Tarde”
+                </p>
+            <a href="https://awarmi.com/about/">
               Leer Mas
             </a>
           </div>

@@ -19,7 +19,7 @@ namespace CASEWEB.Admin
         {
             if (!IsPostBack)
             {
-                Session["breadCrum"] = "Casera";
+                Session["breadCrum"] = "Vendedor";
                 getCaseras();
             }
             lblMsg.Visible = false;
@@ -38,7 +38,7 @@ namespace CASEWEB.Admin
             cmd.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
             cmd.Parameters.AddWithValue("@Correo", txtCorreo.Text);
             cmd.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
-            cmd.Parameters.AddWithValue("@NitCas", txtNitCas.Text);
+            //cmd.Parameters.AddWithValue("@NitCas", txtNitCas.Text);
             cmd.Parameters.AddWithValue("@IsActive", cbIsActive.Checked);
             cmd.Parameters.AddWithValue("@NombreUsuC", txtUsername.Text.Trim());
             cmd.Parameters.AddWithValue("@ClaveC", txtClave.Text.Trim());
@@ -79,7 +79,7 @@ namespace CASEWEB.Admin
                     cmd.ExecuteNonQuery();
                     actionName = caseraId == 0 ? "inserted" : "updated";
                     lblMsg.Visible = true;
-                    lblMsg.Text = "La Casera se actualizó!";
+                    lblMsg.Text = "El Vendedor se actualizó!";
                     lblMsg.CssClass = "alert alert-success";
                     if (caseraId != 0)
                     {
@@ -122,7 +122,7 @@ namespace CASEWEB.Admin
             txtTelefono.Text = string.Empty;
             txtCorreo.Text = string.Empty;
             txtDireccion.Text = string.Empty;
-            txtNitCas.Text = string.Empty;
+            //txtNitCas.Text = string.Empty;
             cbIsActive.Checked = false;
             hdnId.Value = "0";
             btnAddOrUpdate.Text = "Añadir";
@@ -154,7 +154,7 @@ namespace CASEWEB.Admin
                 txtTelefono.Text = dt.Rows[0]["Telefono_Cas"].ToString();
                 txtCorreo.Text = dt.Rows[0]["Correo_Cas"].ToString();
                 txtDireccion.Text = dt.Rows[0]["Direccion_Cas"].ToString();
-                txtNitCas.Text = dt.Rows[0]["Nit_Cas"].ToString();
+                //txtNitCas.Text = dt.Rows[0]["Nit_Cas"].ToString();
                 object activoCasValue = dt.Rows[0]["Activo_Cas"];
                 if (activoCasValue != DBNull.Value)
                 {
@@ -186,7 +186,7 @@ namespace CASEWEB.Admin
                     con.Open();
                     cmd.ExecuteNonQuery();
                     lblMsg.Visible = true;
-                    lblMsg.Text = "Casera eliminada exitosamente!";
+                    lblMsg.Text = "Vendedor eliminado exitosamente!";
                     lblMsg.CssClass = "alert alert-success";
                     getCaseras();
                 }

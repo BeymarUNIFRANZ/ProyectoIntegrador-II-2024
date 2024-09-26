@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>CASERAWEB - Admin</title>
+    <title>AWAJ WARMIS - Vendedor</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -120,7 +120,7 @@
                             </a>
                             <a href="Dashboard.aspx">
 
-                                <img class="img-fluid" src="../assets/images/logoA.png" alt="LOGO" />
+                                <img class="img-fluid" src="../assets/images/logoAWAJ.png" alt="LOGO" />
                             </a>
                             <a class="mobile-options">
                                 <i class="ti-more"></i>
@@ -189,8 +189,9 @@
 
                                 <li class="user-profile header-notification">
                                     <a href="#!">
-                                        <img src="../assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                        <span>Casera(o)</span>
+                                        
+                                        <img src="../assets/images/AvatarVendedor.png" class="img-radius" alt="User-Profile-Image"/>
+                                        <span>Vendedor</span>
                                         <i class="ti-angle-down"></i>
                                     </a>
                                     <ul class="show-notification profile-notification">
@@ -265,12 +266,12 @@
                                     <span class="search-icon"><i class="ti-search" aria-hidden="true"></i></span>
                                 </div>
                             </div>--%>
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Dashboard</div>
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Inicio</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li class="active">
                                         <a href="Dashboard.aspx">
                                             <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                                            <span class="pcoded-mtext" data-i18n="nav.dash.main">Inicio</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                     </li>
@@ -366,7 +367,7 @@
                                 </li>--%>
                                 </ul>
 
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Producto Crud</div>
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Lista de Productos</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
                                         <a href="Product.aspx">
@@ -414,12 +415,12 @@
                                 </li>--%>
                                 </ul>
 
-                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Estado Producto Delivery</div>
+                                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Compra Fisica</div>
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li>
-                                        <a href="javascript:void(0)">
+                                        <a href="Venta.aspx">
                                             <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Estado Actualizado</span>
+                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Venta</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
 
@@ -456,7 +457,7 @@
                                         </li>
 
                                     </ul>--%>
-                                    </li>
+                                    <%--</li>
 
                                     <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Lista  Usuarios</div>
                                     <ul class="pcoded-item pcoded-left-item">
@@ -489,7 +490,7 @@
                                                 </li>
 
 
-                                            </ul>
+                                            </ul>--%>
                             </div>
                         </nav>
                         <div class="pcoded-content">

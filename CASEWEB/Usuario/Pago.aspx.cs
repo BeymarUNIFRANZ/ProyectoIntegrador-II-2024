@@ -43,7 +43,7 @@ namespace CASEWEB.Usuario
             _expiryDate = txtExpMonth.Text.Trim() + txtExpYear.Text.Trim();
             _cvv = txtCvv.Text.Trim();
             _address = txtAddress.Text.Trim();
-            _paymentMode = "card";
+            _paymentMode = "Tarjeta";
             if (Session["Cod_Usu"] != null)
             {
                 OrderPayment(_name, _cardNo, _expiryDate, _cvv, _address, _paymentMode);

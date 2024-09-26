@@ -1,31 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using iTextSharp.text;
 
 namespace CASEWEB.Usuario
 {
     public partial class Login : System.Web.UI.Page
     {
-
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter sda;
         DataTable dt;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Cod_Usu"] != null || Session["Cod_Cas"] != null) 
+            if (Session["Cod_Usu"] != null || Session["Cod_Cas"] != null)
             {
                 Response.Redirect("Default.aspx");
             }
-         
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -34,6 +26,12 @@ namespace CASEWEB.Usuario
             {
                 Session["admin"] = txtUsername.Text.Trim();
                 Response.Redirect("../Admin/Dashboard2.aspx");
+            }
+
+            else if(txtUsername.Text.Trim() == "Rosa" && txtClave.Text.Trim() == "12345678")
+            {
+                Session["Vendedor"] = txtUsername.Text.Trim();
+                Response.Redirect("..\\Vendedor\\Dashboard.aspx");
             }
             bool encontrado = false;
             if (!encontrado)
@@ -51,7 +49,7 @@ namespace CASEWEB.Usuario
                 {
                     encontrado = true;
                     Session["username"] = txtUsername.Text.Trim();
-                    Session["Cod_Usu"] = dt.Rows[0]["Cod_Usu"]; 
+                    Session["Cod_Usu"] = dt.Rows[0]["Cod_Usu"];
                     Response.Redirect("Default.aspx");
                 }
                 else
@@ -60,7 +58,6 @@ namespace CASEWEB.Usuario
                     lblMsg.Text = "Usuario o Contraseña Incorrecta..!";
                     lblMsg.CssClass = "alert alert-danger";
                 }
-
             }
             if (!encontrado)
             {
@@ -73,7 +70,7 @@ namespace CASEWEB.Usuario
                 sda = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 sda.Fill(dt);
-                if (dt.Rows.Count == 1)
+                if (dt.Rows.Count >= 1)
                 {
                     Session["usernameC"] = txtUsername.Text.Trim();
                     Session["Cod_Cas"] = dt.Rows[0]["Cod_Cas"];
@@ -85,11 +82,7 @@ namespace CASEWEB.Usuario
                     lblMsg.Text = "Usuario o Contraseña Incorrecta..!";
                     lblMsg.CssClass = "alert alert-danger";
                 }
-
             }
-
-
         }
-
     }
 }

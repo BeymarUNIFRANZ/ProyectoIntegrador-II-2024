@@ -24,6 +24,18 @@
                 reader.readAsDataURL(input.files[0]);
             }
     </script>
+    <script>
+            function MostrarOcultarContrasena() {
+                var claveTextBox = document.getElementById('<%= txtClave.ClientID %>');
+        var chkMostrarClave = document.getElementById('<%= chkMostrarClave.ClientID %>');
+
+                if (chkMostrarClave.checked) {
+                    claveTextBox.type = 'text';
+                } else {
+                    claveTextBox.type = 'password';
+                }
+            }
+    </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -85,7 +97,7 @@
                                 ErrorMessage="No Corresponde a un formato Email"
                                 ForeColor="Red" Display="Dynamic" SetFocusOnError="true"
                                 ValidationExpression="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"
-                                 ControlToValidate="txtEmail">
+                                ControlToValidate="txtEmail">
                             </asp:RegularExpressionValidator>
 
                             <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"
@@ -96,7 +108,7 @@
                         <div>
 
                             <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono"
-                                ErrorMessage="Requiere Numero de Celular o Telefono"
+                                ErrorMessage="Requiere Numero de Celular"
                                 ForeColor="Red" Display="Dynamic" SetFocusOnError="true">
                             </asp:RequiredFieldValidator>
 
@@ -107,7 +119,7 @@
                             </asp:RegularExpressionValidator>
 
                             <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"
-                                placeholder="Ingrese su Numero de Celular o Telefono" ToolTip="Mobile">
+                                placeholder="Ingrese su Numero de Celular" ToolTip="Mobile">
                             </asp:TextBox>
 
                         </div>
@@ -138,23 +150,30 @@
                         </div>
 
                         <div>
+    <asp:RequiredFieldValidator ID="rfvClave" runat="server" ControlToValidate="txtClave"
+        ErrorMessage="Requiere Contraseña"
+        ForeColor="Red" Display="Dynamic" SetFocusOnError="true">
+    </asp:RequiredFieldValidator>
+    <asp:RegularExpressionValidator ID="revClave" runat="server"
+        ErrorMessage="La contraseña debe tener al menos 8 caracteres"
+        ForeColor="Red" Display="Dynamic" SetFocusOnError="true"
+        ValidationExpression="^.{8,}$" ControlToValidate="txtClave">
+    </asp:RegularExpressionValidator>
 
-                            <asp:RequiredFieldValidator ID="rfvClave" runat="server" ControlToValidate="txtClave"
-                                ErrorMessage="Requiere Contraseña"
-                                ForeColor="Red" Display="Dynamic" SetFocusOnError="true">
-                            </asp:RequiredFieldValidator>
+    <asp:TextBox ID="txtClave" runat="server" CssClass="form-control"
+        placeholder="Ingrese su Contraseña" ToolTip="Password" TextMode="Password">
+    </asp:TextBox>
 
-                            <asp:TextBox ID="txtClave" runat="server" CssClass="form-control"
-                                placeholder="Ingrese su Contraseña" ToolTip="Password" TextMode="Password">
-                            </asp:TextBox>
+    <asp:CheckBox ID="chkMostrarClave" runat="server" Text="Mostrar Contraseña" onclick="MostrarOcultarContrasena();" />
 
+    
+</div>
 
-                        </div>
 
                         <div class="row pl-4">
                             <div class="btn_box">
                                 <asp:Button ID="btnRegister" runat="server" Text="Registrar" CssClass="btn btn-success rounded-pill pl-4 pr-4 text-white"
-                                     OnClick="btnRegistrar_Click"/>
+                                    OnClick="btnRegistrar_Click" />
                                 <asp:Label ID="lblAlreadyUser" runat="server" CssClass="pl-3 text-black-100"
                                     Text="Ya estas Registrado? <a href='Login.aspx' class='badge badge-info'>Logueate aqui...</a>">
                                 </asp:Label>

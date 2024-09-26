@@ -85,14 +85,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AsignacionCaseta.aspx" />
-    <Content Include="Admin\CasetasPBaja.aspx" />
+    <Content Include="Admin\Borradores.aspx" />
+    <Content Include="Admin\BorradorPro.aspx" />
+    <Content Include="Admin\BorradorUsu.aspx" />
+    <Content Include="Admin\BorradorVen.aspx" />
+    <Content Include="Admin\Contactos.aspx" />
     <Content Include="Admin\Dashboard2.aspx" />
     <Content Include="Admin\listpedi.aspx" />
     <Content Include="Admin\NivelPiso.aspx" />
     <Content Include="Admin\pediclien.aspx" />
+    <Content Include="Admin\pedidomepago.aspx" />
+    <Content Include="Admin\prodcateg.aspx" />
     <Content Include="Admin\Product.aspx" />
+    <Content Include="Admin\productosagotados.aspx" />
+    <Content Include="Admin\Promocion.aspx" />
+    <Content Include="Admin\PromoPro.aspx" />
+    <Content Include="Admin\prorecienagregados.aspx" />
     <Content Include="Admin\RegistroCasera.aspx" />
+    <Content Include="Admin\registroclientes.aspx" />
     <Content Include="Admin\RegistrosMercado.aspx" />
+    <Content Include="Admin\RegistroUsuarios.aspx" />
+    <Content Include="Admin\ventasdsm.aspx" />
     <Content Include="aspnet_client\system_web\2_0_50727\crystalreportviewers13\ActiveXControls\PrintControl.cab" />
     <Content Include="aspnet_client\system_web\2_0_50727\crystalreportviewers13\ActiveXControls\PrintControl_res_cs.cab" />
     <Content Include="aspnet_client\system_web\2_0_50727\crystalreportviewers13\ActiveXControls\PrintControl_res_da.cab" />
@@ -1239,14 +1252,20 @@
     <Content Include="assets\images\avatar-2.jpg" />
     <Content Include="assets\images\avatar-3.jpg" />
     <Content Include="assets\images\avatar-4.jpg" />
+    <Content Include="assets\images\AvatarVendedor.png" />
+    <Content Include="assets\images\Avatar_AlpacaAdmin.png" />
     <Content Include="assets\images\bg.jpg" />
     <Content Include="assets\images\favicon.ico" />
     <Content Include="assets\images\flags\ENGLISH.jpg" />
     <Content Include="assets\images\flags\FRANCE.jpg" />
     <Content Include="assets\images\flags\PORTO.jpg" />
     <Content Include="assets\images\flags\SPAIN.jpg" />
+    <Content Include="assets\images\Fondo_Admin.jpg" />
     <Content Include="assets\images\Logo-about-img.png" />
     <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\logoAWAJ.png" />
+    <Content Include="assets\images\logo_awajwarmi.png" />
+    <Content Include="assets\images\logo_awajwarmi_white.jpg" />
     <Content Include="assets\images\mega-menu\01.jpg" />
     <Content Include="assets\images\mega-menu\02.jpg" />
     <Content Include="assets\images\mega-menu\03.jpg" />
@@ -1311,6 +1330,8 @@
     <Content Include="assets\pages\widget\amchart\worldLow.js" />
     <Content Include="assets\pages\widget\amchart\worldLow.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="Images\alpacaLOGIN.jpg" />
+    <Content Include="Images\AWAJcontactanos.jpg" />
     <Content Include="Images\Category\1b785d40-153e-4c57-a924-3d310ade5939.jpg" />
     <Content Include="Images\Category\66b69b5a-d16b-4a64-917a-1e2a5215cfdc.jpeg" />
     <Content Include="Images\Category\85e08e85-bcc7-48f1-93c0-e2276b331465.jpg" />
@@ -1320,13 +1341,17 @@
     <Content Include="Images\Category\f454c17b-9715-4adf-b105-da9c04e6aeca.png" />
     <Content Include="Images\Login.jpg" />
     <Content Include="Images\Login.png" />
+    <Content Include="Images\MAMAALPACA.png" />
     <Content Include="Images\No_image.png" />
+    <Content Include="Images\Vendedor.jpg" />
     <Content Include="PlantillaArchivos\css\bootstrap.css" />
     <Content Include="PlantillaArchivos\css\font-awesome.min.css" />
     <Content Include="PlantillaArchivos\css\responsive.css" />
     <Content Include="PlantillaArchivos\css\letra.css" />
     <Content Include="PlantillaArchivos\css\style.css" />
     <Content Include="PlantillaArchivos\images\about-img.png" />
+    <Content Include="PlantillaArchivos\images\alpaquita.png" />
+    <Content Include="PlantillaArchivos\images\alpaquitacerca.png" />
     <Content Include="PlantillaArchivos\images\client1.jpg" />
     <Content Include="PlantillaArchivos\images\client2.jpg" />
     <Content Include="PlantillaArchivos\images\f1.png" />
@@ -1339,6 +1364,8 @@
     <Content Include="PlantillaArchivos\images\f8.png" />
     <Content Include="PlantillaArchivos\images\f9.png" />
     <Content Include="PlantillaArchivos\images\favicon.png" />
+    <Content Include="PlantillaArchivos\images\FondoAWAJ.jpg" />
+    <Content Include="PlantillaArchivos\images\FONDOAWAJ1.png" />
     <Content Include="PlantillaArchivos\images\hero-bg.jpeg" />
     <Content Include="PlantillaArchivos\images\hero-bg.jpg" />
     <Content Include="PlantillaArchivos\images\o1.jpg" />
@@ -1367,6 +1394,7 @@
     <Content Include="Vendedor\Product.aspx" />
     <Content Include="Vendedor\Usuarios.aspx" />
     <Content Include="Admin\ventacat.aspx" />
+    <Content Include="Vendedor\Venta.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1384,12 +1412,40 @@
     <Compile Include="Admin\AsignacionCaseta.aspx.designer.cs">
       <DependentUpon>AsignacionCaseta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\CasetasPBaja.aspx.cs">
-      <DependentUpon>CasetasPBaja.aspx</DependentUpon>
+    <Compile Include="Admin\Borradores.aspx.cs">
+      <DependentUpon>Borradores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\CasetasPBaja.aspx.designer.cs">
-      <DependentUpon>CasetasPBaja.aspx</DependentUpon>
+    <Compile Include="Admin\Borradores.aspx.designer.cs">
+      <DependentUpon>Borradores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BorradorPro.aspx.cs">
+      <DependentUpon>BorradorPro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BorradorPro.aspx.designer.cs">
+      <DependentUpon>BorradorPro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BorradorUsu.aspx.cs">
+      <DependentUpon>BorradorUsu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BorradorUsu.aspx.designer.cs">
+      <DependentUpon>BorradorUsu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BorradorVen.aspx.cs">
+      <DependentUpon>BorradorVen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BorradorVen.aspx.designer.cs">
+      <DependentUpon>BorradorVen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Contactos.aspx.cs">
+      <DependentUpon>Contactos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Contactos.aspx.designer.cs">
+      <DependentUpon>Contactos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Dashboard2.aspx.cs">
       <DependentUpon>Dashboard2.aspx</DependentUpon>
@@ -1419,12 +1475,79 @@
     <Compile Include="Admin\pediclien.aspx.designer.cs">
       <DependentUpon>pediclien.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\pedidomepago.aspx.cs">
+      <DependentUpon>pedidomepago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\pedidomepago.aspx.designer.cs">
+      <DependentUpon>pedidomepago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\pedidompago.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pedidompago.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\procateg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>procateg.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\prodcateg.aspx.cs">
+      <DependentUpon>prodcateg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\prodcateg.aspx.designer.cs">
+      <DependentUpon>prodcateg.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Product.aspx.designer.cs">
       <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\productosagotado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>productosagotado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\productosagotados.aspx.cs">
+      <DependentUpon>productosagotados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\productosagotados.aspx.designer.cs">
+      <DependentUpon>productosagotados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Promocion.aspx.cs">
+      <DependentUpon>Promocion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Promocion.aspx.designer.cs">
+      <DependentUpon>Promocion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PromoPro.aspx.cs">
+      <DependentUpon>PromoPro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PromoPro.aspx.designer.cs">
+      <DependentUpon>PromoPro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\prorecienagregados.aspx.cs">
+      <DependentUpon>prorecienagregados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\prorecienagregados.aspx.designer.cs">
+      <DependentUpon>prorecienagregados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\prorecienagregados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prorecienagregados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\recibos1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>recibos1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Admin\RegistroCasera.aspx.cs">
       <DependentUpon>RegistroCasera.aspx</DependentUpon>
@@ -1433,6 +1556,18 @@
     <Compile Include="Admin\RegistroCasera.aspx.designer.cs">
       <DependentUpon>RegistroCasera.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\registroclientes.aspx.cs">
+      <DependentUpon>registroclientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\registroclientes.aspx.designer.cs">
+      <DependentUpon>registroclientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\registroclientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>registroclientes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Admin\RegistrosMercado.aspx.cs">
       <DependentUpon>RegistrosMercado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1440,11 +1575,30 @@
     <Compile Include="Admin\RegistrosMercado.aspx.designer.cs">
       <DependentUpon>RegistrosMercado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\RegistroUsuarios.aspx.cs">
+      <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RegistroUsuarios.aspx.designer.cs">
+      <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ventacat.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ventacat.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Admin\ventasdsm.aspx.cs">
+      <DependentUpon>ventasdsm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ventasdsm.aspx.designer.cs">
+      <DependentUpon>ventasdsm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ventasdsm.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ventasdsm.xsd</DependentUpon>
     </Compile>
     <Compile Include="Connetion.cs" />
     <Compile Include="Global.asax.cs">
@@ -1664,6 +1818,13 @@
     <Compile Include="Admin\ventacat.aspx.designer.cs">
       <DependentUpon>ventacat.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vendedor\Venta.aspx.cs">
+      <DependentUpon>Venta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendedor\Venta.aspx.designer.cs">
+      <DependentUpon>Venta.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icon\icofont\fonts\icofont.eot" />
@@ -1673,6 +1834,84 @@
     <Content Include="assets\icon\themify-icons\fonts\themify.ttf" />
     <Content Include="assets\icon\themify-icons\fonts\themify.woff" />
     <Content Include="Admin\Admin.Master" />
+    <Content Include="Admin\prorecienagregados.xsc">
+      <DependentUpon>prorecienagregados.xsd</DependentUpon>
+    </Content>
+    <Content Include="Admin\procateg.xsc">
+      <DependentUpon>procateg.xsd</DependentUpon>
+    </Content>
+    <Content Include="Admin\pedidompago.xsc">
+      <DependentUpon>pedidompago.xsd</DependentUpon>
+    </Content>
+    <None Include="Admin\pedidompago.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pedidompago.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Admin\pedidompago.xss">
+      <DependentUpon>pedidompago.xsd</DependentUpon>
+    </Content>
+    <None Include="Admin\procateg.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>procateg.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Admin\procateg.xss">
+      <DependentUpon>procateg.xsd</DependentUpon>
+    </Content>
+    <Content Include="Admin\productosagotado.xsc">
+      <DependentUpon>productosagotado.xsd</DependentUpon>
+    </Content>
+    <None Include="Admin\productosagotado.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>productosagotado.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Admin\productosagotado.xss">
+      <DependentUpon>productosagotado.xsd</DependentUpon>
+    </Content>
+    <None Include="Admin\prorecienagregados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>prorecienagregados.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Admin\prorecienagregados.xss">
+      <DependentUpon>prorecienagregados.xsd</DependentUpon>
+    </Content>
+    <Content Include="Admin\registroclientes.xsc">
+      <DependentUpon>registroclientes.xsd</DependentUpon>
+    </Content>
+    <Content Include="Admin\recibos1.xsc">
+      <DependentUpon>recibos1.xsd</DependentUpon>
+    </Content>
+    <None Include="Admin\recibos1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>recibos1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Admin\recibos1.xss">
+      <DependentUpon>recibos1.xsd</DependentUpon>
+    </Content>
+    <None Include="Admin\registroclientes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>registroclientes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Admin\registroclientes.xss">
+      <DependentUpon>registroclientes.xsd</DependentUpon>
+    </Content>
+    <Content Include="Admin\ventasdsm.xsc">
+      <DependentUpon>ventasdsm.xsd</DependentUpon>
+    </Content>
+    <None Include="Admin\ventasdsm.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ventasdsm.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Admin\ventasdsm.xss">
+      <DependentUpon>ventasdsm.xsd</DependentUpon>
+    </Content>
+    <Content Include="assets\images\lindo-estilo-dibujos-animados-alpaca_846317-47.avif" />
     <None Include="packages.config" />
     <Content Include="PlantillaArchivos\css\style.css.map" />
     <Content Include="PlantillaArchivos\css\style.scss" />
@@ -1778,6 +2017,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\images\iconos\" />
     <Folder Include="Images\Casera\" />
     <Folder Include="Images\Casetas\" />
     <Folder Include="Images\NivelesPiso\" />

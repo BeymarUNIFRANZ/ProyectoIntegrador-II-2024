@@ -26,7 +26,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form_container">
-                        <img id="userLogin" src="../Images/login.png" alt="" class="img-thumbnail" />
+                   
+                        <img id="userLogin" src="../Images/alpacaLOGIN.jpg" alt="" class="img-thumbnail" />
                     </div>
                 </div>
                 <div class="col-md-6">

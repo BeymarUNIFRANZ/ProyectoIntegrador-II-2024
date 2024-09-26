@@ -1,9 +1,10 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Web;
+using CrystalDecisions.Shared;
 using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace CASEWEB.Admin
 {
@@ -13,37 +14,123 @@ namespace CASEWEB.Admin
         {
             if (!IsPostBack)
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["CaseBDConnectionString"].ToString();
-                SqlConnection connection = new SqlConnection(connectionString);
+                ReportDocument reportDocument = new ReportDocument();
+                reportDocument.Load(Server.MapPath("~/masvendido.rpt"));
+                CrystalReportViewer1.ReportSource = reportDocument;
+                CrystalReportViewer1.RefreshReport();
+            }
+        }
 
-                // Create a new DataSet
-                DataSet data = new DataSet();
+        protected void btnExportPDF_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("PDF");
+        }
 
-                // Define the structure of the table
-                DataTable table = new DataTable("TablaDatos");
-                table.Columns.Add("Producto", typeof(string));
-                table.Columns.Add("Precio", typeof(decimal));
-                table.Columns.Add("Cantidad", typeof(int));
-                table.Columns.Add("Orden", typeof(int));
-                data.Tables.Add(table);
+        protected void btnExportWord_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("Word");
+        }
 
-                string sql = "SELECT dbo.PRODUCTOS.Nombre_Pro, dbo.PRODUCTOS.Precio_Pro, dbo.PRODUCTOS.Cantidad_Pro, dbo.ORDEN.Cantidad_Ord FROM dbo.PRODUCTOS INNER JOIN dbo.ORDEN ON dbo.PRODUCTOS.Cod_Pro = dbo.ORDEN.Cod_Pro";
+        protected void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("Excel");
+        }
 
-                using (SqlConnection conn = new SqlConnection(connectionString))
+        protected void btnExportCSV_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("CSV");
+        }
+
+        protected void btnExportText_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("Texto");
+        }
+
+        private void ExportarReporte(string formato)
+        {
+            try
+            {
+                // Obtener la cadena de conexión desde web.config
+                string cadenaConexion = System.Configuration.ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
+
+                // Resto del código sigue igual
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
-                    conn.Open();
-                    SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
-                    adapter.Fill(data, "TablaDatos");
+                    // Abrir la conexión
+                    conexion.Open();
+
+                    // Crear un comando SQL para obtener datos
+                    string consultaSQL = " SELECT TOP (10) Cod_Pro, Nombre_Pro, Precio_Pro, Cantidad_Pro AS TotalVendido FROM PRODUCTOS ORDER BY TotalVendido DESC";
+                    using (SqlCommand comando = new SqlCommand(consultaSQL, conexion))
+                    {
+                        // Crear un adaptador de datos
+                        using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                        {
+                            // Crear un conjunto de datos para almacenar los resultados de la consulta
+                            DataSet dataSet = new DataSet();
+
+                            // Llenar el conjunto de datos con los resultados de la consulta
+                            adaptador.Fill(dataSet);
+
+                            // Crear un informe Crystal Reports
+                            ReportDocument reportDocument = new ReportDocument();
+                            reportDocument.Load(Server.MapPath("masvendido.rpt"));
+
+                            // Configurar el origen de datos del informe
+                            reportDocument.SetDataSource(dataSet.Tables[0]);
+
+                            // Obtener el nombre del archivo
+                            string nombreArchivo = $"10productosmasvendidos_{DateTime.Now.ToString("yyyyMMddHHmmss")}";
+
+                            // Exportar el informe en el formato deseado con el nombre del archivo
+                            reportDocument.ExportToHttpResponse(GetFormatoExportacion(formato), Response, true, nombreArchivo);
+                            Response.End();
+                        }
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción, por ejemplo, mostrar un mensaje de error o registrarla.
+                Response.Write($"Error al exportar el informe: {ex.Message}");
+            }
+        }
 
-                // Supposing that 'masvendido' is the report file
-                masvendido reporte = new masvendido();
+        private ExportFormatType GetFormatoExportacion(string formato)
+        {
+            switch (formato.ToLower())
+            {
+                case "pdf":
+                    return ExportFormatType.PortableDocFormat;
+                case "word":
+                    return ExportFormatType.WordForWindows;
+                case "excel":
+                    return ExportFormatType.Excel;
+                case "csv":
+                    return ExportFormatType.CharacterSeparatedValues;
+                case "texto":
+                    return ExportFormatType.Text;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(formato), formato, null);
+            }
+        }
 
-                // Assign data to the report
-                reporte.SetDataSource(data);
-
-                // Bind the report to CrystalReportViewer
-                CrystalReportViewer1.ReportSource = reporte;
+        private string ObtenerTipoContenido(string formato)
+        {
+            switch (formato.ToLower())
+            {
+                case "pdf":
+                    return "application/pdf";
+                case "word":
+                    return "application/msword";
+                case "excel":
+                    return "application/vnd.ms-excel";
+                case "csv":
+                    return "text/csv";
+                case "texto":
+                    return "text/plain";
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(formato), formato, null);
             }
         }
     }

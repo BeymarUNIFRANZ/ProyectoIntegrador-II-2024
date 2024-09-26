@@ -113,22 +113,22 @@
                                                             ErrorMessage="Requiere Precio" ForeColor="Red" Display="Dynamic"
                                                             SetFocusOnError="true" ControlToValidate="txtPrice"></asp:RequiredFieldValidator>
                                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
-                                                            ErrorMessage="El Precio tiene que estar en Decimal" ForeColor="Red" Display="Dynamic"
+                                                            ErrorMessage="El Precio tiene que estar en Decimal y sin caracteres" ForeColor="Red" Display="Dynamic"
                                                             SetFocusOnError="true" ControlToValidate="txtPrice"
                                                             ValidationExpression="^\d{0,8}(\.\d{1,4})?$"></asp:RegularExpressionValidator>
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label>Cantidad de Producto</label>
+                                                    <label>Stock de Producto</label>
                                                     <div>
                                                         <asp:TextBox ID="txtQunatity" runat="server" CssClass="form-control"
                                                             placeholder="Cantidad Producto"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
-                                                            ErrorMessage="Requiere Cantidad" ForeColor="Red" Display="Dynamic"
+                                                            ErrorMessage="Requiere Stock" ForeColor="Red" Display="Dynamic"
                                                             SetFocusOnError="true" ControlToValidate="txtQunatity"></asp:RequiredFieldValidator>
                                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server"
-                                                            ErrorMessage="La Cantidad No puede ser Negativa" ForeColor="Red" Display="Dynamic"
+                                                            ErrorMessage="La Cantidad No puede ser Negativa/Ni contener Caracteres" ForeColor="Red" Display="Dynamic"
                                                             SetFocusOnError="true" ControlToValidate="txtQunatity"
                                                             ValidationExpression="^([1-9]\d*|0)$"></asp:RegularExpressionValidator>
                                                     </div>
@@ -157,7 +157,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group">
+                                               <!-- <div class="form-group">
                                                     <label>Casetas</label>
                                                     <div>
                                                         <asp:DropDownList ID="ddlCasetas" runat="server" CssClass="form-control"
@@ -171,7 +171,7 @@
                                                         </asp:RequiredFieldValidator>
                                                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:cs %>" SelectCommand="SELECT [Cod_Cast],[Nombre_Cast] FROM [CASETAS]"></asp:SqlDataSource>
                                                     </div>
-                                                </div>
+                                                </div>-->
 
                                                 <div class="form-check pl-4">
                                                     <asp:CheckBox ID="cbIsActive" runat="server" Text="&nbsp; Activo"
@@ -263,7 +263,7 @@
                                                                         <th>Precio(Bs)</th>
                                                                         <th>Cantidad</th>
                                                                         <th>Categoria</th>
-                                                                        <th>Caseta</th>
+                                                                        
                                                                         <th>Activo</th>
                                                                         <th>Descripcion</th>
                                                                         <th>Fecha Creada</th>
@@ -288,9 +288,9 @@
                                                                     <asp:Label ID="lblQuantity" runat="server" Text='<%# Eval("Cantidad_Pro") %>'></asp:Label>
                                                                 </td>
 
-                                                                <td><%# Eval("Nombre_Pro") %> </td>
+                                                                <td class="table-plus"><%# Eval("Nombre_Pro") %> </td>
 
-                                                               <td><%# Eval("Cod_Cast") %> </td>
+                                                               
 
                                                                 <td>
                                                                     <asp:Label ID="lblIsActive" runat="server" Text='<%# Eval("Activo_Pro") %>'>
@@ -310,7 +310,7 @@
 
                                                                     <asp:LinkButton ID="lnkDelete" Text="Delete" runat="server" CommandName="delete"
                                                                         CssClass="badge bg-danger" CommandArgument='<%# Eval("Cod_Pro") %>'
-                                                                        OnClientClick="return confirm('Do you want to delete this product?');"
+                                                                        OnClientClick="return confirm('Quieres Eliminar este Prodcuto?');"
                                                                         CausesValidation="false">
                                                                          <i class="ti-trash"></i>
                                                                     </asp:LinkButton>

@@ -42,6 +42,15 @@ namespace CASEWEB.Admin
         protected global::System.Web.UI.WebControls.HiddenField hdnId;
 
         /// <summary>
+        /// Control RequiredFieldValidator3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+
+        /// <summary>
         /// Control fuCategoryImage.
         /// </summary>
         /// <remarks>
@@ -85,15 +94,6 @@ namespace CASEWEB.Admin
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgCategory;
-
-        /// <summary>
-        /// Control lnkEdit.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkEdit;
 
         /// <summary>
         /// Control rCategory.

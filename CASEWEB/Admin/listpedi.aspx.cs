@@ -1,6 +1,5 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
-using CrystalDecisions.Web;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -20,37 +19,118 @@ namespace CASEWEB.Admin
         {
 
         }
-        protected void btnDescargarPDF_Click(object sender, EventArgs e)
-        {
 
+        protected void btnExportPDF_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("PDF");
+        }
+
+        protected void btnExportWord_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("Word");
+        }
+
+        protected void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("Excel");
+        }
+
+        protected void btnExportCSV_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("CSV");
+        }
+
+        protected void btnExportText_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("Texto");
+        }
+
+        private void ExportarReporte(string formato)
+        {
             try
             {
-                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CaseBDConnectionString"].ConnectionString))
+                // Obtener la cadena de conexión desde web.config
+                string cadenaConexion = System.Configuration.ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
+
+                // Resto del código sigue igual
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
-                    using (SqlCommand cmd = new SqlCommand("SELECT ORDEN.NumOrden_Ord, PRODUCTOS.Nombre_Pro, ORDEN.Cantidad_Ord, USUARIOS.Nombre_Usu, PAGO.Nombre_Pag, ORDEN.Estado_Ord FROM PRODUCTOS INNER JOIN ORDEN ON PRODUCTOS.Cod_Pro = ORDEN.Cod_Pro INNER JOIN PAGO ON ORDEN.Cod_Pag = PAGO.Cod_Pag INNER JOIN USUARIOS ON ORDEN.Cod_Usu = USUARIOS.Cod_Usu GROUP BY ORDEN.NumOrden_Ord, PRODUCTOS.Nombre_Pro, ORDEN.Cantidad_Ord, USUARIOS.Nombre_Usu, PAGO.Nombre_Pag, ORDEN.Estado_Ord", con))
+                    // Abrir la conexión
+                    conexion.Open();
+
+                    // Crear un comando SQL para obtener datos
+                    string consultaSQL = "SELECT ORDEN.NumOrden_Ord, PRODUCTOS.Nombre_Pro, ORDEN.Cantidad_Ord, USUARIOS.Nombre_Usu, PAGO.Nombre_Pag, ORDEN.Estado_Ord FROM PRODUCTOS INNER JOIN ORDEN ON PRODUCTOS.Cod_Pro = ORDEN.Cod_Pro INNER JOIN PAGO ON ORDEN.Cod_Pag = PAGO.Cod_Pag INNER JOIN USUARIOS ON ORDEN.Cod_Usu = USUARIOS.Cod_Usu GROUP BY ORDEN.NumOrden_Ord, PRODUCTOS.Nombre_Pro, ORDEN.Cantidad_Ord, USUARIOS.Nombre_Usu, PAGO.Nombre_Pag, ORDEN.Estado_Ord";
+                    using (SqlCommand comando = new SqlCommand(consultaSQL, conexion))
                     {
-                        cmd.CommandType = CommandType.Text;
-                        SqlDataAdapter da = new SqlDataAdapter();
-                        da.SelectCommand = cmd;
-                        DataTable datatable = new DataTable();
-                        da.Fill(datatable); // Obtiene toda la información
+                        // Crear un adaptador de datos
+                        using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                        {
+                            // Crear un conjunto de datos para almacenar los resultados de la consulta
+                            DataSet dataSet = new DataSet();
 
-                        ReportDocument crystalReport = new ReportDocument(); // Crear el crystal report
-                        crystalReport.Load(Server.MapPath("listpedi.rpt")); // Ruta del reporte 
-                        crystalReport.SetDataSource(datatable); // Cargar datos al reporte
-                        CrystalReportViewer1.ReportSource = crystalReport;
+                            // Llenar el conjunto de datos con los resultados de la consulta
+                            adaptador.Fill(dataSet);
 
-                        crystalReport.ExportToHttpResponse(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, Response, true, "Listadepedido_" + DateTime.Now.ToString());//Exportar pdf
+                            // Crear un informe Crystal Reports
+                            ReportDocument reportDocument = new ReportDocument();
+                            reportDocument.Load(Server.MapPath("listpedi.rpt"));
+
+                            // Configurar el origen de datos del informe
+                            reportDocument.SetDataSource(dataSet.Tables[0]);
+
+                            // Obtener el nombre del archivo
+                            string nombreArchivo = $"Listadepedido_{DateTime.Now.ToString("yyyyMMddHHmmss")}";
+
+                            // Exportar el informe en el formato deseado con el nombre del archivo
+                            reportDocument.ExportToHttpResponse(GetFormatoExportacion(formato), Response, true, nombreArchivo);
+                            Response.End();
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Manejar la excepción, registrarla o mostrar un mensaje de error al usuario.
-                // Por ejemplo:
-                Response.Write("Se produjo un error: " + ex.Message);
+                // Manejar la excepción, por ejemplo, mostrar un mensaje de error o registrarla.
+                Response.Write($"Error al exportar el informe: {ex.Message}");
             }
         }
 
+        private ExportFormatType GetFormatoExportacion(string formato)
+        {
+            switch (formato.ToLower())
+            {
+                case "pdf":
+                    return ExportFormatType.PortableDocFormat;
+                case "word":
+                    return ExportFormatType.WordForWindows;
+                case "excel":
+                    return ExportFormatType.Excel;
+                case "csv":
+                    return ExportFormatType.CharacterSeparatedValues;
+                case "texto":
+                    return ExportFormatType.Text;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(formato), formato, null);
+            }
+        }
+
+        private string ObtenerTipoContenido(string formato)
+        {
+            switch (formato.ToLower())
+            {
+                case "pdf":
+                    return "application/pdf";
+                case "word":
+                    return "application/msword";
+                case "excel":
+                    return "application/vnd.ms-excel";
+                case "csv":
+                    return "text/csv";
+                case "texto":
+                    return "text/plain";
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(formato), formato, null);
+            }
+        }
     }
 }

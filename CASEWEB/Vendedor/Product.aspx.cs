@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Drawing;
 
 
 namespace CASEWEB.Vendedor
@@ -22,7 +23,7 @@ namespace CASEWEB.Vendedor
         {
             if (!IsPostBack)
             {
-                Session["breadCrum"] = "Product";
+                Session["breadCrum"] = "Producto";
                 getProducts();
             }
             lblMsg.Visible = false;
@@ -42,6 +43,7 @@ namespace CASEWEB.Vendedor
             cmd.Parameters.AddWithValue("@Price", txtPrice.Text.Trim());
             cmd.Parameters.AddWithValue("@Quantity", txtQunatity.Text.Trim());
             cmd.Parameters.AddWithValue("@CategoryId", ddlCategories.SelectedValue);
+          
             cmd.Parameters.AddWithValue("@IsActive", cbIsActive.Checked);
             if (fuProductImage.HasFile)
             {
@@ -114,6 +116,7 @@ namespace CASEWEB.Vendedor
             txtQunatity.Text = string.Empty;
             txtPrice.Text = string.Empty;
             ddlCategories.ClearSelection();
+            
             cbIsActive.Checked = false;
             hdnId.Value = "0";
             btnAddOrUpdate.Text = "Añadir";
@@ -143,6 +146,7 @@ namespace CASEWEB.Vendedor
                 txtPrice.Text = dt.Rows[0]["Precio_Pro"].ToString();
                 txtQunatity.Text = dt.Rows[0]["Cantidad_Pro"].ToString();
                 ddlCategories.SelectedValue = dt.Rows[0]["Cod_Cat"].ToString();
+                
                 cbIsActive.Checked = Convert.ToBoolean(dt.Rows[0]["Activo_Pro"]);
                 imgProduct.ImageUrl = string.IsNullOrEmpty(dt.Rows[0]["ImagenUrl_Pro"].ToString()) ?
                     "..//Images/No_image.png" : "../" + dt.Rows[0]["ImagenUrl_Pro"].ToString();
@@ -202,9 +206,10 @@ namespace CASEWEB.Vendedor
                 if (Convert.ToInt32(lblQuantity.Text) <= 5)
                 {
                     lblQuantity.CssClass = "badge badge-danger";
-                    lblQuantity.ToolTip = "Item about to be 'Out of stock'!";
+                    lblQuantity.ToolTip = "¡Artículo a punto de estar Agotado!";
                 }
             }
         }
+
     }
 }

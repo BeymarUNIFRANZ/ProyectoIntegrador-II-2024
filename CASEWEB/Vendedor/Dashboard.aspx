@@ -2,5 +2,5 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <img src="../PlantillaArchivos/images/FONDOCASERA.png" style="display: block; margin: 0 auto; max-width: 100%; height: auto;" />
+    <img src="../Images/Vendedor.jpg" style="display: block; margin: 0 auto; max-width: 100%; height: auto;" />
 </asp:Content>

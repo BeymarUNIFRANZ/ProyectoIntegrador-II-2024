@@ -29,14 +29,14 @@ namespace CASEWEB.Usuario
 
             if (Session["Cod_Usu"] != null)
             {
-                LbLoginOrLogout.Text = "Cerrar Sesion";
+                LbLoginOrLogout.Text = "Cerrar Sesión";
                 Utils utils = new Utils();
                 Session["cartCount"] = utils.cartCount(Convert.ToInt32(Session["Cod_Usu"])).ToString();
             }
 
             else
             {
-                LbLoginOrLogout.Text = "Iniciar Sesion";
+                LbLoginOrLogout.Text = "Iniciar Sesión";
                 Session["cartCount"] = "0";
             }
         }
@@ -58,12 +58,12 @@ namespace CASEWEB.Usuario
         {
             if (Session["Cod_Usu"] != null)
             {
-                lbRegisterOrProfile.ToolTip = "User Profile"; 
+                lbRegisterOrProfile.ToolTip = "Perfil de Usuario"; 
                 Response.Redirect("Perfil.aspx");
             }
             else
             {
-                lbRegisterOrProfile.ToolTip = "User Registration";
+                lbRegisterOrProfile.ToolTip = "Usuario ya registrado";
                 Response.Redirect("Registro.aspx");
 
             }

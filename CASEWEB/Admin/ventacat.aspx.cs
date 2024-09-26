@@ -1,9 +1,13 @@
-﻿using System;
-using System.Configuration;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Web;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace CASEWEB.Admin
 {
@@ -11,31 +15,118 @@ namespace CASEWEB.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+
+        }
+        protected void btnExportPDF_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("PDF");
+        }
+
+        protected void btnExportWord_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("Word");
+        }
+
+        protected void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("Excel");
+        }
+
+        protected void btnExportCSV_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("CSV");
+        }
+
+        protected void btnExportText_Click(object sender, EventArgs e)
+        {
+            ExportarReporte("Texto");
+        }
+
+        private void ExportarReporte(string formato)
+        {
+            try
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["CaseBDConnectionString"].ToString();
+                // Obtener la cadena de conexión desde web.config
+                string cadenaConexion = System.Configuration.ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                // Resto del código sigue igual
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
-                    connection.Open();
-                    string sql = "SELECT dbo.CATEGORIAS.Nombre_Cat AS Categoria, dbo.PRODUCTOS.Nombre_Pro AS Producto, dbo.PRODUCTOS.Precio_Pro AS Precio, dbo.PRODUCTOS.Cantidad_Pro AS Cantidad, dbo.ORDEN.Cantidad_Ord AS Orden " +
-                        "FROM dbo.CATEGORIAS INNER JOIN " +
-                        "dbo.PRODUCTOS ON dbo.CATEGORIAS.Cod_Cat = dbo.PRODUCTOS.Cod_Cat INNER JOIN " +
-                        "dbo.ORDEN ON dbo.PRODUCTOS.Cod_Pro = dbo.ORDEN.Cod_Pro";
+                    // Abrir la conexión
+                    conexion.Open();
 
-                    SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-                    DataSet datos = new DataSet();
-                    adapter.Fill(datos, "TablaDatos");
+                    // Crear un comando SQL para obtener datos
+                    string consultaSQL = "SELECT CATEGORIAS.Nombre_Cat, PRODUCTOS.Nombre_Pro, PRODUCTOS.Precio_Pro, PRODUCTOS.Cantidad_Pro FROM     PRODUCTOS INNER JOIN             CATEGORIAS ON PRODUCTOS.Cod_Cat = CATEGORIAS.Cod_Cat";
+                    using (SqlCommand comando = new SqlCommand(consultaSQL, conexion))
+                    {
+                        // Crear un adaptador de datos
+                        using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                        {
+                            // Crear un conjunto de datos para almacenar los resultados de la consulta
+                            DataSet dataSet = new DataSet();
 
-                    // Suponiendo que CrystalReport1 está definido en el proyecto y es un informe válido
-                    ventacat reporte = new ventacat();
+                            // Llenar el conjunto de datos con los resultados de la consulta
+                            adaptador.Fill(dataSet);
 
-                    // Asignar los datos al informe
-                    reporte.SetDataSource(datos.Tables["ventacat.rpt"]);
+                            // Crear un informe Crystal Reports
+                            ReportDocument reportDocument = new ReportDocument();
+                            reportDocument.Load(Server.MapPath("ventacat.rpt"));
 
-                    // Enlazar el informe al CrystalReportViewer
-                    CrystalReportViewer1.ReportSource = reporte;
+                            // Configurar el origen de datos del informe
+                            reportDocument.SetDataSource(dataSet.Tables[0]);
+
+                            // Obtener el nombre del archivo
+                            string nombreArchivo = $"Ventaporcategoria_{DateTime.Now.ToString("yyyyMMddHHmmss")}";
+
+                            // Exportar el informe en el formato deseado con el nombre del archivo
+                            reportDocument.ExportToHttpResponse(GetFormatoExportacion(formato), Response, true, nombreArchivo);
+                            Response.End();
+                        }
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción, por ejemplo, mostrar un mensaje de error o registrarla.
+                Response.Write($"Error al exportar el informe: {ex.Message}");
+            }
+        }
+
+        private ExportFormatType GetFormatoExportacion(string formato)
+        {
+            switch (formato.ToLower())
+            {
+                case "pdf":
+                    return ExportFormatType.PortableDocFormat;
+                case "word":
+                    return ExportFormatType.WordForWindows;
+                case "excel":
+                    return ExportFormatType.Excel;
+                case "csv":
+                    return ExportFormatType.CharacterSeparatedValues;
+                case "texto":
+                    return ExportFormatType.Text;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(formato), formato, null);
+            }
+        }
+
+        private string ObtenerTipoContenido(string formato)
+        {
+            switch (formato.ToLower())
+            {
+                case "pdf":
+                    return "application/pdf";
+                case "word":
+                    return "application/msword";
+                case "excel":
+                    return "application/vnd.ms-excel";
+                case "csv":
+                    return "text/csv";
+                case "texto":
+                    return "text/plain";
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(formato), formato, null);
             }
         }
     }

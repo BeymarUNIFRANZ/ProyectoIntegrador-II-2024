@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>CASERAWEB - Admin</title>
+    <title>AWAJ WARMIS - Admin</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -15,7 +15,6 @@
       <![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="CodedThemes">
@@ -121,8 +120,8 @@
                                 <i class="ti-menu"></i>
                             </a>
                             <a href="Dashboard2.aspx">
+                                <img src="../assets/images/logoAWAJ.png" />
 
-                                <img class="img-fluid" src="../assets/images/logoA.png" alt="LOGO" />
                             </a>
                             <a class="mobile-options">
                                 <i class="ti-more"></i>
@@ -191,7 +190,8 @@
 
                                 <li class="user-profile header-notification">
                                     <a href="#!">
-                                        <img src="../assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+
+                                        <img src="../assets/images/Avatar_AlpacaAdmin.png" alt="User-Profile-Image" class="img-radius" />
                                         <span>Admin</span>
                                         <i class="ti-angle-down"></i>
                                     </a>
@@ -467,30 +467,37 @@
 
                                 <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Registros</div>
                                 <ul class="pcoded-item pcoded-left-item">
-                                    <li class="pcoded-hasmenu" >
+                                    <li class="pcoded-hasmenu">
                                         <a href="javascript:void(0)">
-                                            <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
-                                            <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Mercado</span>
+                                            <span class="pcoded-micon"  style="background:green"><i class="ti-layout-grid2-alt"></i></span>
+                                            <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Catalogo</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
                                         <ul class="pcoded-submenu">
                                             <li>
+                                            <li>
+                                                <a href="RegistroUsuarios.aspx">
+                                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Usuarios</span>
+                                                    <span class="pcoded-mcaret"></span>
+                                                </a>
 
+                                            </li>
                                             <li>
                                                 <a href="RegistroCasera.aspx">
                                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Caseras</span>
+                                                    <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Vendedores</span>
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                                 <!-- Contenido del submenú 2 -->
 
 
                                                 <li>
-                                                    <a href="CasetasPBaja.aspx">
+                                                    <!--<a href="CasetasPBaja.aspx">
                                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                         <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Casetas</span>
                                                         <span class="pcoded-mcaret"></span>
-                                                    </a>
+                                                    </a>-->
 
                                                 </li>
 
@@ -523,7 +530,7 @@
                                 <ul class="pcoded-item pcoded-left-item">
                                     <li class="pcoded-hasmenu">
                                         <a href="#">
-                                            <span class="pcoded-micon"><i class="ti-layers"></i><b>M</b></span>
+                                            <span class="pcoded-micon" style="background:red"><i class="ti-layers"></i><b>M</b></span>
                                             <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Reportes</span>
                                             <span class="pcoded-mcaret"></span>
                                         </a>
@@ -545,32 +552,146 @@
                                                     </a>
 
                                                 </li>
-                                                
+
                                                 <li>
                                                     <a href="listpedi.aspx">
                                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                         <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Pedidos</span>
                                                         <span class="pcoded-mcaret"></span>
                                                     </a>
-                                                    
-                                                </li>
-                                                
 
-                                                <li>
+                                                </li>
+
+
+                                              <li>
                                                     <a href="pediclien.aspx">
                                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                         <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Pedidos por Cliente</span>
                                                         <span class="pcoded-mcaret"></span>
                                                     </a>
-                                                    
-                                                </li>
-                                                
-                                            </li>
-                                        </ul>
-                                        
-                                    </li>
 
-                                    <%--<div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Asignacion Casetas</div>
+                                                </li>
+
+                                                    <%--<li>
+                                                    <a href="prorecienagregados.aspx">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Productos Recientemente</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+
+                                                </li>--%>
+
+                                                <li>
+                                                    <a href="prodcateg.aspx">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Productos por Categoria</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+
+                                                </li>
+
+                                                <li>
+                                                    <a href="pedidomepago.aspx">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Pedidos por Metodo de Pago</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+
+                                                </li>
+
+
+                                                <%--<li>
+                                                    <a href="productosagotados.aspx">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Productos Agotados</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+
+                                                </li>--%>
+
+                                                <li>
+                                                    <a href="registroclientes.aspx">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Lista de Usuarios</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+
+                                                </li>
+
+                                                <li>
+                                                    <a href="ventasdsm.aspx">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Ventas por Mes</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+
+                                                </li>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </li>
+                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Lista de Borradores</div>
+                                    <ul class="pcoded-item pcoded-left-item">
+                                        <li class="pcoded-hasmenu">
+                                            <a href="javascript:void(0)">
+                                                <span class="pcoded-micon"  style="background:gray"><i class="ti-layout-grid2-alt"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Inactivos</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                            <ul class="pcoded-submenu">
+                                                <li>
+
+                                                    <li>
+                                                        <a href="Borradores.aspx">
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Categoria</span>
+                                                            <span class="pcoded-mcaret"></span>
+                                                        </a>
+                                                    </li>
+                                                </li>
+                                                <li>
+
+                                                    <li>
+                                                        <a href="BorradorPro.aspx">
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Productos</span>
+                                                            <span class="pcoded-mcaret"></span>
+                                                        </a>
+                                                    </li>
+                                                </li>
+                                                <li>
+
+                                                    <li>
+                                                        <a href="BorradorUsu.aspx">
+                                                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Usuarios</span>
+                                                            <span class="pcoded-mcaret"></span>
+                                                        </a>
+                                                    </li>
+                                                </li>
+                                                <li>
+                                                    <a href="BorradorVen.aspx">
+                                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Vendedor</span>
+                                                        <span class="pcoded-mcaret"></span>
+                                                    </a>
+                                                </li>
+                                        </li>
+                                    </ul>
+
+
+                                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Contactos</div>
+                                    <ul class="pcoded-item pcoded-left-item">
+                                        <li class="active">
+                                            <a href="Contactos.aspx">
+                                                <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>D</b></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.dash.main">Mensajes</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <%--<div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Asignacion Casetas</div>
                                     <ul class="pcoded-item pcoded-left-item">
                                         <li>
                                             <a href="AsignacionCaseta.aspx">
@@ -589,7 +710,7 @@
                                                     <span class="pcoded-mcaret"></span>
                                                 </a>
                                             </li>--%>
-                                </ul>
+                                    </ul>
                             </div>
                         </nav>
                         <div class="pcoded-content">

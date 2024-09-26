@@ -84,7 +84,7 @@
             <!-- For demo purpose -->
             <div class="row mb-4">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-6">Cancele Aqui Casero(a)!!</h1>
+                    <h1 class="display-6">Cancele Aqui!!</h1>
                 </div>
             </div>
             <!-- End -->

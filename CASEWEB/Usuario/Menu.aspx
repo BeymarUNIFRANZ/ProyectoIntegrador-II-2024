@@ -38,7 +38,7 @@
                 return vars;
             };
 
-            var id = getUrlVars()["id"];
+            var id = getUrlVars()["Cod_Cat"];
             if (id > 0) {
                 $('.filters_menu li').removeClass('active');
             }
@@ -73,7 +73,7 @@
                 <div class="align-self-end">
                     <asp:Label ID="lblMsg" runat="server" Visible="false"></asp:Label>
                 </div>
-                <h2>MERCADO</h2>
+                <h2>CATALOGO</h2>
             </div>
 
             <ul class="filters_menu">
@@ -95,6 +95,7 @@
                             <div class="col-sm-6 col-lg-4 all <%# Regex.Replace(Eval("Nombre_Pro").ToString().ToLower(),@"\s+","") %>">
                                 <div class="box">
                                     <div>
+
                                         <div class="img-box">
                                             <img src="<%# Utils.GetImageUrl( Eval("ImagenUrl_Pro")) %>" alt="">
                                         </div>

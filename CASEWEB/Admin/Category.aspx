@@ -27,21 +27,7 @@
     </script>
 
     <!-- JavaScript para abrir la página ASPX en un cuadro de diálogo modal -->
-    <script type="text/javascript">
-        function openPdfPage() {
-            var pdfPageUrl = 'ventacat.aspx'; // Reemplaza 'TuArchivo.aspx' con la URL de tu archivo ASPX
-            var iframe = '<iframe width="100%" height="700px" src="' + pdfPageUrl + '"></iframe>';
 
-            // Limpia el contenido previo del cuadro de diálogo
-            $('#exampleModal .modal-body').empty();
-
-            // Asigna el iframe al cuerpo del cuadro de diálogo
-            $('#exampleModal .modal-body').html(iframe);
-
-            // Abre el cuadro de diálogo modal
-            $('#exampleModal').modal('show');
-        }
-    </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -72,6 +58,9 @@
                                                         <asp:TextBox ID="txtName" runat="server" CssClass="form-control"
                                                             placeholder="Ingrese Nombre"></asp:TextBox>
                                                         <asp:HiddenField ID="hdnId" Value="0" runat="server" />
+                                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+                                                            ErrorMessage="Requiere Nombre de Categoria" ForeColor="Red" Display="Dynamic"
+                                                            SetFocusOnError="true" ControlToValidate="txtName"></asp:RequiredFieldValidator>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -104,13 +93,7 @@
                                             <div class="card-block table-border-style">
                                                 <div class="table-responsive">
 
-                                                    <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server" CssClass="badge badge-primary"
-                                                        CommandArgument='<%# Eval("Cod_Pro") %>' CommandName="edit" OnClientClick="openPdfPage(); return false;">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" fill="currentColor" class="bi bi-hand-index" viewBox="0 0 16 16">
-                                                        <h6>Abrir PDF</h6>
-                                                    </svg>
-                                                    </asp:LinkButton>
-                                                    <hr />
+
 
                                                     <!-- Cuadro de diálogo modal -->
                                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -155,14 +138,15 @@
                                                                 </td>
                                                                 <td><%# Eval("CrearFecha_Cat") %> </td>
                                                                 <td>
-                                                                    <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server" CssClass="badge badge-primary"
+                                                                    <asp:LinkButton ID="lnkEdit" Text="Edit" runat="server" CssClass="badge badge-primary" CausesValidation="false"
                                                                         CommandArgument='<%# Eval("Cod_Cat") %>' CommandName="edit">
                                                                             <i class="ti-pencil"></i>
                                                                     </asp:LinkButton>
 
                                                                     <asp:LinkButton ID="lnkDelete" Text="Delete" runat="server" CommandName="delete"
                                                                         CssClass="badge bg-danger" CommandArgument='<%# Eval("Cod_Cat") %>'
-                                                                        OnClientClick="return confirm('Quieres Eliminar esta Categoria?');">
+                                                                        OnClientClick="return confirm('Quieres Eliminar esta Categoria?');"
+                                                                        CausesValidation="false">
                                                                              <i class="ti-trash"></i>
                                                                     </asp:LinkButton>
                                                                 </td>

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Usuario.master.cs" Inherits="CASEWEB.Usuario.Usuario" %>
+﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Usuario.master.cs" Inherits="CASEWEB.Usuario.Usuario" %>
 
 <%@ Register Src="~/Usuario/SliderUserControl1.ascx" TagPrefix="uc1" TagName="SliderUserControl1" %>
 
@@ -18,12 +18,12 @@
     <meta name="author" content="" />
     <link rel="shortcut icon" href="../PlantillaArchivos/images/favicon.png" type="">
 
-    <title>CASERA WEB </title>
+    <title>AWAJ WARMIS </title>
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="../PlantillaArchivos/css/bootstrap.css" />
 
     <!--owl slider stylesheet -->
-   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <!-- nice select  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
     <!-- font awesome style -->
@@ -51,8 +51,58 @@
                 }
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializar el índice de la imagen actual
+            var currentImageIndex = 1;
+
+            // Cambiar las imágenes cada cierto tiempo (por ejemplo, cada 5 segundos)
+            setInterval(function () {
+                toggleImages();
+            }, 5000);
+
+            function toggleImages() {
+                var imageContainer = document.getElementById('image-container');
+                // Obtener todas las imágenes dentro del contenedor
+                var images = imageContainer.getElementsByClassName('background-image');
+
+                // Ocultar todas las imágenes
+                for (var i = 0; i < images.length; i++) {
+                    images[i].style.opacity = '0';
+                }
+
+                // Mostrar la siguiente imagen
+                images[currentImageIndex].style.opacity = '1';
+
+                // Incrementar el índice de la imagen actual
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            }
+        });
+
+
     </script>
 
+    <style>
+        #image-container {
+            
+            width: 100%;
+            height: 100vh;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out; /* Ajusta la duración y el tipo de transición según tus preferencias */
+        }
+
+        #image1 {
+            opacity: 1; /* La primera imagen es visible inicialmente */
+        }
+    </style>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -62,17 +112,22 @@
 
         <div class="hero_area">
             <div class="bg-box">
-                <img src="../PlantillaArchivos/images/FondoMercado2.png" />
+                <img src="../PlantillaArchivos/images/FONDOAWAJ1.png" />
+                    <!--<img src="../PlantillaArchivos/images/FondoMercado2.png" class="background-image" id="image1" />-->
+                <%--<div id="image-container">
+                    <img src="../PlantillaArchivos/images/FondoMercado1.png" class="background-image" id="image2"/>
+                    <img src="../PlantillaArchivos/images/FondoMercado3.png" class="background-image" id="image3"/>
+                </div>--%>
             </div>
             <br />
 
             <!-- header section strats -->
             <header class="header_section">
                 <div class="container">
-                    
+
                     <nav class="navbar navbar-expand-lg custom_nav-container ">
                         <a class="navbar-brand" href="Default.aspx">
-                            <span>CASERA WEB
+                            <span>AWAJ WARMIS
                             </span>
                         </a>
 
@@ -86,11 +141,11 @@
                                     <a class="nav-link" href="Default.aspx">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="Menu.aspx">Mercado</a>
+                                    <a class="nav-link" href="Menu.aspx">Catalogo</a>
                                 </li>
-                                <li class="nav-item">
+                               <%-- <li class="nav-item">
                                     <a class="nav-link" href="Casetas.aspx">Casetas</a>
-                                </li>
+                                </li>--%>
                                 <li class="nav-item">
                                     <a class="nav-link" href="Acerca.aspx">Nosotros</a>
                                 </li>
@@ -178,7 +233,7 @@
                             </div>
                         </div>
                     </nav>
-                        
+
                 </div>
             </header>
             <!-- end header section -->
@@ -212,7 +267,7 @@
                                 </a>
                                 <a href="#">
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    <span>TuCaserita@gmail.com
+                                    <span>AwajWarmis@gmail.com
                                     </span>
                                 </a>
                             </div>
@@ -223,7 +278,7 @@
                             <a href="#" class="footer-logo">Apoyanos
                             </a>
                             <p>
-                                Si quieres aysudar a que este proyecto sigua adelante y ayudarnos a mejorar las cosas a un futuro muy proximo por favor colaboranos con una nota 25 sobre 25 en este hito y en los proximos             
+                               Apoya a la Asociacion Textil para mostrarle al mundo que Bolivia tiene mucho que dar!             
                             </p>
                             <div class="footer_social">
                                 <a href="#">
@@ -257,8 +312,7 @@
                 </div>
                 <div class="footer-info">
                     <p>
-                        ESTA PAGINA WEB FUE AUSPICIADA POR TU CASERA DEL MERCADO LANZA APOYANOS!! 
-            #TUCASERITATAMBIENTIENESENTIMIENTOS
+                       Esta pagina esta inspirada en la difunta caserita web en paz descance :,(
                     </p>
                 </div>
             </div>
@@ -266,26 +320,26 @@
         <!-- footer section -->
     </form>
 
-     <%--<!-- jQery -->
+    <%--<!-- jQery -->
   <script src="../TemplateFiles/js/jquery-3.4.1.min.js"></script>--%>
-  <!-- popper js -->
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
-  <!-- bootstrap js -->
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
     <script src="../PlantillaArchivos/js/bootstrap.js"></script>
-  <!-- owl slider -->
+    <!-- owl slider -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-</script>
-  <!-- isotope js -->
- <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
-  <!-- nice select -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
-  <!-- custom js -->
+    </script>
+    <!-- isotope js -->
+    <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+    <!-- nice select -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+    <!-- custom js -->
     <script src="../PlantillaArchivos/js/custom.js"></script>
-  <!-- Google Map -->
+    <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-</script>
-  <!-- End Google Map -->
+    </script>
+    <!-- End Google Map -->
 
 </body>
 </html>

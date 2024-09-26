@@ -68,7 +68,7 @@ namespace CASEWEB.Usuario
         {
             try
             {
-                string downloadPath = $"D:\\recibo_orden_{Guid.NewGuid()}.pdf";
+                string downloadPath = $"D:\\recibo_orden_.pdf";
                 using (FileStream fs = new FileStream("D:\\recibo_orden.pdf", FileMode.Create, FileAccess.Write, FileShare.None))
                 {
                     DataTable dtbl = GetOrderDetails();
@@ -113,7 +113,7 @@ namespace CASEWEB.Usuario
             BaseFont btnAuthor = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             iTextSharp.text.Font fntAuthor = new iTextSharp.text.Font(btnAuthor, 8, 2, iTextSharp.text.Color.GRAY);
             prgAuthor.Alignment = Element.ALIGN_RIGHT;
-            prgAuthor.Add(new Chunk("Orden de : CASERA WEB", fntAuthor));
+            prgAuthor.Add(new Chunk("Orden de : AWAJ WARMIS", fntAuthor));
             prgAuthor.Add(new Chunk("\nFecha Orden : " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), fntAuthor));
 
             document.Add(prgAuthor);

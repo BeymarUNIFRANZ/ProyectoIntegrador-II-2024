@@ -95,6 +95,7 @@ namespace CASEWEB.Admin
             con = new SqlConnection(Connetion.GetConnectionString());
             cmd = new SqlCommand("Category_Crud", con);
             cmd.Parameters.AddWithValue("@Action", "SELECT");
+            cmd.Parameters.AddWithValue("@IsActive", true);  // Agrega este parámetro para filtrar solo las activas
             cmd.CommandType = CommandType.StoredProcedure;
             sda = new SqlDataAdapter(cmd);
             dt = new DataTable();
@@ -130,17 +131,28 @@ namespace CASEWEB.Admin
                 sda = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 sda.Fill(dt);
-                txtName.Text = dt.Rows[0]["Nombre_Cat"].ToString();
-                cbIsActive.Checked = Convert.ToBoolean(dt.Rows[0]["Activo_Cat"]);
-                imgCategory.ImageUrl = string.IsNullOrEmpty(dt.Rows[0]["ImagenUrl_Cat"].ToString()) ?
-                    "..//Images/No_image.png" : "../" + dt.Rows[0]["ImagenUrl_Cat"].ToString();
-                imgCategory.Height = 200;
-                imgCategory.Width = 200;
-                hdnId.Value = dt.Rows[0]["Cod_Cat"].ToString();
-                btnAddOrUpdate.Text = "Actualizar";
-                LinkButton btn = e.Item.FindControl("lnkEdit") as LinkButton;
-                btn.CssClass = "badge badge-warning";
+
+                if (dt.Rows.Count > 0)
+                {
+                    txtName.Text = dt.Rows[0]["Nombre_Cat"].ToString();
+                    cbIsActive.Checked = Convert.ToBoolean(dt.Rows[0]["Activo_Cat"]);
+                    imgCategory.ImageUrl = string.IsNullOrEmpty(dt.Rows[0]["ImagenUrl_Cat"].ToString()) ?
+                        "..//Images/No_image.png" : "../" + dt.Rows[0]["ImagenUrl_Cat"].ToString();
+                    imgCategory.Height = 200;
+                    imgCategory.Width = 200;
+                    hdnId.Value = dt.Rows[0]["Cod_Cat"].ToString();
+                    btnAddOrUpdate.Text = "Actualizar";
+                    LinkButton btn = e.Item.FindControl("lnkEdit") as LinkButton;
+                    btn.CssClass = "badge badge-warning";
+                }
+                else
+                {
+                    lblMsg.Visible = true;
+                    lblMsg.Text = "No se encontró la categoría.";
+                    lblMsg.CssClass = "alert alert-danger";
+                }
             }
+
             else if (e.CommandName == "delete")
             {
                 //con = new SqlConnection(Connetion.GetConnectionString());
