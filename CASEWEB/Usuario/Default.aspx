@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Usuario/Usuario.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CASEWEB.Usuario.Default" %>
+﻿     <%@ Page Title="" Language="C#" MasterPageFile="~/Usuario/Usuario.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CASEWEB.Usuario.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    <!-- bootstrap core css -->
 <link rel="stylesheet" type="text/css" href="../PlantillaArchivos/css/bootstrap.css" />

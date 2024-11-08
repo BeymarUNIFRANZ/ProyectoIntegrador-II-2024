@@ -572,14 +572,14 @@
 
                                                 </li>
 
-                                                    <%--<li>
+                                                    <li>
                                                     <a href="prorecienagregados.aspx">
                                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                         <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-31">Productos Recientemente</span>
                                                         <span class="pcoded-mcaret"></span>
                                                     </a>
 
-                                                </li>--%>
+                                                </li>
 
                                                 <li>
                                                     <a href="prodcateg.aspx">
