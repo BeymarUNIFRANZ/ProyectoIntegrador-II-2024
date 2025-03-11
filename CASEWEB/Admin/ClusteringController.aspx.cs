@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Linq;
-using CASEWEB.MachineLearning;  // Asegúrate de tener la ruta correcta a tu DataAnalyzer
+using System.Web.Script.Serialization;
+using CASEWEB.MachineLearning;
 using System.Collections.Generic;
 
 namespace CASEWEB.Admin
 {
     public partial class ClusteringController : System.Web.UI.Page
     {
+        protected string ClusterDataJson; // Variable para almacenar los datos en JSON
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -15,15 +18,13 @@ namespace CASEWEB.Admin
             }
         }
 
+        protected string ScatterDataJson; // Variable para almacenar los datos de dispersión en JSON
+
         private void MostrarResultadosClustering()
         {
-            // Crear una instancia de la clase DataAnalyzer para ejecutar el análisis de clustering
             DataAnalyzer dataAnalyzer = new DataAnalyzer();
-
-            // Ejecutar el análisis de clustering y obtener los resultados
             List<ClusterPrediction> clusterResults = dataAnalyzer.AnalyzeOrderData();
 
-            // Crear una lista para almacenar los resultados en un formato adecuado para el GridView
             var clusterSummary = clusterResults
                 .GroupBy(p => p.PredictedClusterId)
                 .Select(g => new
@@ -37,9 +38,15 @@ namespace CASEWEB.Admin
                 .OrderByDescending(c => c.Count)
                 .ToList();
 
-            // Asignar los resultados al GridView para mostrarlos en la interfaz
             GridViewClusteringResults.DataSource = clusterSummary;
             GridViewClusteringResults.DataBind();
+
+            // Serializar los datos de los clusters para el gráfico de dispersión
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            ScatterDataJson = serializer.Serialize(clusterResults); // Convertimos los puntos individuales a JSON
+
+            // Serializar los datos de resumen para el gráfico de barras
+            ClusterDataJson = serializer.Serialize(clusterSummary);
         }
 
     }

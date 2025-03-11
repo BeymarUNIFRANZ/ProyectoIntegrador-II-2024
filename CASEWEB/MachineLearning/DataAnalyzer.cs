@@ -14,7 +14,7 @@ public class DataAnalyzer
         _mlContext = new MLContext();
     }
 
-    // Cambiamos el tipo de retorno a List<ClusterPrediction>
+    
     public List<ClusterPrediction> AnalyzeOrderData()
     {
         // Preparar los datos para el clustering
@@ -67,7 +67,7 @@ public class ClusterPrediction
 
     [ColumnName("Score")]
     public float[] Distances { get; set; }
-
+    
     public float Cantidad_Ord { get; set; }
     public float Cod_Pro { get; set; }
     public float Cod_Pag { get; set; }

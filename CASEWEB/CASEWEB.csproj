@@ -159,6 +159,8 @@
     <Content Include="Admin\ClusteringController.aspx" />
     <Content Include="Admin\Contactos.aspx" />
     <Content Include="Admin\Dashboard2.aspx" />
+    <Content Include="Admin\AnomalyDetection.aspx" />
+    <Content Include="Admin\DBSCANResults.aspx" />
     <Content Include="Admin\listpedi.aspx" />
     <Content Include="Admin\NivelPiso.aspx" />
     <Content Include="Admin\pediclien.aspx" />
@@ -1529,6 +1531,20 @@
     <Compile Include="Admin\Dashboard2.aspx.designer.cs">
       <DependentUpon>Dashboard2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AnomalyDetection.aspx.cs">
+      <DependentUpon>AnomalyDetection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AnomalyDetection.aspx.designer.cs">
+      <DependentUpon>AnomalyDetection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DBSCANResults.aspx.cs">
+      <DependentUpon>DBSCANResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DBSCANResults.aspx.designer.cs">
+      <DependentUpon>DBSCANResults.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\listpedi.aspx.cs">
       <DependentUpon>listpedi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1680,6 +1696,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="MachineLearning\DataAnalyzer.cs" />
+    <Compile Include="MachineLearning\AnomalyDetectionAnalyzer.cs" />
+    <Compile Include="MachineLearning\DBSCANAnalyzer.cs" />
     <Compile Include="MachineLearning\MineriaDatos.Master.cs">
       <DependentUpon>MineriaDatos.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
